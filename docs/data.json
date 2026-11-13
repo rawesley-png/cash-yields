@@ -1,5 +1,5 @@
 {
- "updated": "Fri 11/13/2026 4:31 PM ET",
+ "updated": "Fri 11/13/2026 4:33 PM ET",
  "run_date": "2026-11-13",
  "first_run": true,
  "compared_with": null,
@@ -2693,9 +2693,9 @@
   },
   {
    "name": "Federated Hermes daily yields",
-   "ok": false,
-   "asof": null,
-   "note": "0 of 4 updated today — UTIXX, FFTXX, UTPXX, FTFXX not updated, last good value kept"
+   "ok": true,
+   "asof": "2026-11-13",
+   "note": "4 of 4 updated today"
   },
   {
    "name": "ETF sponsor pages",
