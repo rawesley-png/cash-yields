@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cash Yields</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@87.5,400;87.5,500;87.5,700;100,400;100,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    --panel: #E6E8E6; --tile: #F5F6F4; --tile-edge: #C6CAC5;
+    --ink: #22251F; --ink-2: #5C6157; --ink-3: #8C9186;
+    --green: #2F7D4F; --amber: #B8830E; --red: #B33A2C; --lamp-off: #C4C6BE; --focus: #22251F;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --panel: #1B1E1D; --tile: #252927; --tile-edge: #3A403C;
+      --ink: #EDEEE8; --ink-2: #B4B8AE; --ink-3: #7F857B;
+      --green: #56B57E; --amber: #E0A93A; --red: #E2604F; --lamp-off: #4A4E47; --focus: #EDEEE8;
+    }
+  }
+  :root[data-theme="dark"] {
+    --panel: #1B1E1D; --tile: #252927; --tile-edge: #3A403C;
+    --ink: #EDEEE8; --ink-2: #B4B8AE; --ink-3: #7F857B;
+    --green: #56B57E; --amber: #E0A93A; --red: #E2604F; --lamp-off: #4A4E47; --focus: #EDEEE8;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--panel); color: var(--ink); font-family: "Archivo", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; font-variation-settings: "wdth" 100; font-size: 15px; line-height: 1.45; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1440px; margin: 0 auto; padding: 24px 16px 56px; }
+  .switch { display: grid; grid-template-columns: repeat(auto-fit, minmax(104px, 1fr)); gap: 8px; margin-bottom: 18px; max-width: 760px; }
+  .switch button { min-width: 0; font: inherit; font-weight: 500; padding: 11px 8px 10px; border-radius: 10px; border: 1.5px solid var(--tile-edge); background: var(--tile); color: var(--ink-2); cursor: pointer; text-align: center; line-height: 1.2; }
+  .switch button[aria-selected="true"] { color: var(--ink); border-color: var(--ink); }
+  button:focus-visible, .row:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 18px; margin-bottom: 12px; }
+  h1 { font-size: 30px; line-height: 1.1; margin: 0; font-weight: 700; font-variation-settings: "wdth" 87.5; letter-spacing: -0.01em; }
+  .stamp { color: var(--ink-2); font-size: 14px; }
+  .banner { border-radius: 10px; padding: 11px 14px; margin: 0 0 10px; font-size: 14.5px; border: 1.5px solid var(--tile-edge); background: var(--tile); }
+  .banner.amber { border-color: var(--amber); background: color-mix(in srgb, var(--amber) 14%, var(--tile)); }
+  .banner.red { border-color: var(--red); background: color-mix(in srgb, var(--red) 12%, var(--tile)); }
+  .banner b { font-weight: 700; }
+  .checks { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 14px 0 10px; }
+  @media (min-width: 620px) { .checks { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1100px) { .checks { grid-template-columns: 1.5fr 1fr 1fr 1.3fr; } }
+  .check { background: var(--tile); border: 1.5px solid var(--tile-edge); border-radius: 10px; padding: 12px 14px; display: grid; grid-template-columns: 14px 1fr; gap: 2px 10px; align-content: start; }
+  .check .lamp { width: 12px; height: 12px; border-radius: 50%; background: var(--lamp-off); margin-top: 5px; }
+  .lamp.green { background: var(--green); } .lamp.amber { background: var(--amber); } .lamp.red { background: var(--red); }
+  .check h3 { margin: 0; font-size: 14px; font-weight: 700; font-variation-settings: "wdth" 87.5; }
+  .check p { grid-column: 2; margin: 0; font-size: 13.5px; color: var(--ink-2); }
+  .check p b { color: var(--ink); font-weight: 500; }
+  .since { margin: 6px 0 4px; font-size: 14px; color: var(--ink-2); }
+  .since b { color: var(--ink); font-weight: 500; }
+  .cols { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 16px; align-items: start; }
+  @media (min-width: 720px) { .cols { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1240px) { .cols { grid-template-columns: repeat(4, 1fr); } }
+  .col { min-width: 0; }
+  .col > h2 { margin: 0; font-size: 19px; font-weight: 700; font-variation-settings: "wdth" 87.5; line-height: 1.2; }
+  .col > .sub { margin: 0 0 8px; color: var(--ink-2); font-size: 13.5px; }
+  .rec { background: var(--tile); border: 1.5px solid var(--green); border-radius: 10px; padding: 14px 16px; margin-bottom: 8px; box-shadow: 0 0 0 4px color-mix(in srgb, var(--green) 14%, transparent); }
+  .rec.none { border-color: var(--tile-edge); box-shadow: none; color: var(--ink-2); }
+  .rec .lab { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--green); font-weight: 700; }
+  .rec .top { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-top: 2px; }
+  .rec .sym { font-size: 22px; font-weight: 700; font-variation-settings: "wdth" 87.5; }
+  .rec .net { font-size: 26px; font-weight: 700; font-variation-settings: "wdth" 87.5; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .rec .net small { font-size: 13px; font-weight: 500; color: var(--ink-2); }
+  .rec .nm { color: var(--ink-2); font-size: 13.5px; margin: 0 0 6px; }
+  .rec .kv, .row .kv { display: grid; grid-template-columns: 52px 1fr; gap: 1px 8px; font-size: 13.5px; margin: 0; }
+  .kv dt { color: var(--ink-3); } .kv dd { margin: 0; overflow-wrap: anywhere; }
+  .rec .money { font-size: 14px; margin: 0 0 6px; font-variant-numeric: tabular-nums; }
+  .list { background: var(--tile); border: 1.5px solid var(--tile-edge); border-radius: 10px; overflow: hidden; }
+  .row { padding: 9px 12px 9px; border-top: 1px solid var(--tile-edge); cursor: pointer; display: grid; grid-template-columns: 22px 1fr; gap: 0 6px; }
+  .row:first-child { border-top: 0; }
+  .row .rk { color: var(--ink-3); font-size: 13px; padding-top: 2px; font-variant-numeric: tabular-nums; }
+  .row .l1 { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+  .row .sym { font-weight: 700; font-variation-settings: "wdth" 87.5; font-size: 15.5px; }
+  .row .net { font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .row .net small { font-weight: 400; color: var(--ink-3); font-size: 12px; }
+  .row .l2 { color: var(--ink-2); font-size: 13px; font-variant-numeric: tabular-nums; margin-bottom: 3px; }
+  .row .cav { color: var(--amber); font-size: 12.5px; margin: 3px 0 0; }
+  .row.grey { color: var(--ink-3); cursor: pointer; } .row.grey .sym { font-weight: 500; }
+  .row .more { display: none; margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--tile-edge); font-size: 13px; color: var(--ink-2); }
+  .row.open .more { display: block; }
+  .row .more p { margin: 0 0 4px; } .row .more b { color: var(--ink); font-weight: 500; }
+  .tier { display: inline-block; font-size: 11px; font-weight: 700; line-height: 1; padding: 3px 5px; border-radius: 5px; border: 1.2px solid var(--ink-3); color: var(--ink-2); margin-left: 6px; vertical-align: 2px; }
+  .tier.t1 { border-color: var(--green); color: var(--green); } .tier.t4 { border-color: var(--red); color: var(--red); }
+  .live { font-weight: 500; } .live.ok { color: var(--green); } .live.soon { color: var(--amber); } .live.past { color: var(--red); }
+  .allbtn { display: block; width: 100%; font: inherit; font-size: 13.5px; font-weight: 500; padding: 9px; border: 0; border-top: 1px solid var(--tile-edge); background: transparent; color: var(--ink-2); cursor: pointer; }
+  .grouplab { padding: 7px 12px 5px; border-top: 1px solid var(--tile-edge); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); background: color-mix(in srgb, var(--panel) 55%, var(--tile)); }
+  .section { margin: 28px 0 8px; }
+  .section h3 { margin: 0 0 2px; font-size: 19px; font-weight: 700; font-variation-settings: "wdth" 87.5; }
+  .section p { margin: 0; color: var(--ink-2); font-size: 14px; max-width: 80ch; }
+  .watch { display: grid; gap: 10px; grid-template-columns: 1fr; }
+  @media (min-width: 900px) { .watch { grid-template-columns: repeat(3, 1fr); } }
+  .watch div { background: var(--tile); border: 1.5px dashed var(--tile-edge); border-radius: 10px; padding: 12px 14px; color: var(--ink-3); font-size: 13.5px; }
+  .watch b { color: var(--ink-2); font-weight: 500; display: block; }
+  .foot { margin-top: 26px; background: var(--tile); border: 1.5px solid var(--tile-edge); border-radius: 10px; padding: 16px 18px; font-size: 14px; color: var(--ink-2); }
+  .foot h3 { margin: 0 0 6px; font-size: 16px; color: var(--ink); font-variation-settings: "wdth" 87.5; }
+  .foot h3:not(:first-child) { margin-top: 16px; }
+  .foot code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; color: var(--ink); overflow-wrap: anywhere; }
+  .foot ul { margin: 0; padding-left: 18px; } .foot li { margin: 2px 0; }
+  .feeds { display: grid; grid-template-columns: 1fr; gap: 2px 18px; }
+  @media (min-width: 800px) { .feeds { grid-template-columns: 1fr 1fr; } }
+  .feeds span i { width: 9px; height: 9px; border-radius: 50%; display: inline-block; margin-right: 7px; background: var(--green); }
+  .feeds span i.bad { background: var(--amber); }
+  .log { display: grid; gap: 10px; max-width: 900px; }
+  .log .day { background: var(--tile); border: 1.5px solid var(--tile-edge); border-radius: 10px; padding: 14px 16px; }
+  .log .day h4 { margin: 0 0 4px; font-size: 16px; font-weight: 700; font-variation-settings: "wdth" 87.5; }
+  .log .day p.sum { margin: 0 0 8px; color: var(--ink-2); font-size: 14px; }
+  .log .item { display: grid; grid-template-columns: 92px 1fr; gap: 10px; padding: 6px 0; border-top: 1px solid var(--tile-edge); font-size: 14px; }
+  .log .item .b { color: var(--ink-3); font-size: 12px; padding-top: 3px; }
+  .legend { margin: 14px 0 0; color: var(--ink-2); font-size: 13.5px; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="switch" role="tablist" id="switch"></div>
+  <header><h1 id="title">Cash yields</h1><div class="stamp" id="stamp"></div></header>
+  <div id="banners"></div>
+  <div id="main"></div>
+</div>
+
+<script id="cash-data" type="application/json">/*CASH_DATA*/{}</script>
+<script>
+(function () {
+  const DATA = JSON.parse(document.getElementById("cash-data").textContent.replace(/^\/\*CASH_DATA\*\//, "") || "{}");
+  const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const store = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+  const ROWS = {}; (DATA.rows || []).forEach(r => ROWS[r.symbol] = r);
+  const TIER = { 1: "Treasury-only", 2: "Treasury repo", 3: "Government / deposit / muni", 4: "Prime" };
+  const DOW = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const HOL = {}; ((DATA.calendar || {}).holidays || []).forEach(h => HOL[h.date] = h.name);
+  const EARLY = {}; ((DATA.calendar || {}).early_closes || []).forEach(e => EARLY[e.date] = e);
+  let entity = store.get("cy-entity"); if (!(DATA.entities || []).some(e => e.key === entity)) entity = (DATA.entities || [{}])[0].key;
+  let view = "board";
+  const openRows = new Set(), openCols = new Set();
+
+  // ---- dates in Eastern time; a date is a UTC-midnight Date so arithmetic is plain
+  function nowET() {
+    const p = {}; new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", hourCycle: "h23", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" }).formatToParts(new Date()).forEach(x => p[x.type] = x.value);
+    return { iso: `${p.year}-${p.month}-${p.day}`, mins: (+p.hour % 24) * 60 + +p.minute };
+  }
+  const D = iso => new Date(iso + "T00:00:00Z");
+  const isoOf = d => d.toISOString().slice(0, 10);
+  const isBD = d => d.getUTCDay() % 6 !== 0 && !HOL[isoOf(d)];
+  const nextBD = d => { d = new Date(d.getTime() + 864e5); while (!isBD(d)) d = new Date(d.getTime() + 864e5); return d; };
+  const md = d => `${DOW[d.getUTCDay()]} ${d.getUTCMonth() + 1}/${d.getUTCDate()}`;
+  const mdy = iso => iso ? `${+iso.slice(5, 7)}/${+iso.slice(8, 10)}/${iso.slice(0, 4)}` : "—";
+  const mins = hhmm => +hhmm.slice(0, 2) * 60 + +hhmm.slice(3);
+  const clock = hhmm => { const h = +hhmm.slice(0, 2); return `${(h + 11) % 12 + 1}:${hhmm.slice(3)} ${h < 12 ? "a.m." : "p.m."} ET`; };
+  const dur = m => m >= 60 ? `${Math.floor(m / 60)}h ${m % 60}m` : `${m}m`;
+
+  // ---- live timing for one row: {cutoff, cash, live, liveClass}
+  function timing(r) {
+    const n = nowET(), today = D(n.iso), open = isBD(today);
+    const trade = open ? today : nextBD(today), day = open ? "today" : md(trade), t1 = md(nextBD(trade));
+    const early = EARLY[isoOf(trade)], c = r.cutoff || {};
+    if (r.category === "bill") {
+      const stamp = n.iso + " " + String(Math.floor(n.mins / 60)).padStart(2, "0") + ":" + String(n.mins % 60).padStart(2, "0");
+      const a = (r.auctions || []).find(x => x.close_date ? (x.close_date + " " + x.nc_time) > stamp : x.issue > n.iso);
+      if (a && a.close_date) return { cutoff: `next auction closes ${md(D(a.close_date))} ${clock(a.nc_time)} (noncompetitive); secondary: during trading hours`, cash: `auction settles ${md(D(a.issue))}; secondary buy or sell settles T+1 = ${t1}` };
+      if (a) return { cutoff: `next auction ${a.announced ? "to be announced " + md(D(a.announced)) : "not yet announced"}; secondary: during trading hours`, cash: `next auction settles ${md(D(a.issue))}; secondary buy or sell settles T+1 = ${t1}` };
+      return { cutoff: "no auction announced; secondary: during trading hours", cash: `secondary buy or sell settles T+1 = ${t1}` };
+    }
+    if (r.category === "etf") return { cutoff: "market hours 9:30 a.m.–4:00 p.m. ET" + (early ? " (early close — confirm)" : ""), cash: `T+1 = ${t1}` };
+    if (r.category === "deposit") return r.same_day ? { cutoff: "automatic sweep", cash: "same day (sweep)" } : { cutoff: "by instruction", cash: `posts ${t1}` };
+    if (/sweep/.test(r.cutoff_buy || "")) return { cutoff: "automatic sweep", cash: "same day (sweep)" };
+    let t = c.time;
+    if (!t) return { cutoff: "not verified — ask Merrill", cash: `same day only if Merrill confirms the cutoff; otherwise ${t1}` };
+    let flag = "";
+    if (early) { if (c.early_time) { t = t < c.early_time ? t : c.early_time; flag = " (early close)"; } else flag = " (early close — confirm)"; }
+    const out = { cutoff: `${clock(t)} ${day}${flag}`, cash: r.same_day ? `${day} if ordered by ${clock(t)}; otherwise ${t1}` : `same day only if ordered by ${clock(t)}; otherwise ${t1}` };
+    if (open) {
+      const left = mins(t) - n.mins;
+      if (left > 0) { out.live = `cutoff in ${dur(left)}`; out.liveClass = left <= 60 ? "soon" : "ok"; }
+      else { out.live = `cutoff passed — next business day (${t1})`; out.liveClass = "past"; out.cash = `${t1} (today's cutoff has passed)`; }
+    } else { out.live = "market closed today"; out.liveClass = "past"; }
+    return out;
+  }
+
+  const pct = v => v == null ? "—" : v.toFixed(2) + "%";
+  const money = net => net == null ? "—" : "$" + Math.round(net * 10000).toLocaleString("en-US");
+  const tier = r => `<span class="tier t${r.risk_tier}" title="Risk tier ${r.risk_tier}: ${esc(TIER[r.risk_tier])}">${r.risk_tier}</span>`;
+  const grossLine = r => r.gross == null ? "no data" : r.category === "etf" ? `${pct(r.gross)} 30-day SEC${r.ytm != null ? ` · YTM ${pct(r.ytm)}` : ""}` : `${pct(r.gross)} gross`;
+
+  function details(r) {
+    const ys = Object.keys(r.yields || {}).map(k => `${esc(r.yields[k].source)}: <b>${pct(r.yields[k].y)}</b> as of ${mdy(r.yields[k].asof)}${r.gross_source === r.yields[k].source ? " (used for ranking)" : ""}`);
+    const c = r.cutoff || {}, f = n => (n * 100).toFixed(0) + "%";
+    return `<div class="more">
+      <p><b>${esc(r.name)}</b> · ${esc(r.type)} · ${esc(r.availability)}${r.expense_ratio != null ? ` · expense ${r.expense_ratio}%` : ""}</p>
+      ${ys.length ? `<p>${ys.join("<br>")}</p>` : "<p>No yield fetched — nothing is estimated.</p>"}
+      ${r.ytm != null ? `<p>Average yield to maturity (forward-looking): <b>${pct(r.ytm)}</b></p>` : ""}
+      ${r.category === "bill" && r.bill_maturity ? `<p>Quoted bill matures ${mdy(r.bill_maturity)}${r.bill_cusip ? " · CUSIP " + esc(r.bill_cusip) : ""}</p>` : ""}
+      <p>Buy cutoff: ${esc(c.buy ? clock(c.buy) : r.cutoff_buy)} · Sell cutoff: ${esc(c.sell ? clock(c.sell) : r.cutoff_sell)}${c.t1_time ? ` · orders until ${clock(c.t1_time)} price today, settle next business day` : ""} · NAV strike: ${esc(r.nav_strike || "—")}</p>
+      ${c.source ? `<p>Cutoff source: ${esc(c.source)}</p>` : ""}
+      ${r.settlement_note ? `<p>${esc(r.settlement_note)}</p>` : ""}
+      <p>Taxable share — federal ${f(r.fed_taxable_share)}, South Carolina ${f(r.sc_taxable_share)}</p>
+      ${r.status_note ? `<p>${esc(r.status_note)}</p>` : ""}
+    </div>`;
+  }
+
+  function rowHtml(r, col, rank) {
+    const t = timing(r), key = col + "|" + r.symbol, grey = r.status !== "ranked";
+    return `<div class="row${grey ? " grey" : ""}${openRows.has(key) ? " open" : ""}" data-key="${esc(key)}" tabindex="0" role="button" aria-expanded="${openRows.has(key)}">
+      <div class="rk">${rank || ""}</div>
+      <div>
+        <div class="l1"><span><span class="sym">${esc(r.symbol)}</span>${tier(r)}</span><span class="net">${grey ? "" : pct(r.net[entity]) + " <small>net</small>"}</span></div>
+        <div class="l2">${grey ? esc(r.status_note || "not ranked") + (r.gross != null ? ` · ${pct(r.gross)} gross` : "") : `${grossLine(r)} · ${money(r.net[entity])} per $1M${r.stale ? ` · <span class="live soon">yield as of ${mdy(r.gross_asof)} — stale</span>` : ""}`}</div>
+        ${grey ? "" : `<dl class="kv"><dt>Cutoff</dt><dd>${esc(t.cutoff)}${t.live ? ` · <span class="live ${t.liveClass}">${esc(t.live)}</span>` : ""}</dd><dt>Cash</dt><dd>${esc(t.cash)}</dd></dl>`}
+        ${!grey && r.caveat ? `<p class="cav">${esc(r.caveat)}</p>` : ""}
+        ${details(r)}
+      </div></div>`;
+  }
+
+  function colHtml(c) {
+    const rk = ((DATA.ranking || {})[entity] || {})[c.key] || { ranked: [], unranked: [] };
+    const rec = ROWS[rk.recommended], all = openCols.has(c.key), SHOW = 6;
+    let recHtml = `<div class="rec none">No eligible instrument with a fetched yield.</div>`;
+    if (rec) {
+      const t = timing(rec);
+      recHtml = `<div class="rec"><div class="lab">Recommended</div>
+        <div class="top"><span><span class="sym">${esc(rec.symbol)}</span>${tier(rec)}</span><span class="net">${pct(rec.net[entity])} <small>net</small></span></div>
+        <p class="nm">${esc(rec.name)}</p>
+        <p class="money"><b>${money(rec.net[entity])}</b> a year per $1M after tax · ${grossLine(rec)}</p>
+        <dl class="kv"><dt>Cutoff</dt><dd>${esc(t.cutoff)}${t.live ? ` · <span class="live ${t.liveClass}">${esc(t.live)}</span>` : ""}</dd><dt>Cash</dt><dd>${esc(t.cash)}</dd></dl></div>`;
+    }
+    const ranked = rk.ranked.map((s, i) => rowHtml(ROWS[s], c.key, i + 1));
+    const shown = all ? ranked : ranked.slice(0, SHOW);
+    const rest = ranked.length - SHOW + rk.unranked.length;
+    return `<section class="col" id="col-${c.key}"><h2>${esc(c.name)}</h2><p class="sub">${esc(c.sub)}</p>${recHtml}
+      <div class="list">${shown.join("")}
+        ${all && rk.unranked.length ? `<div class="grouplab">Not ranked</div>` + rk.unranked.map(s => rowHtml(ROWS[s], c.key, "")).join("") : ""}
+        ${rest > 0 || all ? `<button class="allbtn" data-col="${c.key}">${all ? "Show fewer" : `Show all ${ranked.length + rk.unranked.length}`}</button>` : ""}
+      </div></section>`;
+  }
+
+  function checksHtml() {
+    const k = DATA.checks || {}, m = k.muni, p1 = v => (v * 100).toFixed(1) + "%";
+    const sc = entity !== "fl_trust", st = m ? (entity === "fl_trust" ? m.fl : entity === "foundation" ? "green" : m.sc) : "";
+    const muni = m ? `<div class="check"><i class="lamp ${st}"></i><h3>Muni test — FFTXX ÷ TTTXX</h3>
+        <p><b>${p1(m.ratio)}</b> vs break-even <b>${p1(m.be_sc)}</b> (SC) / <b>${p1(m.be_fl)}</b> (FL)</p>
+        <p>SC: ${m.sc === "green" ? "Treasury-only wins" : "FFTXX wins for sitting cash"} · FL: ${m.fl === "green" ? "Treasury-only wins" : "FFTXX wins for sitting cash"}${entity === "foundation" ? " · Foundation: taxable funds win by a wide margin" : ""}</p></div>`
+      : `<div class="check"><i class="lamp"></i><h3>Muni test</h3><p>No data for FFTXX or TTTXX.</p></div>`;
+    const repo = k.repo ? `<div class="check"><i class="lamp ${k.repo.status}"></i><h3>Repo signal — TSTXX − TTTXX</h3><p><b>${k.repo.bp} bp</b> · ${k.repo.status === "green" ? "normal (10 bp or less)" : k.repo.status === "amber" ? "watch (10–25 bp)" : "repo paying up over bills — check the plumbing board"}</p></div>`
+      : `<div class="check"><i class="lamp"></i><h3>Repo signal</h3><p>No data.</p></div>`;
+    const bill = k.bill_premium ? `<div class="check"><i class="lamp green"></i><h3>Bill premium — 13-week − TTTXX</h3><p><b>${k.bill_premium.bp} bp</b> for committing to a date</p></div>`
+      : `<div class="check"><i class="lamp"></i><h3>Bill premium</h3><p>No data.</p></div>`;
+    const bad = (DATA.feeds || []).filter(f => !f.ok).length;
+    const asof = `<div class="check"><i class="lamp ${bad ? "amber" : "green"}"></i><h3>Data as of</h3><p>Merrill sheet <b>${mdy(DATA.merrill_asof)}</b> · Treasury <b>${mdy(DATA.treasury_asof)}</b></p><p>Run ${esc(DATA.updated || "")}${bad ? ` · ${bad} feed${bad > 1 ? "s" : ""} failed, see foot` : ""}</p></div>`;
+    return `<div class="checks">${muni}${repo}${bill}${asof}</div>`;
+  }
+
+  function footHtml() {
+    const t = DATA.tax || {}, p = v => (v * 100).toFixed(2).replace(/\.?0+$/, "") + "%";
+    return `<div class="foot"><h3>How it's computed</h3>
+      <ul>
+        <li>SC partners: <code>net = gross × (1 − fed share × (${p(t.fed_rate_partner)} + ${p(t.niit_partner)}) − SC share × ${p(t.sc_rate)})</code></li>
+        <li>SC trust: <code>net = gross × (1 − fed share × (${p(t.fed_rate_trust)} + ${p(t.niit_trust)}) − SC share × ${p(t.sc_rate)})</code></li>
+        <li>FL trust: <code>net = gross × (1 − fed share × (${p(t.fed_rate_trust)} + ${p(t.niit_trust)}))</code></li>
+        <li>Foundation: <code>net = gross × (1 − ${p(t.foundation_excise)} × fed share)</code> — ${esc(t.foundation_excise_note || "")}</li>
+        <li>SC rate ${p(t.sc_rate)}: ${esc(t.sc_rate_note || "")}. Federal deductibility of state tax is ignored.</li>
+        <li>Each fund is ranked on the newer of the Merrill-sheet yield and the sponsor's daily yield; tap a row to see both. ETFs rank on the 30-day SEC yield. Bills use Treasury's coupon-equivalent yield.</li>
+        <li>Recommended = highest net yield among instruments at or below risk tier ${t.max_risk_tier_recommended}; advisory-program (IAP) share classes are ${t.iap_accounts ? "included" : "excluded"}. An instrument with no fetched yield is never ranked or estimated.</li>
+        <li>Dollars per $1M are a year of net income at today's yield. Rates are edited in <code>config/tax.json</code>.</li>
+      </ul>
+      <p class="legend"><span>Risk tier:</span><span><span class="tier t1">1</span> Treasury-only</span><span><span class="tier t2">2</span> Treasury repo</span><span><span class="tier t3">3</span> government / deposit / muni</span><span><span class="tier t4">4</span> prime</span></p>
+      <h3>Feeds this run</h3>
+      <div class="feeds">${(DATA.feeds || []).map(f => `<span><i class="${f.ok ? "" : "bad"}"></i>${esc(f.name)} — ${esc(f.note)}${f.asof ? ` (${mdy(f.asof)})` : ""}</span>`).join("")}</div>
+    </div>`;
+  }
+
+  function renderBanners() {
+    const n = nowET(), out = [];
+    if (HOL[n.iso]) out.push(`<div class="banner red"><b>Bond market closed today — ${esc(HOL[n.iso])}.</b> Orders placed today go in on ${md(nextBD(D(n.iso)))}.</div>`);
+    else if (EARLY[n.iso]) out.push(`<div class="banner amber"><b>SIFMA early close today at ${clock(EARLY[n.iso].time)}</b> (${esc(EARLY[n.iso].name)}). Fund cutoffs may be earlier than usual — confirm before ordering.</div>`);
+    else if (!isBD(D(n.iso))) out.push(`<div class="banner">Weekend — next business day is ${md(nextBD(D(n.iso)))}.</div>`);
+    if (DATA.run_date && DATA.run_date < n.iso && isBD(D(n.iso))) out.push(`<div class="banner amber">Yields are from the ${mdy(DATA.run_date)} run — today's refresh has not run yet. Cutoff times and dates below are for today.</div>`);
+    (DATA.banners || []).forEach(b => out.push(`<div class="banner ${esc(b.level)}">${esc(b.text)}</div>`));
+    const up = ((DATA.calendar || {}).upcoming || []).filter(u => u.date > n.iso);
+    if (up.length) out.push(`<div class="banner">Coming up: ${up.map(u => u.kind === "holiday" ? `<b>${md(D(u.date))}</b> market closed (${esc(u.name)})` : `<b>${md(D(u.date))}</b> early close ${clock(u.time)}`).join(" · ")}</div>`);
+    document.getElementById("banners").innerHTML = out.join("");
+  }
+
+  function render() {
+    document.getElementById("switch").innerHTML = (DATA.entities || []).map(e => `<button role="tab" data-entity="${e.key}" aria-selected="${view === "board" && e.key === entity}">${esc(e.name)}</button>`).join("") + `<button role="tab" data-log="1" aria-selected="${view === "log"}">Log</button>`;
+    document.getElementById("stamp").textContent = "Checked " + (DATA.updated || "—");
+    renderBanners();
+    const main = document.getElementById("main");
+    if (view === "log") {
+      const cl = DATA.changelog || [];
+      main.innerHTML = `<div class="section"><h3>Change log</h3><p>Each entry compares a run with the one before it: changes in a Recommended pick, a fetched cutoff, the muni test, or a new early close inside ten business days.</p></div>
+        <div class="log">${cl.length ? cl.map(d => `<div class="day"><h4>${mdy(d.date)}</h4><p class="sum">${esc(d.summary)}</p>${(d.items || []).map(i => `<div class="item"><span class="b">${esc(i.label)}</span><div>${esc(i.text)}</div></div>`).join("")}</div>`).join("") : `<div class="day"><p class="sum">Nothing has changed since the first run.</p></div>`}</div>`;
+      return;
+    }
+    const since = DATA.since_last_run || [];
+    main.innerHTML = checksHtml()
+      + `<p class="since">Since last run: ${DATA.first_run ? "first run — nothing to compare yet." : since.length ? since.map(i => `<b>${esc(i.text)}</b>`).join(" · ") : "nothing moved."}</p>`
+      + `<div class="cols">${(DATA.columns || []).map(colHtml).join("")}</div>`
+      + ((DATA.watch || []).length ? `<div class="section"><h3>Desk quote — not ranked</h3><p>No automated feed yet; ask the desk.</p></div><div class="watch">${DATA.watch.map(w => `<div><b>${esc(w.name)} <span class="tier t${w.risk_tier}">${w.risk_tier}</span></b>${esc(w.note)}</div>`).join("")}</div>` : "")
+      + footHtml();
+  }
+
+  document.addEventListener("click", ev => {
+    const b = ev.target.closest("button"), row = ev.target.closest(".row");
+    if (b && b.dataset.entity) { entity = b.dataset.entity; view = "board"; store.set("cy-entity", entity); render(); }
+    else if (b && b.dataset.log) { view = "log"; render(); }
+    else if (b && b.dataset.col) { openCols.has(b.dataset.col) ? openCols.delete(b.dataset.col) : openCols.add(b.dataset.col); render(); }
+    else if (row && !ev.target.closest("a")) { const k = row.dataset.key; openRows.has(k) ? openRows.delete(k) : openRows.add(k); row.classList.toggle("open"); row.setAttribute("aria-expanded", openRows.has(k)); }
+  });
+  document.addEventListener("keydown", ev => { if ((ev.key === "Enter" || ev.key === " ") && ev.target.classList && ev.target.classList.contains("row")) { ev.preventDefault(); ev.target.click(); } });
+  render();
+  setInterval(() => { if (view === "board" && !document.hidden) render(); }, 60000);
+})();
+</script>
+</body>
+</html>

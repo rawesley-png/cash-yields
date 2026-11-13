@@ -1,0 +1,8 @@
+{
+ "merrill_pdf": "https://oaui.fs.ml.com/Publish/Content/application/pdf/GWMOL/ICCRateSheet.pdf",
+ "treasury_bills_xml": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_bill_rates&field_tdr_date_value_month={yyyymm}",
+ "auctions_json": "https://www.treasurydirect.gov/TA_WS/securities/upcoming?format=json",
+ "sifma_calendar": "https://www.sifma.org/resources/general/holiday-schedule/",
+ "blackrock_screener": "https://www.blackrock.com/cash/en-us/product-screener/product-screener-v3.1.jsn?dcrPath=/templatedata/config/product-screener-v3/data/en/global-cash-one/cash-us/product-screener-backend-config&siteEntryPassthrough=true",
+ "federated_api": "https://www.federatedhermes.com/external/open/corpwebsite/v1/api/ProductDetailMeasure?productId={id}"
+}

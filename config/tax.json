@@ -1,0 +1,12 @@
+{
+ "fed_rate_trust": 0.37,
+ "niit_trust": 0.038,
+ "fed_rate_partner": 0.37,
+ "niit_partner": 0.038,
+ "sc_rate": 0.0521,
+ "sc_rate_note": "Act No. 110 of 2026 (H.4216), top rate for tax years after 2025, applies to trusts and estates; was 0.06 for 2025",
+ "foundation_excise": 0.0139,
+ "foundation_excise_note": "§4940; tax-exempt municipal interest is excluded from the excise base (Form 990-PF instructions, Part I col. (b), lines 3–4)",
+ "max_risk_tier_recommended": 3,
+ "iap_accounts": false
+}

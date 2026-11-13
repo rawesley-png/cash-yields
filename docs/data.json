@@ -1,0 +1,3018 @@
+{
+ "updated": "Fri 11/13/2026 3:32 PM ET",
+ "run_date": "2026-11-13",
+ "first_run": false,
+ "entities": [
+  {
+   "key": "sc_partner",
+   "name": "SC partners"
+  },
+  {
+   "key": "sc_trust",
+   "name": "SC trust"
+  },
+  {
+   "key": "fl_trust",
+   "name": "FL trust"
+  },
+  {
+   "key": "foundation",
+   "name": "Foundation"
+  }
+ ],
+ "columns": [
+  {
+   "key": "same",
+   "name": "Same day",
+   "sub": "Needed any day"
+  },
+  {
+   "key": "next",
+   "name": "Next day, no date",
+   "sub": "T+1 liquidity, no maturity to match"
+  },
+  {
+   "key": "w13",
+   "name": "Dated inside 13 weeks",
+   "sub": "Payment date within 13 weeks"
+  },
+  {
+   "key": "w52",
+   "name": "Dated inside 52 weeks",
+   "sub": "Payment date within 52 weeks"
+  }
+ ],
+ "tax": {
+  "fed_rate_trust": 0.37,
+  "niit_trust": 0.038,
+  "fed_rate_partner": 0.37,
+  "niit_partner": 0.038,
+  "sc_rate": 0.0521,
+  "sc_rate_note": "Act No. 110 of 2026 (H.4216), top rate for tax years after 2025, applies to trusts and estates; was 0.06 for 2025",
+  "foundation_excise": 0.0139,
+  "foundation_excise_note": "§4940; tax-exempt municipal interest is excluded from the excise base (Form 990-PF instructions, Part I col. (b), lines 3–4)",
+  "max_risk_tier_recommended": 3,
+  "iap_accounts": false
+ },
+ "rows": [
+  {
+   "symbol": "FSIXX",
+   "name": "Fidelity Investments Money Market Treasury Only – Class I",
+   "category": "fund",
+   "type": "Treasury-only",
+   "availability": "Brokerage",
+   "risk_tier": 1,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 0.0,
+   "same_day": true,
+   "cutoff_buy": "Until NAV strike (4:00 p.m. ET)",
+   "cutoff_sell": "same",
+   "nav_strike": "4:00 p.m. (5:00 also cited)",
+   "settlement_note": "Same day for wire redemptions received before the strike; confirm with Merrill",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "merrill_eligibility": "Brokerage",
+   "yields": {
+    "merrill": {
+     "y": 3.87,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (7-day yield)"
+    }
+   },
+   "gross": 3.87,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (7-day yield)",
+   "stale": false,
+   "cutoff": {
+    "time": "16:00",
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": "Fidelity prospectus 5/30/2026",
+    "refreshed_today": null
+   },
+   "caveat": null,
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.291,
+    "sc_trust": 2.291,
+    "fl_trust": 2.291,
+    "foundation": 3.8162
+   },
+   "timing": {
+    "cutoff": "4:00 p.m. ET today",
+    "cash": "today if ordered by 4:00 p.m. ET; otherwise Mon 11/16"
+   }
+  },
+  {
+   "symbol": "TTTXX",
+   "name": "BlackRock Liquidity Funds Treasury Trust – Institutional",
+   "category": "fund",
+   "type": "Treasury-only",
+   "availability": "Brokerage",
+   "risk_tier": 1,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 0.0,
+   "same_day": true,
+   "cutoff_buy": "2:30 p.m. ET (2:00 around holidays)",
+   "cutoff_sell": "same",
+   "nav_strike": "4:00 p.m.",
+   "settlement_note": "Same day; purchase wire by Fed wire close 6:45 p.m.",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "merrill_eligibility": "Brokerage, IAP",
+   "yields": {
+    "merrill": {
+     "y": 3.86,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (7-day yield)"
+    },
+    "sponsor": {
+     "y": 3.86,
+     "asof": "2026-11-12",
+     "source": "BlackRock (7-day SEC yield)"
+    }
+   },
+   "gross": 3.86,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (7-day yield)",
+   "stale": false,
+   "cutoff": {
+    "time": "14:30",
+    "buy": "14:30",
+    "sell": "14:30",
+    "early_time": "14:00",
+    "source": "BlackRock fact sheet Oct 2026",
+    "refreshed_today": true,
+    "t1_time": null,
+    "verified": "2026-11-13"
+   },
+   "caveat": null,
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.2851,
+    "sc_trust": 2.2851,
+    "fl_trust": 2.2851,
+    "foundation": 3.8063
+   },
+   "timing": {
+    "cutoff": "2:30 p.m. ET today",
+    "cash": "today if ordered by 2:30 p.m. ET; otherwise Mon 11/16"
+   }
+  },
+  {
+   "symbol": "UTIXX",
+   "name": "Federated Hermes U.S. Treasury Cash Reserves – Institutional",
+   "category": "fund",
+   "type": "Treasury-only",
+   "availability": "Brokerage",
+   "risk_tier": 1,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 0.0,
+   "same_day": true,
+   "cutoff_buy": "3:00 p.m. ET for same-day",
+   "cutoff_sell": "3:00 p.m. ET for same-day wire",
+   "nav_strike": "3:00 & 4:00 p.m.",
+   "settlement_note": "3:00–4:00 orders price today, settle next business day",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "merrill_eligibility": "Brokerage",
+   "yields": {
+    "merrill": {
+     "y": 3.84,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (7-day yield)"
+    },
+    "sponsor": {
+     "y": 3.84,
+     "asof": "2026-11-12",
+     "source": "Federated Hermes (7-day net yield)"
+    }
+   },
+   "gross": 3.84,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (7-day yield)",
+   "stale": false,
+   "cutoff": {
+    "time": "15:00",
+    "buy": "15:00",
+    "sell": "15:00",
+    "early_time": null,
+    "source": "Federated page 11/13/2026",
+    "refreshed_today": true,
+    "t1_time": "16:00",
+    "verified": "2026-11-13"
+   },
+   "caveat": null,
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.2733,
+    "sc_trust": 2.2733,
+    "fl_trust": 2.2733,
+    "foundation": 3.7866
+   },
+   "timing": {
+    "cutoff": "3:00 p.m. ET today",
+    "cash": "today if ordered by 3:00 p.m. ET; otherwise Mon 11/16"
+   }
+  },
+  {
+   "symbol": "GOTXX",
+   "name": "Federated Hermes Government Obligations Tax-Managed Fund – Institutional Class",
+   "category": "fund",
+   "type": "Government, tax-managed, no repo",
+   "availability": "Brokerage",
+   "risk_tier": 3,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 0.1,
+   "same_day": true,
+   "cutoff_buy": "not verified",
+   "cutoff_sell": "not verified",
+   "nav_strike": "—",
+   "settlement_note": "ask Merrill",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "merrill_eligibility": "Brokerage, IAP",
+   "yields": {
+    "merrill": {
+     "y": 3.81,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (7-day yield)"
+    }
+   },
+   "gross": 3.81,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (7-day yield)",
+   "stale": false,
+   "cutoff": {
+    "time": null,
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": null,
+    "refreshed_today": null
+   },
+   "caveat": null,
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.2357,
+    "sc_trust": 2.2357,
+    "fl_trust": 2.2555,
+    "foundation": 3.757
+   },
+   "timing": {
+    "cutoff": "not verified — ask Merrill",
+    "cash": "same day only if Merrill confirms the cutoff; otherwise Mon 11/16"
+   }
+  },
+  {
+   "symbol": "TSTXX",
+   "name": "BlackRock Liquidity Funds T-Fund – Institutional",
+   "category": "fund",
+   "type": "Treasury + Treasury repo",
+   "availability": "Brokerage",
+   "risk_tier": 2,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 0.5,
+   "same_day": true,
+   "cutoff_buy": "5:00 p.m. ET",
+   "cutoff_sell": "5:00 p.m. ET",
+   "nav_strike": "6:00 p.m.",
+   "settlement_note": "Same day; wire by 6:45",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "merrill_eligibility": "Brokerage, IAP",
+   "yields": {
+    "merrill": {
+     "y": 3.81,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (7-day yield)"
+    },
+    "sponsor": {
+     "y": 3.81,
+     "asof": "2026-11-12",
+     "source": "BlackRock (7-day SEC yield)"
+    }
+   },
+   "gross": 3.81,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (7-day yield)",
+   "stale": false,
+   "cutoff": {
+    "time": "17:00",
+    "buy": "17:00",
+    "sell": "17:00",
+    "early_time": null,
+    "source": "BlackRock fact sheet Oct 2026",
+    "refreshed_today": true,
+    "t1_time": null,
+    "verified": "2026-11-13"
+   },
+   "caveat": null,
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.1563,
+    "sc_trust": 2.1563,
+    "fl_trust": 2.2555,
+    "foundation": 3.757
+   },
+   "timing": {
+    "cutoff": "5:00 p.m. ET today",
+    "cash": "today if ordered by 5:00 p.m. ET; otherwise Mon 11/16"
+   }
+  },
+  {
+   "symbol": "FISXX",
+   "name": "Fidelity Investments Money Market Treasury Portfolio – Class I",
+   "category": "fund",
+   "type": "Treasury + Treasury repo",
+   "availability": "Brokerage",
+   "risk_tier": 2,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 0.5,
+   "same_day": true,
+   "cutoff_buy": "Until NAV strike (4:00/5:00 p.m.)",
+   "cutoff_sell": "same",
+   "nav_strike": "4:00 & 5:00 p.m.",
+   "settlement_note": "Same day for wire redemptions before the strike",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "merrill_eligibility": "Brokerage",
+   "yields": {
+    "merrill": {
+     "y": 3.82,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (7-day yield)"
+    }
+   },
+   "gross": 3.82,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (7-day yield)",
+   "stale": false,
+   "cutoff": {
+    "time": "16:00",
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": "Fidelity prospectus 5/30/2026",
+    "refreshed_today": null
+   },
+   "caveat": null,
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.1619,
+    "sc_trust": 2.1619,
+    "fl_trust": 2.2614,
+    "foundation": 3.7669
+   },
+   "timing": {
+    "cutoff": "4:00 p.m. ET today",
+    "cash": "today if ordered by 4:00 p.m. ET; otherwise Mon 11/16"
+   }
+  },
+  {
+   "symbol": "TFFXX",
+   "name": "BlackRock Select Treasury Based Liquidity Fund – Institutional Class",
+   "category": "fund",
+   "type": "Treasury + Treasury repo",
+   "availability": "Brokerage",
+   "risk_tier": 2,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 0.5,
+   "same_day": true,
+   "cutoff_buy": "not verified",
+   "cutoff_sell": "not verified",
+   "nav_strike": "—",
+   "settlement_note": "",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "merrill_eligibility": "Brokerage, IAP",
+   "yields": {
+    "merrill": {
+     "y": 3.79,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (7-day yield)"
+    }
+   },
+   "gross": 3.79,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (7-day yield)",
+   "stale": false,
+   "cutoff": {
+    "time": null,
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": null,
+    "refreshed_today": null
+   },
+   "caveat": null,
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.145,
+    "sc_trust": 2.145,
+    "fl_trust": 2.2437,
+    "foundation": 3.7373
+   },
+   "timing": {
+    "cutoff": "not verified — ask Merrill",
+    "cash": "same day only if Merrill confirms the cutoff; otherwise Mon 11/16"
+   }
+  },
+  {
+   "symbol": "TFDXX",
+   "name": "BlackRock Liquidity Funds FedFund – Institutional",
+   "category": "fund",
+   "type": "Government (agencies + repo)",
+   "availability": "Brokerage",
+   "risk_tier": 3,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 0.55,
+   "same_day": true,
+   "cutoff_buy": "5:00 p.m. ET",
+   "cutoff_sell": "5:00 p.m. ET",
+   "nav_strike": "6:00 p.m.",
+   "settlement_note": "Same day",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "merrill_eligibility": "Brokerage, IAP",
+   "yields": {
+    "merrill": {
+     "y": 3.79,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (7-day yield)"
+    },
+    "sponsor": {
+     "y": 3.79,
+     "asof": "2026-11-12",
+     "source": "BlackRock (7-day SEC yield)"
+    }
+   },
+   "gross": 3.79,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (7-day yield)",
+   "stale": false,
+   "cutoff": {
+    "time": "17:00",
+    "buy": "17:00",
+    "sell": "17:00",
+    "early_time": null,
+    "source": "BlackRock fact sheet Oct 2026",
+    "refreshed_today": true,
+    "t1_time": null,
+    "verified": "2026-11-13"
+   },
+   "caveat": null,
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.1351,
+    "sc_trust": 2.1351,
+    "fl_trust": 2.2437,
+    "foundation": 3.7373
+   },
+   "timing": {
+    "cutoff": "5:00 p.m. ET today",
+    "cash": "today if ordered by 5:00 p.m. ET; otherwise Mon 11/16"
+   }
+  },
+  {
+   "symbol": "FIGXX",
+   "name": "Fidelity Investments Money Market Government Portfolio – Class I",
+   "category": "fund",
+   "type": "Government (agencies + repo)",
+   "availability": "Brokerage",
+   "risk_tier": 3,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 0.55,
+   "same_day": true,
+   "cutoff_buy": "Until NAV strike (4:00/5:00 p.m.)",
+   "cutoff_sell": "same",
+   "nav_strike": "4:00 & 5:00 p.m.",
+   "settlement_note": "",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "merrill_eligibility": "Brokerage",
+   "yields": {
+    "merrill": {
+     "y": 3.79,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (7-day yield)"
+    }
+   },
+   "gross": 3.79,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (7-day yield)",
+   "stale": false,
+   "cutoff": {
+    "time": "16:00",
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": "Fidelity prospectus 5/30/2026",
+    "refreshed_today": null
+   },
+   "caveat": null,
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.1351,
+    "sc_trust": 2.1351,
+    "fl_trust": 2.2437,
+    "foundation": 3.7373
+   },
+   "timing": {
+    "cutoff": "4:00 p.m. ET today",
+    "cash": "today if ordered by 4:00 p.m. ET; otherwise Mon 11/16"
+   }
+  },
+  {
+   "symbol": "TOIXX",
+   "name": "Federated Hermes Treasury Obligations Fund – Institutional Class",
+   "category": "fund",
+   "type": "Treasury + Treasury repo",
+   "availability": "Brokerage",
+   "risk_tier": 2,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 0.8,
+   "same_day": true,
+   "cutoff_buy": "not verified",
+   "cutoff_sell": "not verified",
+   "nav_strike": "—",
+   "settlement_note": "",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "merrill_eligibility": "Brokerage",
+   "yields": {
+    "merrill": {
+     "y": 3.76,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (7-day yield)"
+    }
+   },
+   "gross": 3.76,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (7-day yield)",
+   "stale": false,
+   "cutoff": {
+    "time": null,
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": null,
+    "refreshed_today": null
+   },
+   "caveat": null,
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.0692,
+    "sc_trust": 2.0692,
+    "fl_trust": 2.2259,
+    "foundation": 3.7077
+   },
+   "timing": {
+    "cutoff": "not verified — ask Merrill",
+    "cash": "same day only if Merrill confirms the cutoff; otherwise Mon 11/16"
+   }
+  },
+  {
+   "symbol": "GOIXX",
+   "name": "Federated Hermes Government Obligations Fund – Institutional Class",
+   "category": "fund",
+   "type": "Government (agencies + repo)",
+   "availability": "Brokerage",
+   "risk_tier": 3,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 0.6,
+   "same_day": true,
+   "cutoff_buy": "not verified",
+   "cutoff_sell": "not verified",
+   "nav_strike": "—",
+   "settlement_note": "",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "merrill_eligibility": "Brokerage",
+   "yields": {
+    "merrill": {
+     "y": 3.75,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (7-day yield)"
+    }
+   },
+   "gross": 3.75,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (7-day yield)",
+   "stale": false,
+   "cutoff": {
+    "time": null,
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": null,
+    "refreshed_today": null
+   },
+   "caveat": null,
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.1028,
+    "sc_trust": 2.1028,
+    "fl_trust": 2.22,
+    "foundation": 3.6979
+   },
+   "timing": {
+    "cutoff": "not verified — ask Merrill",
+    "cash": "same day only if Merrill confirms the cutoff; otherwise Mon 11/16"
+   }
+  },
+  {
+   "symbol": "TMCXX",
+   "name": "BlackRock Liquidity Funds TempCash – Institutional",
+   "category": "fund",
+   "type": "Prime",
+   "availability": "Brokerage",
+   "risk_tier": 4,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 1.0,
+   "same_day": true,
+   "cutoff_buy": "3:00 p.m. ET",
+   "cutoff_sell": "3:00 p.m. ET",
+   "nav_strike": "3:00 p.m.",
+   "settlement_note": "Floating NAV; liquidity fees possible",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "merrill_eligibility": "Brokerage, IAP",
+   "yields": {
+    "merrill": {
+     "y": 3.95,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (7-day yield)"
+    },
+    "sponsor": {
+     "y": 3.95,
+     "asof": "2026-11-12",
+     "source": "BlackRock (7-day SEC yield)"
+    }
+   },
+   "gross": 3.95,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (7-day yield)",
+   "stale": false,
+   "cutoff": {
+    "time": "15:00",
+    "buy": "15:00",
+    "sell": "15:00",
+    "early_time": null,
+    "source": "BlackRock fact sheet Oct 2026",
+    "refreshed_today": true,
+    "t1_time": null,
+    "verified": "2026-11-13"
+   },
+   "caveat": "Prime fund: floating NAV, liquidity fees possible — above the recommended risk tier.",
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.1326,
+    "sc_trust": 2.1326,
+    "fl_trust": 2.3384,
+    "foundation": 3.8951
+   },
+   "timing": {
+    "cutoff": "3:00 p.m. ET today",
+    "cash": "today if ordered by 3:00 p.m. ET; otherwise Mon 11/16"
+   }
+  },
+  {
+   "symbol": "POIXX",
+   "name": "Federated Hermes Institutional Prime Obligations Fund – Institutional Class",
+   "category": "fund",
+   "type": "Prime",
+   "availability": "Brokerage",
+   "risk_tier": 4,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 1.0,
+   "same_day": true,
+   "cutoff_buy": "not verified",
+   "cutoff_sell": "not verified",
+   "nav_strike": "—",
+   "settlement_note": "Floating NAV; fees possible",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "merrill_eligibility": "Brokerage, IAP",
+   "yields": {
+    "merrill": {
+     "y": 3.94,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (7-day yield)"
+    }
+   },
+   "gross": 3.94,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (7-day yield)",
+   "stale": false,
+   "cutoff": {
+    "time": null,
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": null,
+    "refreshed_today": null
+   },
+   "caveat": "Prime fund: floating NAV, liquidity fees possible — above the recommended risk tier.",
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.1272,
+    "sc_trust": 2.1272,
+    "fl_trust": 2.3325,
+    "foundation": 3.8852
+   },
+   "timing": {
+    "cutoff": "not verified — ask Merrill",
+    "cash": "same day only if Merrill confirms the cutoff; otherwise Mon 11/16"
+   }
+  },
+  {
+   "symbol": "FFTXX",
+   "name": "Federated Hermes Institutional Tax-Free Cash Trust – Institutional",
+   "category": "fund",
+   "type": "Municipal (federally exempt)",
+   "availability": "Brokerage",
+   "risk_tier": 3,
+   "fed_taxable_share": 0.0,
+   "sc_taxable_share": 1.0,
+   "same_day": false,
+   "cutoff_buy": "1:00 p.m. ET",
+   "cutoff_sell": "1:00 p.m. ET",
+   "nav_strike": "1:00 p.m.",
+   "settlement_note": "Treat as next-day; floating NAV; fees possible; check AMT paper",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "merrill_eligibility": "Brokerage",
+   "yields": {
+    "merrill": {
+     "y": 2.28,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (7-day yield)"
+    },
+    "sponsor": {
+     "y": 2.28,
+     "asof": "2026-11-12",
+     "source": "Federated Hermes (7-day net yield)"
+    }
+   },
+   "gross": 2.28,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (7-day yield)",
+   "stale": false,
+   "cutoff": {
+    "time": "13:00",
+    "buy": "13:00",
+    "sell": "13:00",
+    "early_time": null,
+    "source": "Federated page 11/13/2026",
+    "refreshed_today": true,
+    "t1_time": null,
+    "verified": "2026-11-13"
+   },
+   "caveat": "Municipal fund: floating NAV, fees possible, check AMT paper; only wins when the muni test is amber.",
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.1612,
+    "sc_trust": 2.1612,
+    "fl_trust": 2.28,
+    "foundation": 2.28
+   },
+   "timing": {
+    "cutoff": "1:00 p.m. ET today",
+    "cash": "same day only if ordered by 1:00 p.m. ET; otherwise Mon 11/16"
+   }
+  },
+  {
+   "symbol": "MCSXX",
+   "name": "BlackRock Liquidity Funds MuniCash – Institutional",
+   "category": "fund",
+   "type": "Municipal (federally exempt)",
+   "availability": "Brokerage",
+   "risk_tier": 3,
+   "fed_taxable_share": 0.0,
+   "sc_taxable_share": 1.0,
+   "same_day": false,
+   "cutoff_buy": "2:30 p.m. ET",
+   "cutoff_sell": "1:00 p.m. ET",
+   "nav_strike": "3:00 p.m.",
+   "settlement_note": "Floating NAV",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "merrill_eligibility": "Brokerage, IAP",
+   "yields": {
+    "merrill": {
+     "y": 2.17,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (7-day yield)"
+    },
+    "sponsor": {
+     "y": 2.17,
+     "asof": "2026-11-12",
+     "source": "BlackRock (7-day SEC yield)"
+    }
+   },
+   "gross": 2.17,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (7-day yield)",
+   "stale": false,
+   "cutoff": {
+    "time": "13:00",
+    "buy": "14:30",
+    "sell": "13:00",
+    "early_time": null,
+    "source": "BlackRock fact sheet Oct 2026",
+    "refreshed_today": true,
+    "t1_time": null,
+    "verified": "2026-11-13"
+   },
+   "caveat": "Municipal fund: floating NAV, fees possible, check AMT paper; only wins when the muni test is amber.",
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.0569,
+    "sc_trust": 2.0569,
+    "fl_trust": 2.17,
+    "foundation": 2.17
+   },
+   "timing": {
+    "cutoff": "1:00 p.m. ET today",
+    "cash": "same day only if ordered by 1:00 p.m. ET; otherwise Mon 11/16"
+   }
+  },
+  {
+   "symbol": "FRSXX",
+   "name": "Fidelity Investments Money Market Treasury Only Portfolio – Institutional Class I",
+   "category": "fund",
+   "type": "Treasury-only",
+   "availability": "IAP only",
+   "risk_tier": 1,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 0.0,
+   "same_day": true,
+   "cutoff_buy": "Until NAV strike",
+   "cutoff_sell": "same",
+   "nav_strike": "4:00 p.m.",
+   "settlement_note": "Advisory-program accounts only",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "merrill_eligibility": "IAP",
+   "yields": {
+    "merrill": {
+     "y": 3.91,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (7-day yield)"
+    }
+   },
+   "gross": 3.91,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (7-day yield)",
+   "stale": false,
+   "cutoff": {
+    "time": "16:00",
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": "Fidelity prospectus 5/30/2026",
+    "refreshed_today": null
+   },
+   "caveat": null,
+   "status": "excluded",
+   "status_note": "IAP only — advisory-program accounts (iap_accounts is off)",
+   "net": {
+    "sc_partner": 2.3147,
+    "sc_trust": 2.3147,
+    "fl_trust": 2.3147,
+    "foundation": 3.8557
+   },
+   "timing": {
+    "cutoff": "4:00 p.m. ET today",
+    "cash": "today if ordered by 4:00 p.m. ET; otherwise Mon 11/16"
+   }
+  },
+  {
+   "symbol": "UTPXX",
+   "name": "Federated Hermes U.S. Treasury Cash Reserves – Premier",
+   "category": "fund",
+   "type": "Treasury-only",
+   "availability": "IAP only",
+   "risk_tier": 1,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 0.0,
+   "same_day": true,
+   "cutoff_buy": "3:00 p.m. ET",
+   "cutoff_sell": "3:00 p.m. ET",
+   "nav_strike": "3:00 & 4:00 p.m.",
+   "settlement_note": "Advisory-program accounts only",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "merrill_eligibility": "IAP",
+   "yields": {
+    "merrill": {
+     "y": 3.88,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (7-day yield)"
+    },
+    "sponsor": {
+     "y": 3.88,
+     "asof": "2026-11-12",
+     "source": "Federated Hermes (7-day net yield)"
+    }
+   },
+   "gross": 3.88,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (7-day yield)",
+   "stale": false,
+   "cutoff": {
+    "time": "15:00",
+    "buy": "15:00",
+    "sell": "15:00",
+    "early_time": null,
+    "source": "Federated page 11/13/2026",
+    "refreshed_today": true,
+    "t1_time": "16:00",
+    "verified": "2026-11-13"
+   },
+   "caveat": null,
+   "status": "excluded",
+   "status_note": "IAP only — advisory-program accounts (iap_accounts is off)",
+   "net": {
+    "sc_partner": 2.297,
+    "sc_trust": 2.297,
+    "fl_trust": 2.297,
+    "foundation": 3.8261
+   },
+   "timing": {
+    "cutoff": "3:00 p.m. ET today",
+    "cash": "today if ordered by 3:00 p.m. ET; otherwise Mon 11/16"
+   }
+  },
+  {
+   "symbol": "FTFXX",
+   "name": "Federated Hermes Institutional Tax-Free Cash Trust – Premier",
+   "category": "fund",
+   "type": "Municipal",
+   "availability": "IAP only",
+   "risk_tier": 3,
+   "fed_taxable_share": 0.0,
+   "sc_taxable_share": 1.0,
+   "same_day": false,
+   "cutoff_buy": "1:00 p.m. ET",
+   "cutoff_sell": "1:00 p.m. ET",
+   "nav_strike": "1:00 p.m.",
+   "settlement_note": "Advisory-program accounts only",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "merrill_eligibility": "IAP",
+   "yields": {
+    "merrill": {
+     "y": 2.33,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (7-day yield)"
+    },
+    "sponsor": {
+     "y": 2.33,
+     "asof": "2026-11-12",
+     "source": "Federated Hermes (7-day net yield)"
+    }
+   },
+   "gross": 2.33,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (7-day yield)",
+   "stale": false,
+   "cutoff": {
+    "time": "13:00",
+    "buy": "13:00",
+    "sell": "13:00",
+    "early_time": null,
+    "source": "Federated page 11/13/2026",
+    "refreshed_today": true,
+    "t1_time": null,
+    "verified": "2026-11-13"
+   },
+   "caveat": "Municipal fund: floating NAV, fees possible, check AMT paper; only wins when the muni test is amber.",
+   "status": "excluded",
+   "status_note": "IAP only — advisory-program accounts (iap_accounts is off)",
+   "net": {
+    "sc_partner": 2.2086,
+    "sc_trust": 2.2086,
+    "fl_trust": 2.33,
+    "foundation": 2.33
+   },
+   "timing": {
+    "cutoff": "1:00 p.m. ET today",
+    "cash": "same day only if ordered by 1:00 p.m. ET; otherwise Mon 11/16"
+   }
+  },
+  {
+   "symbol": "BTFXX",
+   "name": "BlackRock Liquidity Funds: Treasury Trust – Cash Reserve Class",
+   "category": "fund",
+   "type": "Treasury-only",
+   "availability": "TMA sweep only",
+   "risk_tier": 1,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 0.0,
+   "same_day": true,
+   "cutoff_buy": "automatic sweep",
+   "cutoff_sell": "automatic sweep",
+   "nav_strike": "4:00 p.m.",
+   "settlement_note": "Bank-trustee / retirement accounts only",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "merrill_eligibility": "Sweep only",
+   "yields": {
+    "merrill": {
+     "y": 3.46,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (7-day yield)"
+    }
+   },
+   "gross": 3.46,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (7-day yield)",
+   "stale": false,
+   "cutoff": {
+    "time": null,
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": null,
+    "refreshed_today": null
+   },
+   "caveat": null,
+   "status": "excluded",
+   "status_note": "TMA sweep only — bank-trustee / retirement accounts; never ranked",
+   "net": {
+    "sc_partner": 2.0483,
+    "sc_trust": 2.0483,
+    "fl_trust": 2.0483,
+    "foundation": 3.4119
+   },
+   "timing": {
+    "cutoff": "automatic sweep",
+    "cash": "same day (sweep)"
+   }
+  },
+  {
+   "symbol": "BFRXX",
+   "name": "BlackRock Liquidity Funds: FedFund – Cash Reserve Class",
+   "category": "fund",
+   "type": "Government",
+   "availability": "TMA sweep only",
+   "risk_tier": 3,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 0.55,
+   "same_day": true,
+   "cutoff_buy": "automatic sweep",
+   "cutoff_sell": "automatic sweep",
+   "nav_strike": "6:00 p.m.",
+   "settlement_note": "Bank-trustee / retirement accounts only",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "merrill_eligibility": "Sweep only",
+   "yields": {
+    "merrill": {
+     "y": 3.39,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (7-day yield)"
+    }
+   },
+   "gross": 3.39,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (7-day yield)",
+   "stale": false,
+   "cutoff": {
+    "time": null,
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": null,
+    "refreshed_today": null
+   },
+   "caveat": null,
+   "status": "excluded",
+   "status_note": "TMA sweep only — bank-trustee / retirement accounts; never ranked",
+   "net": {
+    "sc_partner": 1.9097,
+    "sc_trust": 1.9097,
+    "fl_trust": 2.0069,
+    "foundation": 3.3429
+   },
+   "timing": {
+    "cutoff": "automatic sweep",
+    "cash": "same day (sweep)"
+   }
+  },
+  {
+   "symbol": "PD-100M",
+   "name": "Preferred Deposit — $100,000,000 and above",
+   "category": "deposit",
+   "type": "Bank deposit",
+   "availability": "Brokerage",
+   "risk_tier": 3,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 1.0,
+   "same_day": false,
+   "cutoff_buy": "by instruction",
+   "cutoff_sell": "by instruction",
+   "nav_strike": "—",
+   "settlement_note": "By instruction; posts next business day; tiers are per account, not aggregated; FDIC to $250,000.",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "yields": {
+    "merrill": {
+     "y": 3.92,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (APY)"
+    }
+   },
+   "gross": 3.92,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (APY)",
+   "stale": false,
+   "cutoff": {
+    "time": null,
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": null,
+    "refreshed_today": null
+   },
+   "caveat": "Rate applies only to an account whose own balance is in this tier; FDIC insurance to $250,000.",
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.1164,
+    "sc_trust": 2.1164,
+    "fl_trust": 2.3206,
+    "foundation": 3.8655
+   },
+   "timing": {
+    "cutoff": "by instruction",
+    "cash": "posts Mon 11/16"
+   }
+  },
+  {
+   "symbol": "PD-10M",
+   "name": "Preferred Deposit — $10,000,000 to $99,999,999",
+   "category": "deposit",
+   "type": "Bank deposit",
+   "availability": "Brokerage",
+   "risk_tier": 3,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 1.0,
+   "same_day": false,
+   "cutoff_buy": "by instruction",
+   "cutoff_sell": "by instruction",
+   "nav_strike": "—",
+   "settlement_note": "By instruction; posts next business day; tiers are per account, not aggregated; FDIC to $250,000.",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "yields": {
+    "merrill": {
+     "y": 3.87,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (APY)"
+    }
+   },
+   "gross": 3.87,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (APY)",
+   "stale": false,
+   "cutoff": {
+    "time": null,
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": null,
+    "refreshed_today": null
+   },
+   "caveat": "Rate applies only to an account whose own balance is in this tier; FDIC insurance to $250,000.",
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.0894,
+    "sc_trust": 2.0894,
+    "fl_trust": 2.291,
+    "foundation": 3.8162
+   },
+   "timing": {
+    "cutoff": "by instruction",
+    "cash": "posts Mon 11/16"
+   }
+  },
+  {
+   "symbol": "PD-5M",
+   "name": "Preferred Deposit — $5,000,000 to $9,999,999",
+   "category": "deposit",
+   "type": "Bank deposit",
+   "availability": "Brokerage",
+   "risk_tier": 3,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 1.0,
+   "same_day": false,
+   "cutoff_buy": "by instruction",
+   "cutoff_sell": "by instruction",
+   "nav_strike": "—",
+   "settlement_note": "By instruction; posts next business day; tiers are per account, not aggregated; FDIC to $250,000.",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "yields": {
+    "merrill": {
+     "y": 3.61,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (APY)"
+    }
+   },
+   "gross": 3.61,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (APY)",
+   "stale": false,
+   "cutoff": {
+    "time": null,
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": null,
+    "refreshed_today": null
+   },
+   "caveat": "Rate applies only to an account whose own balance is in this tier; FDIC insurance to $250,000.",
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 1.949,
+    "sc_trust": 1.949,
+    "fl_trust": 2.1371,
+    "foundation": 3.5598
+   },
+   "timing": {
+    "cutoff": "by instruction",
+    "cash": "posts Mon 11/16"
+   }
+  },
+  {
+   "symbol": "PD-2.5M",
+   "name": "Preferred Deposit — $2,500,000 to $4,999,999",
+   "category": "deposit",
+   "type": "Bank deposit",
+   "availability": "Brokerage",
+   "risk_tier": 3,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 1.0,
+   "same_day": false,
+   "cutoff_buy": "by instruction",
+   "cutoff_sell": "by instruction",
+   "nav_strike": "—",
+   "settlement_note": "By instruction; posts next business day; tiers are per account, not aggregated; FDIC to $250,000.",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "yields": {
+    "merrill": {
+     "y": 3.51,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (APY)"
+    }
+   },
+   "gross": 3.51,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (APY)",
+   "stale": false,
+   "cutoff": {
+    "time": null,
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": null,
+    "refreshed_today": null
+   },
+   "caveat": "Rate applies only to an account whose own balance is in this tier; FDIC insurance to $250,000.",
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 1.895,
+    "sc_trust": 1.895,
+    "fl_trust": 2.0779,
+    "foundation": 3.4612
+   },
+   "timing": {
+    "cutoff": "by instruction",
+    "cash": "posts Mon 11/16"
+   }
+  },
+  {
+   "symbol": "PD-<2.5M",
+   "name": "Preferred Deposit — under $2,500,000",
+   "category": "deposit",
+   "type": "Bank deposit",
+   "availability": "Brokerage",
+   "risk_tier": 3,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 1.0,
+   "same_day": false,
+   "cutoff_buy": "by instruction",
+   "cutoff_sell": "by instruction",
+   "nav_strike": "—",
+   "settlement_note": "By instruction; posts next business day; tiers are per account, not aggregated; FDIC to $250,000.",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "yields": {
+    "merrill": {
+     "y": 3.15,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (APY)"
+    }
+   },
+   "gross": 3.15,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (APY)",
+   "stale": false,
+   "cutoff": {
+    "time": null,
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": null,
+    "refreshed_today": null
+   },
+   "caveat": "Rate applies only to an account whose own balance is in this tier; FDIC insurance to $250,000.",
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 1.7007,
+    "sc_trust": 1.7007,
+    "fl_trust": 1.8648,
+    "foundation": 3.1062
+   },
+   "timing": {
+    "cutoff": "by instruction",
+    "cash": "posts Mon 11/16"
+   }
+  },
+  {
+   "symbol": "ISA",
+   "name": "Insured Savings Account",
+   "category": "deposit",
+   "type": "Bank deposit",
+   "availability": "Brokerage",
+   "risk_tier": 3,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 1.0,
+   "same_day": false,
+   "cutoff_buy": "by instruction",
+   "cutoff_sell": "by instruction",
+   "nav_strike": "—",
+   "settlement_note": "By instruction; posts next business day.",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "yields": {
+    "merrill": {
+     "y": 2.06,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (APY)"
+    }
+   },
+   "gross": 2.06,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (APY)",
+   "stale": false,
+   "cutoff": {
+    "time": null,
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": null,
+    "refreshed_today": null
+   },
+   "caveat": null,
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 1.1122,
+    "sc_trust": 1.1122,
+    "fl_trust": 1.2195,
+    "foundation": 2.0314
+   },
+   "timing": {
+    "cutoff": "by instruction",
+    "cash": "posts Mon 11/16"
+   }
+  },
+  {
+   "symbol": "MLBDP-1",
+   "name": "Merrill Lynch Bank Deposit Program — Tiers 1–2",
+   "category": "deposit",
+   "type": "Bank deposit",
+   "availability": "Brokerage",
+   "risk_tier": 3,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 1.0,
+   "same_day": true,
+   "cutoff_buy": "automatic sweep",
+   "cutoff_sell": "automatic sweep",
+   "nav_strike": "—",
+   "settlement_note": "Automatic sweep.",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "yields": {
+    "merrill": {
+     "y": 0.01,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (APY)"
+    }
+   },
+   "gross": 0.01,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (APY)",
+   "stale": false,
+   "cutoff": {
+    "time": null,
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": null,
+    "refreshed_today": null
+   },
+   "caveat": null,
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 0.0054,
+    "sc_trust": 0.0054,
+    "fl_trust": 0.0059,
+    "foundation": 0.0099
+   },
+   "timing": {
+    "cutoff": "automatic sweep",
+    "cash": "same day (sweep)"
+   }
+  },
+  {
+   "symbol": "MLBDP-4",
+   "name": "Merrill Lynch Bank Deposit Program — Tier 4",
+   "category": "deposit",
+   "type": "Bank deposit",
+   "availability": "Brokerage",
+   "risk_tier": 3,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 1.0,
+   "same_day": true,
+   "cutoff_buy": "automatic sweep",
+   "cutoff_sell": "automatic sweep",
+   "nav_strike": "—",
+   "settlement_note": "Automatic sweep.",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "yields": {
+    "merrill": {
+     "y": 0.15,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (APY)"
+    }
+   },
+   "gross": 0.15,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (APY)",
+   "stale": false,
+   "cutoff": {
+    "time": null,
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": null,
+    "refreshed_today": null
+   },
+   "caveat": null,
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 0.081,
+    "sc_trust": 0.081,
+    "fl_trust": 0.0888,
+    "foundation": 0.1479
+   },
+   "timing": {
+    "cutoff": "automatic sweep",
+    "cash": "same day (sweep)"
+   }
+  },
+  {
+   "symbol": "MLBDP-5",
+   "name": "Merrill Lynch Bank Deposit Program — Tier 5",
+   "category": "deposit",
+   "type": "Bank deposit",
+   "availability": "IAP only",
+   "risk_tier": 3,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 1.0,
+   "same_day": true,
+   "cutoff_buy": "automatic sweep",
+   "cutoff_sell": "automatic sweep",
+   "nav_strike": "—",
+   "settlement_note": "Automatic sweep; advisory-program accounts only.",
+   "term_weeks": null,
+   "expense_ratio": null,
+   "yields": {
+    "merrill": {
+     "y": 3.35,
+     "asof": "2026-11-12",
+     "source": "Merrill Yields at a Glance (APY)"
+    }
+   },
+   "gross": 3.35,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Merrill Yields at a Glance (APY)",
+   "stale": false,
+   "cutoff": {
+    "time": null,
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": null,
+    "refreshed_today": null
+   },
+   "caveat": null,
+   "status": "excluded",
+   "status_note": "IAP only — advisory-program accounts (iap_accounts is off)",
+   "net": {
+    "sc_partner": 1.8087,
+    "sc_trust": 1.8087,
+    "fl_trust": 1.9832,
+    "foundation": 3.3034
+   },
+   "timing": {
+    "cutoff": "automatic sweep",
+    "cash": "same day (sweep)"
+   }
+  },
+  {
+   "symbol": "SGOV",
+   "name": "iShares 0–3 Month Treasury Bond ETF",
+   "category": "etf",
+   "type": "Treasury bill ETF",
+   "availability": "Brokerage",
+   "risk_tier": 1,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 0.02,
+   "same_day": false,
+   "cutoff_buy": "Market hours 9:30 a.m.–4:00 p.m. ET",
+   "cutoff_sell": "Market hours 9:30 a.m.–4:00 p.m. ET",
+   "nav_strike": "—",
+   "settlement_note": "Trade any time during market hours (9:30–4:00 ET); cash T+1; price moves a few cents through the month as income accrues and is distributed; bid/ask ~0.01%.",
+   "term_weeks": null,
+   "expense_ratio": 0.09,
+   "ytm": 4.03,
+   "yields": {
+    "sponsor": {
+     "y": 3.86,
+     "asof": "2026-11-11",
+     "source": "iShares (30-day SEC yield)"
+    }
+   },
+   "gross": 3.86,
+   "gross_asof": "2026-11-11",
+   "gross_source": "iShares (30-day SEC yield)",
+   "stale": false,
+   "cutoff": {
+    "time": "16:00",
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": "config (not verified)",
+    "refreshed_today": null
+   },
+   "caveat": null,
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.2811,
+    "sc_trust": 2.2811,
+    "fl_trust": 2.2851,
+    "foundation": 3.8063
+   },
+   "timing": {
+    "cutoff": "market hours 9:30 a.m.–4:00 p.m. ET",
+    "cash": "T+1 = Mon 11/16"
+   }
+  },
+  {
+   "symbol": "BIL",
+   "name": "SPDR Bloomberg 1–3 Month T-Bill ETF",
+   "category": "etf",
+   "type": "Treasury bill ETF",
+   "availability": "Brokerage",
+   "risk_tier": 1,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 0.02,
+   "same_day": false,
+   "cutoff_buy": "Market hours 9:30 a.m.–4:00 p.m. ET",
+   "cutoff_sell": "Market hours 9:30 a.m.–4:00 p.m. ET",
+   "nav_strike": "—",
+   "settlement_note": "Trade any time during market hours (9:30–4:00 ET); cash T+1; price moves a few cents through the month as income accrues and is distributed; bid/ask ~0.01%.",
+   "term_weeks": null,
+   "expense_ratio": 0.1352,
+   "ytm": 4.04,
+   "yields": {
+    "sponsor": {
+     "y": 3.87,
+     "asof": "2026-11-12",
+     "source": "State Street (30-day SEC yield)"
+    }
+   },
+   "gross": 3.87,
+   "gross_asof": "2026-11-12",
+   "gross_source": "State Street (30-day SEC yield)",
+   "stale": false,
+   "cutoff": {
+    "time": "16:00",
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": "config (not verified)",
+    "refreshed_today": null
+   },
+   "caveat": null,
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.287,
+    "sc_trust": 2.287,
+    "fl_trust": 2.291,
+    "foundation": 3.8162
+   },
+   "timing": {
+    "cutoff": "market hours 9:30 a.m.–4:00 p.m. ET",
+    "cash": "T+1 = Mon 11/16"
+   }
+  },
+  {
+   "symbol": "USFR",
+   "name": "WisdomTree Floating Rate Treasury Fund",
+   "category": "etf",
+   "type": "Treasury bill ETF",
+   "availability": "Brokerage",
+   "risk_tier": 1,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 0.02,
+   "same_day": false,
+   "cutoff_buy": "Market hours 9:30 a.m.–4:00 p.m. ET",
+   "cutoff_sell": "Market hours 9:30 a.m.–4:00 p.m. ET",
+   "nav_strike": "—",
+   "settlement_note": "Trade any time during market hours (9:30–4:00 ET); cash T+1; price moves a few cents through the month as income accrues and is distributed; bid/ask ~0.01%.",
+   "term_weeks": null,
+   "expense_ratio": 0.15,
+   "yields": {},
+   "gross": null,
+   "gross_asof": null,
+   "gross_source": null,
+   "stale": false,
+   "cutoff": {
+    "time": "16:00",
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": "config (not verified)",
+    "refreshed_today": null
+   },
+   "caveat": null,
+   "status": "no_data",
+   "status_note": "no data — no yield fetched; not ranked",
+   "net": {
+    "sc_partner": null,
+    "sc_trust": null,
+    "fl_trust": null,
+    "foundation": null
+   },
+   "timing": {
+    "cutoff": "market hours 9:30 a.m.–4:00 p.m. ET",
+    "cash": "T+1 = Mon 11/16"
+   }
+  },
+  {
+   "symbol": "BILL-4W",
+   "name": "4-week Treasury bill",
+   "category": "bill",
+   "type": "Treasury bill",
+   "availability": "Brokerage",
+   "risk_tier": 1,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 0.0,
+   "same_day": false,
+   "cutoff_buy": "Auction 11:00 a.m. ET noncompetitive; secondary during trading hours",
+   "cutoff_sell": "Secondary market during trading hours",
+   "nav_strike": "—",
+   "settlement_note": "Auction: noncompetitive bids close 11:00 a.m. ET on auction day (Merrill's deadline earlier); secondary market during trading hours; settles T+1; buy to hold to maturity.",
+   "term_weeks": 4,
+   "expense_ratio": null,
+   "bill_maturity": "2026-12-15",
+   "bill_cusip": "912797WF0",
+   "auctions": [
+    {
+     "close_date": null,
+     "nc_time": "11:00",
+     "c_time": "11:30",
+     "issue": "2026-11-24",
+     "maturity": null,
+     "cusip": "912797WG8",
+     "announced": "2026-11-17"
+    }
+   ],
+   "yields": {
+    "treasury": {
+     "y": 4.04,
+     "asof": "2026-11-12",
+     "source": "Treasury daily bill rates (coupon-equivalent)"
+    }
+   },
+   "gross": 4.04,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Treasury daily bill rates (coupon-equivalent)",
+   "stale": false,
+   "cutoff": {
+    "time": null,
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": null,
+    "refreshed_today": null
+   },
+   "caveat": null,
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.3917,
+    "sc_trust": 2.3917,
+    "fl_trust": 2.3917,
+    "foundation": 3.9838
+   },
+   "timing": {
+    "cutoff": "next auction to be announced Tue 11/17; secondary: during trading hours",
+    "cash": "next auction settles Tue 11/24; secondary buy or sell settles T+1 = Mon 11/16"
+   }
+  },
+  {
+   "symbol": "BILL-6W",
+   "name": "6-week Treasury bill",
+   "category": "bill",
+   "type": "Treasury bill",
+   "availability": "Brokerage",
+   "risk_tier": 1,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 0.0,
+   "same_day": false,
+   "cutoff_buy": "Auction 11:00 a.m. ET noncompetitive; secondary during trading hours",
+   "cutoff_sell": "Secondary market during trading hours",
+   "nav_strike": "—",
+   "settlement_note": "Auction: noncompetitive bids close 11:00 a.m. ET on auction day (Merrill's deadline earlier); secondary market during trading hours; settles T+1; buy to hold to maturity.",
+   "term_weeks": 6,
+   "expense_ratio": null,
+   "bill_maturity": "2026-12-24",
+   "bill_cusip": "912797TC1",
+   "auctions": [
+    {
+     "close_date": "2026-11-17",
+     "nc_time": "11:00",
+     "c_time": "11:30",
+     "issue": "2026-11-19",
+     "maturity": "2026-12-31",
+     "cusip": "912797VJ3",
+     "announced": "2026-11-12"
+    },
+    {
+     "close_date": null,
+     "nc_time": "11:00",
+     "c_time": "11:30",
+     "issue": "2026-11-27",
+     "maturity": null,
+     "cusip": "912797VS3",
+     "announced": "2026-11-19"
+    }
+   ],
+   "yields": {
+    "treasury": {
+     "y": 4.08,
+     "asof": "2026-11-12",
+     "source": "Treasury daily bill rates (coupon-equivalent)"
+    }
+   },
+   "gross": 4.08,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Treasury daily bill rates (coupon-equivalent)",
+   "stale": false,
+   "cutoff": {
+    "time": null,
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": null,
+    "refreshed_today": null
+   },
+   "caveat": null,
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.4154,
+    "sc_trust": 2.4154,
+    "fl_trust": 2.4154,
+    "foundation": 4.0233
+   },
+   "timing": {
+    "cutoff": "next auction closes Tue 11/17 11:00 a.m. ET (noncompetitive); secondary: during trading hours",
+    "cash": "auction settles Thu 11/19; secondary buy or sell settles T+1 = Mon 11/16"
+   }
+  },
+  {
+   "symbol": "BILL-8W",
+   "name": "8-week Treasury bill",
+   "category": "bill",
+   "type": "Treasury bill",
+   "availability": "Brokerage",
+   "risk_tier": 1,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 0.0,
+   "same_day": false,
+   "cutoff_buy": "Auction 11:00 a.m. ET noncompetitive; secondary during trading hours",
+   "cutoff_sell": "Secondary market during trading hours",
+   "nav_strike": "—",
+   "settlement_note": "Auction: noncompetitive bids close 11:00 a.m. ET on auction day (Merrill's deadline earlier); secondary market during trading hours; settles T+1; buy to hold to maturity.",
+   "term_weeks": 8,
+   "expense_ratio": null,
+   "bill_maturity": "2027-01-12",
+   "bill_cusip": "912797WP8",
+   "auctions": [
+    {
+     "close_date": null,
+     "nc_time": "11:00",
+     "c_time": "11:30",
+     "issue": "2026-11-24",
+     "maturity": null,
+     "cusip": "912797WQ6",
+     "announced": "2026-11-17"
+    }
+   ],
+   "yields": {
+    "treasury": {
+     "y": 4.17,
+     "asof": "2026-11-12",
+     "source": "Treasury daily bill rates (coupon-equivalent)"
+    }
+   },
+   "gross": 4.17,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Treasury daily bill rates (coupon-equivalent)",
+   "stale": false,
+   "cutoff": {
+    "time": null,
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": null,
+    "refreshed_today": null
+   },
+   "caveat": null,
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.4686,
+    "sc_trust": 2.4686,
+    "fl_trust": 2.4686,
+    "foundation": 4.112
+   },
+   "timing": {
+    "cutoff": "next auction to be announced Tue 11/17; secondary: during trading hours",
+    "cash": "next auction settles Tue 11/24; secondary buy or sell settles T+1 = Mon 11/16"
+   }
+  },
+  {
+   "symbol": "BILL-13W",
+   "name": "13-week Treasury bill",
+   "category": "bill",
+   "type": "Treasury bill",
+   "availability": "Brokerage",
+   "risk_tier": 1,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 0.0,
+   "same_day": false,
+   "cutoff_buy": "Auction 11:00 a.m. ET noncompetitive; secondary during trading hours",
+   "cutoff_sell": "Secondary market during trading hours",
+   "nav_strike": "—",
+   "settlement_note": "Auction: noncompetitive bids close 11:00 a.m. ET on auction day (Merrill's deadline earlier); secondary market during trading hours; settles T+1; buy to hold to maturity.",
+   "term_weeks": 13,
+   "expense_ratio": null,
+   "bill_maturity": "2027-02-11",
+   "bill_cusip": "912797WB9",
+   "auctions": [
+    {
+     "close_date": "2026-11-16",
+     "nc_time": "11:00",
+     "c_time": "11:30",
+     "issue": "2026-11-19",
+     "maturity": "2027-02-18",
+     "cusip": "912797TV9",
+     "announced": "2026-11-12"
+    },
+    {
+     "close_date": null,
+     "nc_time": "11:00",
+     "c_time": "11:30",
+     "issue": "2026-11-27",
+     "maturity": null,
+     "cusip": "912797WC7",
+     "announced": "2026-11-19"
+    }
+   ],
+   "yields": {
+    "treasury": {
+     "y": 4.24,
+     "asof": "2026-11-12",
+     "source": "Treasury daily bill rates (coupon-equivalent)"
+    }
+   },
+   "gross": 4.24,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Treasury daily bill rates (coupon-equivalent)",
+   "stale": false,
+   "cutoff": {
+    "time": null,
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": null,
+    "refreshed_today": null
+   },
+   "caveat": null,
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.5101,
+    "sc_trust": 2.5101,
+    "fl_trust": 2.5101,
+    "foundation": 4.1811
+   },
+   "timing": {
+    "cutoff": "next auction closes Mon 11/16 11:00 a.m. ET (noncompetitive); secondary: during trading hours",
+    "cash": "auction settles Thu 11/19; secondary buy or sell settles T+1 = Mon 11/16"
+   }
+  },
+  {
+   "symbol": "BILL-17W",
+   "name": "17-week Treasury bill",
+   "category": "bill",
+   "type": "Treasury bill",
+   "availability": "Brokerage",
+   "risk_tier": 1,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 0.0,
+   "same_day": false,
+   "cutoff_buy": "Auction 11:00 a.m. ET noncompetitive; secondary during trading hours",
+   "cutoff_sell": "Secondary market during trading hours",
+   "nav_strike": "—",
+   "settlement_note": "Auction: noncompetitive bids close 11:00 a.m. ET on auction day (Merrill's deadline earlier); secondary market during trading hours; settles T+1; buy to hold to maturity.",
+   "term_weeks": 17,
+   "expense_ratio": null,
+   "bill_maturity": "2027-03-16",
+   "bill_cusip": "912797XH5",
+   "auctions": [
+    {
+     "close_date": null,
+     "nc_time": "11:00",
+     "c_time": "11:30",
+     "issue": "2026-11-24",
+     "maturity": null,
+     "cusip": "912797XJ1",
+     "announced": "2026-11-17"
+    }
+   ],
+   "yields": {
+    "treasury": {
+     "y": 4.35,
+     "asof": "2026-11-12",
+     "source": "Treasury daily bill rates (coupon-equivalent)"
+    }
+   },
+   "gross": 4.35,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Treasury daily bill rates (coupon-equivalent)",
+   "stale": false,
+   "cutoff": {
+    "time": null,
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": null,
+    "refreshed_today": null
+   },
+   "caveat": null,
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.5752,
+    "sc_trust": 2.5752,
+    "fl_trust": 2.5752,
+    "foundation": 4.2895
+   },
+   "timing": {
+    "cutoff": "next auction to be announced Tue 11/17; secondary: during trading hours",
+    "cash": "next auction settles Tue 11/24; secondary buy or sell settles T+1 = Mon 11/16"
+   }
+  },
+  {
+   "symbol": "BILL-26W",
+   "name": "26-week Treasury bill",
+   "category": "bill",
+   "type": "Treasury bill",
+   "availability": "Brokerage",
+   "risk_tier": 1,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 0.0,
+   "same_day": false,
+   "cutoff_buy": "Auction 11:00 a.m. ET noncompetitive; secondary during trading hours",
+   "cutoff_sell": "Secondary market during trading hours",
+   "nav_strike": "—",
+   "settlement_note": "Auction: noncompetitive bids close 11:00 a.m. ET on auction day (Merrill's deadline earlier); secondary market during trading hours; settles T+1; buy to hold to maturity.",
+   "term_weeks": 26,
+   "expense_ratio": null,
+   "bill_maturity": "2027-05-13",
+   "bill_cusip": "912797UX3",
+   "auctions": [
+    {
+     "close_date": "2026-11-16",
+     "nc_time": "11:00",
+     "c_time": "11:30",
+     "issue": "2026-11-19",
+     "maturity": "2027-05-20",
+     "cusip": "912797XD4",
+     "announced": "2026-11-12"
+    },
+    {
+     "close_date": null,
+     "nc_time": "11:00",
+     "c_time": "11:30",
+     "issue": "2026-11-27",
+     "maturity": null,
+     "cusip": "912797XE2",
+     "announced": "2026-11-19"
+    }
+   ],
+   "yields": {
+    "treasury": {
+     "y": 4.46,
+     "asof": "2026-11-12",
+     "source": "Treasury daily bill rates (coupon-equivalent)"
+    }
+   },
+   "gross": 4.46,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Treasury daily bill rates (coupon-equivalent)",
+   "stale": false,
+   "cutoff": {
+    "time": null,
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": null,
+    "refreshed_today": null
+   },
+   "caveat": null,
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.6403,
+    "sc_trust": 2.6403,
+    "fl_trust": 2.6403,
+    "foundation": 4.398
+   },
+   "timing": {
+    "cutoff": "next auction closes Mon 11/16 11:00 a.m. ET (noncompetitive); secondary: during trading hours",
+    "cash": "auction settles Thu 11/19; secondary buy or sell settles T+1 = Mon 11/16"
+   }
+  },
+  {
+   "symbol": "BILL-52W",
+   "name": "52-week Treasury bill",
+   "category": "bill",
+   "type": "Treasury bill",
+   "availability": "Brokerage",
+   "risk_tier": 1,
+   "fed_taxable_share": 1.0,
+   "sc_taxable_share": 0.0,
+   "same_day": false,
+   "cutoff_buy": "Auction 11:00 a.m. ET noncompetitive; secondary during trading hours",
+   "cutoff_sell": "Secondary market during trading hours",
+   "nav_strike": "—",
+   "settlement_note": "Auction: noncompetitive bids close 11:00 a.m. ET on auction day (Merrill's deadline earlier); secondary market during trading hours; settles T+1; buy to hold to maturity.",
+   "term_weeks": 52,
+   "expense_ratio": null,
+   "bill_maturity": "2027-10-28",
+   "bill_cusip": "912797WT0",
+   "auctions": [
+    {
+     "close_date": null,
+     "nc_time": "11:00",
+     "c_time": "11:30",
+     "issue": "2026-11-27",
+     "maturity": null,
+     "cusip": "912797XC6",
+     "announced": "2026-11-19"
+    }
+   ],
+   "yields": {
+    "treasury": {
+     "y": 4.64,
+     "asof": "2026-11-12",
+     "source": "Treasury daily bill rates (coupon-equivalent)"
+    }
+   },
+   "gross": 4.64,
+   "gross_asof": "2026-11-12",
+   "gross_source": "Treasury daily bill rates (coupon-equivalent)",
+   "stale": false,
+   "cutoff": {
+    "time": null,
+    "buy": null,
+    "sell": null,
+    "early_time": null,
+    "source": null,
+    "refreshed_today": null
+   },
+   "caveat": null,
+   "status": "ranked",
+   "status_note": null,
+   "net": {
+    "sc_partner": 2.7469,
+    "sc_trust": 2.7469,
+    "fl_trust": 2.7469,
+    "foundation": 4.5755
+   },
+   "timing": {
+    "cutoff": "next auction to be announced Thu 11/19; secondary: during trading hours",
+    "cash": "next auction settles Fri 11/27; secondary buy or sell settles T+1 = Mon 11/16"
+   }
+  }
+ ],
+ "ranking": {
+  "sc_partner": {
+   "same": {
+    "ranked": [
+     "FSIXX",
+     "TTTXX",
+     "UTIXX",
+     "GOTXX",
+     "FISXX",
+     "TSTXX",
+     "TFFXX",
+     "FIGXX",
+     "TFDXX",
+     "TMCXX",
+     "POIXX",
+     "GOIXX",
+     "TOIXX",
+     "MLBDP-4",
+     "MLBDP-1"
+    ],
+    "unranked": [
+     "FRSXX",
+     "UTPXX",
+     "BTFXX",
+     "BFRXX",
+     "MLBDP-5"
+    ],
+    "recommended": "FSIXX"
+   },
+   "next": {
+    "ranked": [
+     "FSIXX",
+     "BIL",
+     "TTTXX",
+     "SGOV",
+     "UTIXX",
+     "GOTXX",
+     "FISXX",
+     "FFTXX",
+     "TSTXX",
+     "TFFXX",
+     "FIGXX",
+     "TFDXX",
+     "TMCXX",
+     "POIXX",
+     "PD-100M",
+     "GOIXX",
+     "PD-10M",
+     "TOIXX",
+     "MCSXX",
+     "PD-5M",
+     "PD-2.5M",
+     "PD-<2.5M",
+     "ISA",
+     "MLBDP-4",
+     "MLBDP-1"
+    ],
+    "unranked": [
+     "FRSXX",
+     "UTPXX",
+     "FTFXX",
+     "BTFXX",
+     "BFRXX",
+     "MLBDP-5",
+     "USFR"
+    ],
+    "recommended": "FSIXX"
+   },
+   "w13": {
+    "ranked": [
+     "BILL-13W",
+     "BILL-8W",
+     "BILL-6W",
+     "BILL-4W",
+     "FSIXX",
+     "BIL",
+     "TTTXX",
+     "SGOV",
+     "UTIXX",
+     "GOTXX",
+     "FISXX",
+     "FFTXX",
+     "TSTXX",
+     "TFFXX",
+     "FIGXX",
+     "TFDXX",
+     "TMCXX",
+     "POIXX",
+     "PD-100M",
+     "GOIXX",
+     "PD-10M",
+     "TOIXX",
+     "MCSXX",
+     "PD-5M",
+     "PD-2.5M",
+     "PD-<2.5M",
+     "ISA",
+     "MLBDP-4",
+     "MLBDP-1"
+    ],
+    "unranked": [
+     "FRSXX",
+     "UTPXX",
+     "FTFXX",
+     "BTFXX",
+     "BFRXX",
+     "MLBDP-5",
+     "USFR"
+    ],
+    "recommended": "BILL-13W"
+   },
+   "w52": {
+    "ranked": [
+     "BILL-52W",
+     "BILL-26W",
+     "BILL-17W",
+     "BILL-13W",
+     "BILL-8W",
+     "BILL-6W",
+     "BILL-4W",
+     "FSIXX",
+     "BIL",
+     "TTTXX",
+     "SGOV",
+     "UTIXX",
+     "GOTXX",
+     "FISXX",
+     "FFTXX",
+     "TSTXX",
+     "TFFXX",
+     "FIGXX",
+     "TFDXX",
+     "TMCXX",
+     "POIXX",
+     "PD-100M",
+     "GOIXX",
+     "PD-10M",
+     "TOIXX",
+     "MCSXX",
+     "PD-5M",
+     "PD-2.5M",
+     "PD-<2.5M",
+     "ISA",
+     "MLBDP-4",
+     "MLBDP-1"
+    ],
+    "unranked": [
+     "FRSXX",
+     "UTPXX",
+     "FTFXX",
+     "BTFXX",
+     "BFRXX",
+     "MLBDP-5",
+     "USFR"
+    ],
+    "recommended": "BILL-52W"
+   }
+  },
+  "sc_trust": {
+   "same": {
+    "ranked": [
+     "FSIXX",
+     "TTTXX",
+     "UTIXX",
+     "GOTXX",
+     "FISXX",
+     "TSTXX",
+     "TFFXX",
+     "FIGXX",
+     "TFDXX",
+     "TMCXX",
+     "POIXX",
+     "GOIXX",
+     "TOIXX",
+     "MLBDP-4",
+     "MLBDP-1"
+    ],
+    "unranked": [
+     "FRSXX",
+     "UTPXX",
+     "BTFXX",
+     "BFRXX",
+     "MLBDP-5"
+    ],
+    "recommended": "FSIXX"
+   },
+   "next": {
+    "ranked": [
+     "FSIXX",
+     "BIL",
+     "TTTXX",
+     "SGOV",
+     "UTIXX",
+     "GOTXX",
+     "FISXX",
+     "FFTXX",
+     "TSTXX",
+     "TFFXX",
+     "FIGXX",
+     "TFDXX",
+     "TMCXX",
+     "POIXX",
+     "PD-100M",
+     "GOIXX",
+     "PD-10M",
+     "TOIXX",
+     "MCSXX",
+     "PD-5M",
+     "PD-2.5M",
+     "PD-<2.5M",
+     "ISA",
+     "MLBDP-4",
+     "MLBDP-1"
+    ],
+    "unranked": [
+     "FRSXX",
+     "UTPXX",
+     "FTFXX",
+     "BTFXX",
+     "BFRXX",
+     "MLBDP-5",
+     "USFR"
+    ],
+    "recommended": "FSIXX"
+   },
+   "w13": {
+    "ranked": [
+     "BILL-13W",
+     "BILL-8W",
+     "BILL-6W",
+     "BILL-4W",
+     "FSIXX",
+     "BIL",
+     "TTTXX",
+     "SGOV",
+     "UTIXX",
+     "GOTXX",
+     "FISXX",
+     "FFTXX",
+     "TSTXX",
+     "TFFXX",
+     "FIGXX",
+     "TFDXX",
+     "TMCXX",
+     "POIXX",
+     "PD-100M",
+     "GOIXX",
+     "PD-10M",
+     "TOIXX",
+     "MCSXX",
+     "PD-5M",
+     "PD-2.5M",
+     "PD-<2.5M",
+     "ISA",
+     "MLBDP-4",
+     "MLBDP-1"
+    ],
+    "unranked": [
+     "FRSXX",
+     "UTPXX",
+     "FTFXX",
+     "BTFXX",
+     "BFRXX",
+     "MLBDP-5",
+     "USFR"
+    ],
+    "recommended": "BILL-13W"
+   },
+   "w52": {
+    "ranked": [
+     "BILL-52W",
+     "BILL-26W",
+     "BILL-17W",
+     "BILL-13W",
+     "BILL-8W",
+     "BILL-6W",
+     "BILL-4W",
+     "FSIXX",
+     "BIL",
+     "TTTXX",
+     "SGOV",
+     "UTIXX",
+     "GOTXX",
+     "FISXX",
+     "FFTXX",
+     "TSTXX",
+     "TFFXX",
+     "FIGXX",
+     "TFDXX",
+     "TMCXX",
+     "POIXX",
+     "PD-100M",
+     "GOIXX",
+     "PD-10M",
+     "TOIXX",
+     "MCSXX",
+     "PD-5M",
+     "PD-2.5M",
+     "PD-<2.5M",
+     "ISA",
+     "MLBDP-4",
+     "MLBDP-1"
+    ],
+    "unranked": [
+     "FRSXX",
+     "UTPXX",
+     "FTFXX",
+     "BTFXX",
+     "BFRXX",
+     "MLBDP-5",
+     "USFR"
+    ],
+    "recommended": "BILL-52W"
+   }
+  },
+  "fl_trust": {
+   "same": {
+    "ranked": [
+     "TMCXX",
+     "POIXX",
+     "FSIXX",
+     "TTTXX",
+     "UTIXX",
+     "FISXX",
+     "TSTXX",
+     "GOTXX",
+     "TFFXX",
+     "FIGXX",
+     "TFDXX",
+     "TOIXX",
+     "GOIXX",
+     "MLBDP-4",
+     "MLBDP-1"
+    ],
+    "unranked": [
+     "FRSXX",
+     "UTPXX",
+     "BTFXX",
+     "BFRXX",
+     "MLBDP-5"
+    ],
+    "recommended": "FSIXX"
+   },
+   "next": {
+    "ranked": [
+     "TMCXX",
+     "POIXX",
+     "PD-100M",
+     "BIL",
+     "FSIXX",
+     "PD-10M",
+     "SGOV",
+     "TTTXX",
+     "FFTXX",
+     "UTIXX",
+     "FISXX",
+     "TSTXX",
+     "GOTXX",
+     "TFFXX",
+     "FIGXX",
+     "TFDXX",
+     "TOIXX",
+     "GOIXX",
+     "MCSXX",
+     "PD-5M",
+     "PD-2.5M",
+     "PD-<2.5M",
+     "ISA",
+     "MLBDP-4",
+     "MLBDP-1"
+    ],
+    "unranked": [
+     "FRSXX",
+     "UTPXX",
+     "FTFXX",
+     "BTFXX",
+     "BFRXX",
+     "MLBDP-5",
+     "USFR"
+    ],
+    "recommended": "PD-100M"
+   },
+   "w13": {
+    "ranked": [
+     "BILL-13W",
+     "BILL-8W",
+     "BILL-6W",
+     "BILL-4W",
+     "TMCXX",
+     "POIXX",
+     "PD-100M",
+     "BIL",
+     "FSIXX",
+     "PD-10M",
+     "SGOV",
+     "TTTXX",
+     "FFTXX",
+     "UTIXX",
+     "FISXX",
+     "TSTXX",
+     "GOTXX",
+     "TFFXX",
+     "FIGXX",
+     "TFDXX",
+     "TOIXX",
+     "GOIXX",
+     "MCSXX",
+     "PD-5M",
+     "PD-2.5M",
+     "PD-<2.5M",
+     "ISA",
+     "MLBDP-4",
+     "MLBDP-1"
+    ],
+    "unranked": [
+     "FRSXX",
+     "UTPXX",
+     "FTFXX",
+     "BTFXX",
+     "BFRXX",
+     "MLBDP-5",
+     "USFR"
+    ],
+    "recommended": "BILL-13W"
+   },
+   "w52": {
+    "ranked": [
+     "BILL-52W",
+     "BILL-26W",
+     "BILL-17W",
+     "BILL-13W",
+     "BILL-8W",
+     "BILL-6W",
+     "BILL-4W",
+     "TMCXX",
+     "POIXX",
+     "PD-100M",
+     "BIL",
+     "FSIXX",
+     "PD-10M",
+     "SGOV",
+     "TTTXX",
+     "FFTXX",
+     "UTIXX",
+     "FISXX",
+     "TSTXX",
+     "GOTXX",
+     "TFFXX",
+     "FIGXX",
+     "TFDXX",
+     "TOIXX",
+     "GOIXX",
+     "MCSXX",
+     "PD-5M",
+     "PD-2.5M",
+     "PD-<2.5M",
+     "ISA",
+     "MLBDP-4",
+     "MLBDP-1"
+    ],
+    "unranked": [
+     "FRSXX",
+     "UTPXX",
+     "FTFXX",
+     "BTFXX",
+     "BFRXX",
+     "MLBDP-5",
+     "USFR"
+    ],
+    "recommended": "BILL-52W"
+   }
+  },
+  "foundation": {
+   "same": {
+    "ranked": [
+     "TMCXX",
+     "POIXX",
+     "FSIXX",
+     "TTTXX",
+     "UTIXX",
+     "FISXX",
+     "TSTXX",
+     "GOTXX",
+     "TFFXX",
+     "FIGXX",
+     "TFDXX",
+     "TOIXX",
+     "GOIXX",
+     "MLBDP-4",
+     "MLBDP-1"
+    ],
+    "unranked": [
+     "FRSXX",
+     "UTPXX",
+     "BTFXX",
+     "BFRXX",
+     "MLBDP-5"
+    ],
+    "recommended": "FSIXX"
+   },
+   "next": {
+    "ranked": [
+     "TMCXX",
+     "POIXX",
+     "PD-100M",
+     "BIL",
+     "FSIXX",
+     "PD-10M",
+     "SGOV",
+     "TTTXX",
+     "UTIXX",
+     "FISXX",
+     "TSTXX",
+     "GOTXX",
+     "TFFXX",
+     "FIGXX",
+     "TFDXX",
+     "TOIXX",
+     "GOIXX",
+     "PD-5M",
+     "PD-2.5M",
+     "PD-<2.5M",
+     "FFTXX",
+     "MCSXX",
+     "ISA",
+     "MLBDP-4",
+     "MLBDP-1"
+    ],
+    "unranked": [
+     "FRSXX",
+     "UTPXX",
+     "FTFXX",
+     "BTFXX",
+     "BFRXX",
+     "MLBDP-5",
+     "USFR"
+    ],
+    "recommended": "PD-100M"
+   },
+   "w13": {
+    "ranked": [
+     "BILL-13W",
+     "BILL-8W",
+     "BILL-6W",
+     "BILL-4W",
+     "TMCXX",
+     "POIXX",
+     "PD-100M",
+     "BIL",
+     "FSIXX",
+     "PD-10M",
+     "SGOV",
+     "TTTXX",
+     "UTIXX",
+     "FISXX",
+     "TSTXX",
+     "GOTXX",
+     "TFFXX",
+     "FIGXX",
+     "TFDXX",
+     "TOIXX",
+     "GOIXX",
+     "PD-5M",
+     "PD-2.5M",
+     "PD-<2.5M",
+     "FFTXX",
+     "MCSXX",
+     "ISA",
+     "MLBDP-4",
+     "MLBDP-1"
+    ],
+    "unranked": [
+     "FRSXX",
+     "UTPXX",
+     "FTFXX",
+     "BTFXX",
+     "BFRXX",
+     "MLBDP-5",
+     "USFR"
+    ],
+    "recommended": "BILL-13W"
+   },
+   "w52": {
+    "ranked": [
+     "BILL-52W",
+     "BILL-26W",
+     "BILL-17W",
+     "BILL-13W",
+     "BILL-8W",
+     "BILL-6W",
+     "BILL-4W",
+     "TMCXX",
+     "POIXX",
+     "PD-100M",
+     "BIL",
+     "FSIXX",
+     "PD-10M",
+     "SGOV",
+     "TTTXX",
+     "UTIXX",
+     "FISXX",
+     "TSTXX",
+     "GOTXX",
+     "TFFXX",
+     "FIGXX",
+     "TFDXX",
+     "TOIXX",
+     "GOIXX",
+     "PD-5M",
+     "PD-2.5M",
+     "PD-<2.5M",
+     "FFTXX",
+     "MCSXX",
+     "ISA",
+     "MLBDP-4",
+     "MLBDP-1"
+    ],
+    "unranked": [
+     "FRSXX",
+     "UTPXX",
+     "FTFXX",
+     "BTFXX",
+     "BFRXX",
+     "MLBDP-5",
+     "USFR"
+    ],
+    "recommended": "BILL-52W"
+   }
+  }
+ },
+ "watch": [
+  {
+   "name": "Agency discount notes (FHLB / FFCB)",
+   "risk_tier": 3,
+   "note": "State-exempt by statute; typically a few bp over bills."
+  },
+  {
+   "name": "Brokered CDs by term",
+   "risk_tier": 3,
+   "note": "FDIC to $250,000 per bank per entity; fully taxable, so for SC entities a CD needs ~10% more gross yield than a bill to tie; relevant mainly to the Foundation."
+  },
+  {
+   "name": "Other Treasury-only institutional funds Merrill may hold at $1",
+   "risk_tier": 1,
+   "note": "JPMorgan 100% U.S. Treasury Securities, Goldman Financial Square Treasury Instruments, Dreyfus Treasury Securities Cash Management, Morgan Stanley ILF Treasury Securities — confirm tickers and availability with Merrill before adding; they occasionally out-yield TTTXX by a few bp."
+  }
+ ],
+ "checks": {
+  "muni": {
+   "ratio": 0.5907,
+   "be_sc": 0.6245,
+   "be_fl": 0.592,
+   "fftxx": 2.28,
+   "tttxx": 3.86,
+   "sc": "green",
+   "fl": "green"
+  },
+  "repo": {
+   "bp": -5,
+   "status": "green"
+  },
+  "bill_premium": {
+   "bp": 38
+  }
+ },
+ "banners": [],
+ "feeds": [
+  {
+   "name": "SIFMA calendar",
+   "ok": true,
+   "asof": "2026-11-13",
+   "note": "cached (refetched weekly)"
+  },
+  {
+   "name": "Merrill Yields at a Glance",
+   "ok": true,
+   "asof": "2026-11-12",
+   "note": "fetched today"
+  },
+  {
+   "name": "Treasury bill rates",
+   "ok": true,
+   "asof": "2026-11-12",
+   "note": "fetched today"
+  },
+  {
+   "name": "TreasuryDirect auction calendar",
+   "ok": true,
+   "asof": "2026-11-13",
+   "note": "fetched today"
+  },
+  {
+   "name": "BlackRock daily yields",
+   "ok": true,
+   "asof": "2026-11-13",
+   "note": "fetched today"
+  },
+  {
+   "name": "Federated Hermes daily yields",
+   "ok": true,
+   "asof": "2026-11-13",
+   "note": "fetched today"
+  },
+  {
+   "name": "ETF sponsor pages",
+   "ok": true,
+   "asof": "2026-11-13",
+   "note": "fetched today"
+  },
+  {
+   "name": "BlackRock fact sheets (cutoffs)",
+   "ok": true,
+   "asof": "2026-11-13",
+   "note": "fetched today"
+  },
+  {
+   "name": "Federated Hermes pages (cutoffs)",
+   "ok": true,
+   "asof": "2026-11-13",
+   "note": "fetched today"
+  }
+ ],
+ "merrill_asof": "2026-11-12",
+ "treasury_asof": "2026-11-12",
+ "calendar": {
+  "holidays": [
+   {
+    "date": "2026-11-11",
+    "name": "Veterans Day"
+   },
+   {
+    "date": "2026-11-26",
+    "name": "Thanksgiving Day"
+   },
+   {
+    "date": "2026-12-25",
+    "name": "Christmas Day"
+   },
+   {
+    "date": "2027-01-01",
+    "name": "New Year’s Day 2026/2027"
+   },
+   {
+    "date": "2027-01-18",
+    "name": "Martin Luther King Day"
+   },
+   {
+    "date": "2027-02-15",
+    "name": "Presidents Day"
+   },
+   {
+    "date": "2027-03-26",
+    "name": "Good Friday"
+   },
+   {
+    "date": "2027-05-31",
+    "name": "Memorial Day"
+   },
+   {
+    "date": "2027-06-18",
+    "name": "Juneteenth"
+   },
+   {
+    "date": "2027-07-05",
+    "name": "U.S. Independence Day"
+   },
+   {
+    "date": "2027-09-06",
+    "name": "Labor Day"
+   },
+   {
+    "date": "2027-10-11",
+    "name": "Columbus Day"
+   },
+   {
+    "date": "2027-11-11",
+    "name": "Veterans Day"
+   },
+   {
+    "date": "2027-11-25",
+    "name": "Thanksgiving Day"
+   },
+   {
+    "date": "2027-12-24",
+    "name": "Christmas Day"
+   }
+  ],
+  "early_closes": [
+   {
+    "date": "2026-11-27",
+    "time": "14:00",
+    "name": "Thanksgiving Day"
+   },
+   {
+    "date": "2026-12-24",
+    "time": "14:00",
+    "name": "Christmas Day"
+   },
+   {
+    "date": "2026-12-31",
+    "time": "14:00",
+    "name": "New Year’s Day 2026/2027"
+   },
+   {
+    "date": "2027-03-25",
+    "time": "14:00",
+    "name": "Good Friday"
+   },
+   {
+    "date": "2027-05-28",
+    "time": "14:00",
+    "name": "Memorial Day"
+   },
+   {
+    "date": "2027-07-02",
+    "time": "14:00",
+    "name": "U.S. Independence Day"
+   },
+   {
+    "date": "2027-11-26",
+    "time": "14:00",
+    "name": "Thanksgiving Day"
+   },
+   {
+    "date": "2027-12-23",
+    "time": "14:00",
+    "name": "Christmas Day"
+   },
+   {
+    "date": "2027-12-31",
+    "time": "14:00",
+    "name": "New Year’s Day 2027/2028"
+   }
+  ],
+  "upcoming": [
+   {
+    "date": "2026-11-26",
+    "kind": "holiday",
+    "name": "Thanksgiving Day"
+   },
+   {
+    "date": "2026-11-27",
+    "kind": "early",
+    "name": "Thanksgiving Day",
+    "time": "14:00"
+   }
+  ],
+  "fetched": "2026-11-13"
+ },
+ "since_last_run": [],
+ "changelog": []
+}

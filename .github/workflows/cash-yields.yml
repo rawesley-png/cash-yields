@@ -1,0 +1,33 @@
+name: Cash yields
+on:
+  schedule:
+    - cron: "30 11 * * 1-5"    # 7:30am EDT (summer)
+    - cron: "30 12 * * 1-5"    # 7:30am EST (winter); the other line's run is a harmless second refresh
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: cash-yields
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pdftotext and requests
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+          python3 -m pip install -q requests
+      - name: Run the engine
+        env:
+          SITE_URL: ${{ secrets.SITE_URL }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
+          PUSHOVER_USER: ${{ secrets.PUSHOVER_USER }}
+          PUSHOVER_TOKEN: ${{ secrets.PUSHOVER_TOKEN }}
+        run: python3 cash_yields.py
+      - name: Publish the page and history
+        run: |
+          git config user.name cash-yields && git config user.email cash-yields@users.noreply.github.com
+          git add docs history.json state.json changelog.json config/calendar.json
+          git commit -m "cash yields $(date -u +%F)" || true
+          git push || true
