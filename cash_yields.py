@@ -532,7 +532,7 @@ def caveat(i):
     if t.startswith("Municipal"):
         return "Municipal fund: floating NAV, fees possible, check AMT paper; only wins when the muni test is amber."
     if i["symbol"].startswith("PD-"):
-        return "Rate applies only to an account whose own balance is in this tier; FDIC insurance to $250,000."
+        return "Rate applies only to an account whose own balance is in this tier; FDIC to $250,000. Not eligible for Recommended unless set as preferred_deposit_tier."
     return None
 
 
@@ -682,7 +682,10 @@ def run():
         for col, _, _ in COLUMNS:
             members = [r for r in rows if in_column(col, r)]
             ranked = sorted((r for r in members if r["status"] == "ranked"), key=lambda r: (-r["net"][e], r["risk_tier"], r["symbol"]))
-            rec = next((r for r in ranked if r["risk_tier"] <= tax["max_risk_tier_recommended"]), None)
+            # Preferred Deposit rates depend on one account's own balance, so a tier can only be Recommended when
+            # config/tax.json names it as the tier that applies (preferred_deposit_tier); the others stay in the list.
+            rec = next((r for r in ranked if r["risk_tier"] <= tax["max_risk_tier_recommended"]
+                        and (not r["symbol"].startswith("PD-") or r["symbol"] == tax.get("preferred_deposit_tier"))), None)
             ranking[e][col] = {"ranked": [r["symbol"] for r in ranked], "unranked": [r["symbol"] for r in members if r["status"] != "ranked"],
                                "recommended": rec["symbol"] if rec else None}
             picks[e][col] = {"symbol": rec["symbol"], "net": rec["net"][e]} if rec else None

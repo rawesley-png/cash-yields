@@ -33,13 +33,13 @@
    "MLBDP-5": 3.35,
    "SGOV": 3.86,
    "BIL": 3.87,
-   "BILL-4W": 4.04,
+   "BILL-4W": 4.02,
    "BILL-6W": 4.08,
-   "BILL-8W": 4.17,
-   "BILL-13W": 4.24,
-   "BILL-17W": 4.35,
-   "BILL-26W": 4.46,
-   "BILL-52W": 4.64
+   "BILL-8W": 4.16,
+   "BILL-13W": 4.23,
+   "BILL-17W": 4.34,
+   "BILL-26W": 4.47,
+   "BILL-52W": 4.63
   },
   "picks": {
    "sc_partner": {
@@ -56,13 +56,13 @@
    },
    "fl_trust": {
     "same": "FSIXX",
-    "next": "PD-100M",
+    "next": "BIL",
     "w13": "BILL-13W",
     "w52": "BILL-52W"
    },
    "foundation": {
     "same": "FSIXX",
-    "next": "PD-100M",
+    "next": "BIL",
     "w13": "BILL-13W",
     "w52": "BILL-52W"
    }

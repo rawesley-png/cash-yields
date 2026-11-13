@@ -262,6 +262,7 @@
         <li>SC rate ${p(t.sc_rate)}: ${esc(t.sc_rate_note || "")}. Federal deductibility of state tax is ignored.</li>
         <li>Each fund is ranked on the newer of the Merrill-sheet yield and the sponsor's daily yield; tap a row to see both. ETFs rank on the 30-day SEC yield. Bills use Treasury's coupon-equivalent yield.</li>
         <li>Recommended = highest net yield among instruments at or below risk tier ${t.max_risk_tier_recommended}; advisory-program (IAP) share classes are ${t.iap_accounts ? "included" : "excluded"}. An instrument with no fetched yield is never ranked or estimated.</li>
+        <li>Preferred Deposit tiers are ranked but ${t.preferred_deposit_tier ? `only <b>${esc(t.preferred_deposit_tier)}</b> can be Recommended` : "never Recommended"}: the rate depends on one account's own balance. Set <code>preferred_deposit_tier</code> in <code>config/tax.json</code> to the tier that applies.</li>
         <li>Dollars per $1M are a year of net income at today's yield. Rates are edited in <code>config/tax.json</code>.</li>
       </ul>
       <p class="legend"><span>Risk tier:</span><span><span class="tier t1">1</span> Treasury-only</span><span><span class="tier t2">2</span> Treasury repo</span><span><span class="tier t3">3</span> government / deposit / muni</span><span><span class="tier t4">4</span> prime</span></p>

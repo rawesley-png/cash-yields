@@ -1,5 +1,5 @@
 {
- "updated": "Fri 11/13/2026 3:32 PM ET",
+ "updated": "Fri 11/13/2026 4:01 PM ET",
  "run_date": "2026-11-13",
  "first_run": false,
  "entities": [
@@ -52,7 +52,9 @@
   "foundation_excise": 0.0139,
   "foundation_excise_note": "§4940; tax-exempt municipal interest is excluded from the excise base (Form 990-PF instructions, Part I col. (b), lines 3–4)",
   "max_risk_tier_recommended": 3,
-  "iap_accounts": false
+  "iap_accounts": false,
+  "preferred_deposit_tier": null,
+  "preferred_deposit_tier_note": "Set to the tier one account's own Preferred Deposit balance qualifies for (PD-100M, PD-10M, PD-5M, PD-2.5M or PD-<2.5M) to make it eligible for Recommended; null keeps every tier in the ranked list only"
  },
  "rows": [
   {
@@ -1153,7 +1155,7 @@
     "source": null,
     "refreshed_today": null
    },
-   "caveat": "Rate applies only to an account whose own balance is in this tier; FDIC insurance to $250,000.",
+   "caveat": "Rate applies only to an account whose own balance is in this tier; FDIC to $250,000. Not eligible for Recommended unless set as preferred_deposit_tier.",
    "status": "ranked",
    "status_note": null,
    "net": {
@@ -1202,7 +1204,7 @@
     "source": null,
     "refreshed_today": null
    },
-   "caveat": "Rate applies only to an account whose own balance is in this tier; FDIC insurance to $250,000.",
+   "caveat": "Rate applies only to an account whose own balance is in this tier; FDIC to $250,000. Not eligible for Recommended unless set as preferred_deposit_tier.",
    "status": "ranked",
    "status_note": null,
    "net": {
@@ -1251,7 +1253,7 @@
     "source": null,
     "refreshed_today": null
    },
-   "caveat": "Rate applies only to an account whose own balance is in this tier; FDIC insurance to $250,000.",
+   "caveat": "Rate applies only to an account whose own balance is in this tier; FDIC to $250,000. Not eligible for Recommended unless set as preferred_deposit_tier.",
    "status": "ranked",
    "status_note": null,
    "net": {
@@ -1300,7 +1302,7 @@
     "source": null,
     "refreshed_today": null
    },
-   "caveat": "Rate applies only to an account whose own balance is in this tier; FDIC insurance to $250,000.",
+   "caveat": "Rate applies only to an account whose own balance is in this tier; FDIC to $250,000. Not eligible for Recommended unless set as preferred_deposit_tier.",
    "status": "ranked",
    "status_note": null,
    "net": {
@@ -1349,7 +1351,7 @@
     "source": null,
     "refreshed_today": null
    },
-   "caveat": "Rate applies only to an account whose own balance is in this tier; FDIC insurance to $250,000.",
+   "caveat": "Rate applies only to an account whose own balance is in this tier; FDIC to $250,000. Not eligible for Recommended unless set as preferred_deposit_tier.",
    "status": "ranked",
    "status_note": null,
    "net": {
@@ -1733,13 +1735,13 @@
    ],
    "yields": {
     "treasury": {
-     "y": 4.04,
-     "asof": "2026-11-12",
+     "y": 4.02,
+     "asof": "2026-11-13",
      "source": "Treasury daily bill rates (coupon-equivalent)"
     }
    },
-   "gross": 4.04,
-   "gross_asof": "2026-11-12",
+   "gross": 4.02,
+   "gross_asof": "2026-11-13",
    "gross_source": "Treasury daily bill rates (coupon-equivalent)",
    "stale": false,
    "cutoff": {
@@ -1754,10 +1756,10 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.3917,
-    "sc_trust": 2.3917,
-    "fl_trust": 2.3917,
-    "foundation": 3.9838
+    "sc_partner": 2.3798,
+    "sc_trust": 2.3798,
+    "fl_trust": 2.3798,
+    "foundation": 3.9641
    },
    "timing": {
     "cutoff": "next auction to be announced Tue 11/17; secondary: during trading hours",
@@ -1805,12 +1807,12 @@
    "yields": {
     "treasury": {
      "y": 4.08,
-     "asof": "2026-11-12",
+     "asof": "2026-11-13",
      "source": "Treasury daily bill rates (coupon-equivalent)"
     }
    },
    "gross": 4.08,
-   "gross_asof": "2026-11-12",
+   "gross_asof": "2026-11-13",
    "gross_source": "Treasury daily bill rates (coupon-equivalent)",
    "stale": false,
    "cutoff": {
@@ -1866,13 +1868,13 @@
    ],
    "yields": {
     "treasury": {
-     "y": 4.17,
-     "asof": "2026-11-12",
+     "y": 4.16,
+     "asof": "2026-11-13",
      "source": "Treasury daily bill rates (coupon-equivalent)"
     }
    },
-   "gross": 4.17,
-   "gross_asof": "2026-11-12",
+   "gross": 4.16,
+   "gross_asof": "2026-11-13",
    "gross_source": "Treasury daily bill rates (coupon-equivalent)",
    "stale": false,
    "cutoff": {
@@ -1887,10 +1889,10 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.4686,
-    "sc_trust": 2.4686,
-    "fl_trust": 2.4686,
-    "foundation": 4.112
+    "sc_partner": 2.4627,
+    "sc_trust": 2.4627,
+    "fl_trust": 2.4627,
+    "foundation": 4.1022
    },
    "timing": {
     "cutoff": "next auction to be announced Tue 11/17; secondary: during trading hours",
@@ -1937,13 +1939,13 @@
    ],
    "yields": {
     "treasury": {
-     "y": 4.24,
-     "asof": "2026-11-12",
+     "y": 4.23,
+     "asof": "2026-11-13",
      "source": "Treasury daily bill rates (coupon-equivalent)"
     }
    },
-   "gross": 4.24,
-   "gross_asof": "2026-11-12",
+   "gross": 4.23,
+   "gross_asof": "2026-11-13",
    "gross_source": "Treasury daily bill rates (coupon-equivalent)",
    "stale": false,
    "cutoff": {
@@ -1958,10 +1960,10 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.5101,
-    "sc_trust": 2.5101,
-    "fl_trust": 2.5101,
-    "foundation": 4.1811
+    "sc_partner": 2.5042,
+    "sc_trust": 2.5042,
+    "fl_trust": 2.5042,
+    "foundation": 4.1712
    },
    "timing": {
     "cutoff": "next auction closes Mon 11/16 11:00 a.m. ET (noncompetitive); secondary: during trading hours",
@@ -1999,13 +2001,13 @@
    ],
    "yields": {
     "treasury": {
-     "y": 4.35,
-     "asof": "2026-11-12",
+     "y": 4.34,
+     "asof": "2026-11-13",
      "source": "Treasury daily bill rates (coupon-equivalent)"
     }
    },
-   "gross": 4.35,
-   "gross_asof": "2026-11-12",
+   "gross": 4.34,
+   "gross_asof": "2026-11-13",
    "gross_source": "Treasury daily bill rates (coupon-equivalent)",
    "stale": false,
    "cutoff": {
@@ -2020,10 +2022,10 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.5752,
-    "sc_trust": 2.5752,
-    "fl_trust": 2.5752,
-    "foundation": 4.2895
+    "sc_partner": 2.5693,
+    "sc_trust": 2.5693,
+    "fl_trust": 2.5693,
+    "foundation": 4.2797
    },
    "timing": {
     "cutoff": "next auction to be announced Tue 11/17; secondary: during trading hours",
@@ -2070,13 +2072,13 @@
    ],
    "yields": {
     "treasury": {
-     "y": 4.46,
-     "asof": "2026-11-12",
+     "y": 4.47,
+     "asof": "2026-11-13",
      "source": "Treasury daily bill rates (coupon-equivalent)"
     }
    },
-   "gross": 4.46,
-   "gross_asof": "2026-11-12",
+   "gross": 4.47,
+   "gross_asof": "2026-11-13",
    "gross_source": "Treasury daily bill rates (coupon-equivalent)",
    "stale": false,
    "cutoff": {
@@ -2091,10 +2093,10 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.6403,
-    "sc_trust": 2.6403,
-    "fl_trust": 2.6403,
-    "foundation": 4.398
+    "sc_partner": 2.6462,
+    "sc_trust": 2.6462,
+    "fl_trust": 2.6462,
+    "foundation": 4.4079
    },
    "timing": {
     "cutoff": "next auction closes Mon 11/16 11:00 a.m. ET (noncompetitive); secondary: during trading hours",
@@ -2132,13 +2134,13 @@
    ],
    "yields": {
     "treasury": {
-     "y": 4.64,
-     "asof": "2026-11-12",
+     "y": 4.63,
+     "asof": "2026-11-13",
      "source": "Treasury daily bill rates (coupon-equivalent)"
     }
    },
-   "gross": 4.64,
-   "gross_asof": "2026-11-12",
+   "gross": 4.63,
+   "gross_asof": "2026-11-13",
    "gross_source": "Treasury daily bill rates (coupon-equivalent)",
    "stale": false,
    "cutoff": {
@@ -2153,10 +2155,10 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.7469,
-    "sc_trust": 2.7469,
-    "fl_trust": 2.7469,
-    "foundation": 4.5755
+    "sc_partner": 2.741,
+    "sc_trust": 2.741,
+    "fl_trust": 2.741,
+    "foundation": 4.5656
    },
    "timing": {
     "cutoff": "next auction to be announced Thu 11/19; secondary: during trading hours",
@@ -2544,7 +2546,7 @@
      "MLBDP-5",
      "USFR"
     ],
-    "recommended": "PD-100M"
+    "recommended": "BIL"
    },
    "w13": {
     "ranked": [
@@ -2701,7 +2703,7 @@
      "MLBDP-5",
      "USFR"
     ],
-    "recommended": "PD-100M"
+    "recommended": "BIL"
    },
    "w13": {
     "ranked": [
@@ -2826,7 +2828,7 @@
    "status": "green"
   },
   "bill_premium": {
-   "bp": 38
+   "bp": 37
   }
  },
  "banners": [],
@@ -2846,7 +2848,7 @@
   {
    "name": "Treasury bill rates",
    "ok": true,
-   "asof": "2026-11-12",
+   "asof": "2026-11-13",
    "note": "fetched today"
   },
   {
@@ -2887,7 +2889,7 @@
   }
  ],
  "merrill_asof": "2026-11-12",
- "treasury_asof": "2026-11-12",
+ "treasury_asof": "2026-11-13",
  "calendar": {
   "holidays": [
    {
@@ -3013,6 +3015,58 @@
   ],
   "fetched": "2026-11-13"
  },
- "since_last_run": [],
- "changelog": []
+ "since_last_run": [
+  {
+   "kind": "pick",
+   "label": "FL trust",
+   "entity": "fl_trust",
+   "column": "next",
+   "old": "PD-100M",
+   "new": "BIL",
+   "old_net": 2.3206,
+   "new_net": 2.291,
+   "text": "FL trust · Next day, no date: PD-100M (2.32% net) → BIL (2.29% net)"
+  },
+  {
+   "kind": "pick",
+   "label": "Foundation",
+   "entity": "foundation",
+   "column": "next",
+   "old": "PD-100M",
+   "new": "BIL",
+   "old_net": 3.8655,
+   "new_net": 3.8162,
+   "text": "Foundation · Next day, no date: PD-100M (3.87% net) → BIL (3.82% net)"
+  }
+ ],
+ "changelog": [
+  {
+   "date": "2026-11-13",
+   "summary": "2 changes against the previous run",
+   "items": [
+    {
+     "kind": "pick",
+     "label": "FL trust",
+     "entity": "fl_trust",
+     "column": "next",
+     "old": "PD-100M",
+     "new": "BIL",
+     "old_net": 2.3206,
+     "new_net": 2.291,
+     "text": "FL trust · Next day, no date: PD-100M (2.32% net) → BIL (2.29% net)"
+    },
+    {
+     "kind": "pick",
+     "label": "Foundation",
+     "entity": "foundation",
+     "column": "next",
+     "old": "PD-100M",
+     "new": "BIL",
+     "old_net": 3.8655,
+     "new_net": 3.8162,
+     "text": "Foundation · Next day, no date: PD-100M (3.87% net) → BIL (3.82% net)"
+    }
+   ]
+  }
+ ]
 }
