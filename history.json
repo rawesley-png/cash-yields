@@ -45,26 +45,26 @@
    "sc_partner": {
     "same": "FSIXX",
     "next": "FSIXX",
-    "w13": "BILL-13W",
-    "w52": "BILL-52W"
+    "d13": "BILL-13W",
+    "d52": "BILL-52W"
    },
    "sc_trust": {
     "same": "FSIXX",
     "next": "FSIXX",
-    "w13": "BILL-13W",
-    "w52": "BILL-52W"
+    "d13": "BILL-13W",
+    "d52": "BILL-52W"
    },
    "fl_trust": {
     "same": "FSIXX",
-    "next": "BIL",
-    "w13": "BILL-13W",
-    "w52": "BILL-52W"
+    "next": "FSIXX",
+    "d13": "BILL-13W",
+    "d52": "BILL-52W"
    },
    "foundation": {
     "same": "FSIXX",
-    "next": "BIL",
-    "w13": "BILL-13W",
-    "w52": "BILL-52W"
+    "next": "FSIXX",
+    "d13": "BILL-13W",
+    "d52": "BILL-52W"
    }
   }
  }

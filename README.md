@@ -1,7 +1,7 @@
 # Cash Yields
 
-A self-updating page that shows, every weekday morning, where cash should sit: four columns
-(**Same day**, **Next day, no date**, **Dated inside 13 weeks**, **Dated inside 52 weeks**), each
+A self-updating page that shows, every weekday morning, where cash should sit: three columns
+(**Same day**, **Next day, no date**, and **By your date** with a date picker), each
 ranked by net yield after the selected entity's taxes (SC partners, SC trust, FL trust, Foundation),
 with today's order cutoff and the date the cash is available on every row.
 
@@ -16,6 +16,25 @@ Same shape as the tripwires repo: `cash_yields.py` (engine) + `template.html` â†
 
 GitHub Actions (`.github/workflows/cash-yields.yml`) runs it on weekdays at 7:30 a.m. Eastern and
 commits the output; GitHub Pages serves `docs/`.
+
+## How it ranks
+
+- Yields are compared at the two decimals they are published to. On a tie a fund ranks ahead of a bill, a
+  deposit, then an ETF; then the safer tier, then the later cutoff.
+- **Same day**: once a fund's cutoff has passed, the page moves the recommendation to the best fund still open.
+- **By your date**: pick the date the cash is needed. Only bills maturing on or before it qualify. Ranking is
+  on net dollars per $1M from the next business day to that date; after a bill matures the cash is assumed to
+  sit in the Same-day pick. The card also shows the reinvestment rate at which rolling a shorter bill would
+  match the recommended one.
+- **Bill yields are indicative** (Treasury's closing bid-side rates), not purchase quotes.
+- **Cutoffs are the funds' own deadlines.** Add `"merrill_cutoff": "14:00"` (and optionally
+  `"merrill_cutoff_verified": "11/20/2026"`) to an instrument in `config/instruments.json` once Merrill's own
+  deadline is confirmed; the page then uses and labels that instead.
+- SC-taxable shares for the BlackRock and Fidelity funds come from the sponsors' 2025 tax letters (a prior-year
+  proxy). Federated funds, ETFs and deposits use unverified estimates; each row says which.
+- The change log compares each day with the previous day's run, so a second run on the same day rebuilds the
+  day's entry rather than clearing it. It tracks the Same-day and Next-day picks and the dated pick 13 and 52
+  weeks out.
 
 ## Where the numbers come from
 

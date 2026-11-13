@@ -445,85 +445,106 @@
    "verified": "2026-11-13"
   }
  },
- "early_seen": [
-  "2026-11-27"
- ],
- "picks": {
-  "sc_partner": {
-   "same": {
-    "symbol": "FSIXX",
-    "net": 2.291
+ "last": {
+  "date": "2026-11-13",
+  "picks": {
+   "sc_partner": {
+    "same": {
+     "symbol": "FSIXX",
+     "net": 2.2902
+    },
+    "next": {
+     "symbol": "FSIXX",
+     "net": 2.2902
+    },
+    "d13": {
+     "symbol": "BILL-13W",
+     "net": 2.5042
+    },
+    "d52": {
+     "symbol": "BILL-52W",
+     "net": 2.741
+    }
    },
-   "next": {
-    "symbol": "FSIXX",
-    "net": 2.291
+   "sc_trust": {
+    "same": {
+     "symbol": "FSIXX",
+     "net": 2.2902
+    },
+    "next": {
+     "symbol": "FSIXX",
+     "net": 2.2902
+    },
+    "d13": {
+     "symbol": "BILL-13W",
+     "net": 2.5042
+    },
+    "d52": {
+     "symbol": "BILL-52W",
+     "net": 2.741
+    }
    },
-   "w13": {
-    "symbol": "BILL-13W",
-    "net": 2.5042
+   "fl_trust": {
+    "same": {
+     "symbol": "FSIXX",
+     "net": 2.291
+    },
+    "next": {
+     "symbol": "FSIXX",
+     "net": 2.291
+    },
+    "d13": {
+     "symbol": "BILL-13W",
+     "net": 2.5042
+    },
+    "d52": {
+     "symbol": "BILL-52W",
+     "net": 2.741
+    }
    },
-   "w52": {
-    "symbol": "BILL-52W",
-    "net": 2.741
+   "foundation": {
+    "same": {
+     "symbol": "FSIXX",
+     "net": 3.8162
+    },
+    "next": {
+     "symbol": "FSIXX",
+     "net": 3.8162
+    },
+    "d13": {
+     "symbol": "BILL-13W",
+     "net": 4.1712
+    },
+    "d52": {
+     "symbol": "BILL-52W",
+     "net": 4.5656
+    }
    }
   },
-  "sc_trust": {
-   "same": {
-    "symbol": "FSIXX",
-    "net": 2.291
-   },
-   "next": {
-    "symbol": "FSIXX",
-    "net": 2.291
-   },
-   "w13": {
-    "symbol": "BILL-13W",
-    "net": 2.5042
-   },
-   "w52": {
-    "symbol": "BILL-52W",
-    "net": 2.741
-   }
+  "cutoffs": {
+   "FSIXX": "16:00",
+   "TTTXX": "14:30",
+   "UTIXX": "15:00",
+   "TSTXX": "17:00",
+   "FISXX": "16:00",
+   "TFDXX": "17:00",
+   "FIGXX": "16:00",
+   "TMCXX": "15:00",
+   "FFTXX": "13:00",
+   "MCSXX": "13:00",
+   "FRSXX": "16:00",
+   "UTPXX": "15:00",
+   "FTFXX": "13:00",
+   "SGOV": "16:00",
+   "BIL": "16:00",
+   "USFR": "16:00"
   },
-  "fl_trust": {
-   "same": {
-    "symbol": "FSIXX",
-    "net": 2.291
-   },
-   "next": {
-    "symbol": "BIL",
-    "net": 2.291
-   },
-   "w13": {
-    "symbol": "BILL-13W",
-    "net": 2.5042
-   },
-   "w52": {
-    "symbol": "BILL-52W",
-    "net": 2.741
-   }
-  },
-  "foundation": {
-   "same": {
-    "symbol": "FSIXX",
-    "net": 3.8162
-   },
-   "next": {
-    "symbol": "BIL",
-    "net": 3.8162
-   },
-   "w13": {
-    "symbol": "BILL-13W",
-    "net": 4.1712
-   },
-   "w52": {
-    "symbol": "BILL-52W",
-    "net": 4.5656
-   }
+  "early_seen": [
+   "2026-11-27"
+  ],
+  "muni": {
+   "sc": "green",
+   "fl": "green"
   }
- },
- "muni": {
-  "sc": "green",
-  "fl": "green"
  }
 }

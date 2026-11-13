@@ -1,7 +1,9 @@
 {
- "updated": "Fri 11/13/2026 4:07 PM ET",
+ "updated": "Fri 11/13/2026 4:31 PM ET",
  "run_date": "2026-11-13",
- "first_run": false,
+ "first_run": true,
+ "compared_with": null,
+ "dated_start": "2026-11-16",
  "entities": [
   {
    "key": "sc_partner",
@@ -32,14 +34,9 @@
    "sub": "T+1 liquidity, no maturity to match"
   },
   {
-   "key": "w13",
-   "name": "Dated inside 13 weeks",
-   "sub": "Payment date within 13 weeks"
-  },
-  {
-   "key": "w52",
-   "name": "Dated inside 52 weeks",
-   "sub": "Payment date within 52 weeks"
+   "key": "dated",
+   "name": "By your date",
+   "sub": "Cash needed on a date you pick"
   }
  ],
  "tax": {
@@ -65,7 +62,7 @@
    "availability": "Brokerage",
    "risk_tier": 1,
    "fed_taxable_share": 1.0,
-   "sc_taxable_share": 0.0,
+   "sc_taxable_share": 0.004086,
    "same_day": true,
    "cutoff_buy": "Until NAV strike (4:00 p.m. ET)",
    "cutoff_sell": "same",
@@ -73,6 +70,7 @@
    "settlement_note": "Same day for wire redemptions received before the strike; confirm with Merrill",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": "Fidelity 2025 percentage of income from U.S. Government securities — prior-year proxy",
    "merrill_eligibility": "Brokerage",
    "yields": {
     "merrill": {
@@ -87,6 +85,8 @@
    "stale": false,
    "cutoff": {
     "time": "16:00",
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
@@ -97,15 +97,20 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.291,
-    "sc_trust": 2.291,
+    "sc_partner": 2.2902,
+    "sc_trust": 2.2902,
     "fl_trust": 2.291,
     "foundation": 3.8162
    },
    "timing": {
-    "cutoff": "4:00 p.m. ET today",
+    "cutoff": "4:00 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
     "cash": "today if ordered by 4:00 p.m. ET; otherwise Mon 11/16"
-   }
+   },
+   "can_recommend": true,
+   "columns": [
+    "same",
+    "next"
+   ]
   },
   {
    "symbol": "TTTXX",
@@ -115,7 +120,7 @@
    "availability": "Brokerage",
    "risk_tier": 1,
    "fed_taxable_share": 1.0,
-   "sc_taxable_share": 0.0,
+   "sc_taxable_share": 0.048,
    "same_day": true,
    "cutoff_buy": "2:30 p.m. ET (2:00 around holidays)",
    "cutoff_sell": "same",
@@ -123,6 +128,7 @@
    "settlement_note": "Same day; purchase wire by Fed wire close 6:45 p.m.",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": "BlackRock Liquidity Funds 2025 tax letter (income from Federal Obligations) — prior-year proxy",
    "merrill_eligibility": "Brokerage, IAP",
    "yields": {
     "merrill": {
@@ -142,6 +148,8 @@
    "stale": false,
    "cutoff": {
     "time": "14:30",
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": "14:30",
     "sell": "14:30",
     "early_time": "14:00",
@@ -154,15 +162,20 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.2851,
-    "sc_trust": 2.2851,
+    "sc_partner": 2.2755,
+    "sc_trust": 2.2755,
     "fl_trust": 2.2851,
     "foundation": 3.8063
    },
    "timing": {
-    "cutoff": "2:30 p.m. ET today",
+    "cutoff": "2:30 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
     "cash": "today if ordered by 2:30 p.m. ET; otherwise Mon 11/16"
-   }
+   },
+   "can_recommend": true,
+   "columns": [
+    "same",
+    "next"
+   ]
   },
   {
    "symbol": "UTIXX",
@@ -180,6 +193,7 @@
    "settlement_note": "3:00–4:00 orders price today, settle next business day",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": "build-brief estimate — not verified against a sponsor tax letter",
    "merrill_eligibility": "Brokerage",
    "yields": {
     "merrill": {
@@ -199,6 +213,8 @@
    "stale": false,
    "cutoff": {
     "time": "15:00",
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": "15:00",
     "sell": "15:00",
     "early_time": null,
@@ -217,9 +233,14 @@
     "foundation": 3.7866
    },
    "timing": {
-    "cutoff": "3:00 p.m. ET today",
+    "cutoff": "3:00 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
     "cash": "today if ordered by 3:00 p.m. ET; otherwise Mon 11/16"
-   }
+   },
+   "can_recommend": true,
+   "columns": [
+    "same",
+    "next"
+   ]
   },
   {
    "symbol": "GOTXX",
@@ -237,6 +258,7 @@
    "settlement_note": "ask Merrill",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": "build-brief estimate — not verified against a sponsor tax letter",
    "merrill_eligibility": "Brokerage, IAP",
    "yields": {
     "merrill": {
@@ -251,6 +273,8 @@
    "stale": false,
    "cutoff": {
     "time": null,
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
@@ -269,7 +293,12 @@
    "timing": {
     "cutoff": "not verified — ask Merrill",
     "cash": "same day only if Merrill confirms the cutoff; otherwise Mon 11/16"
-   }
+   },
+   "can_recommend": true,
+   "columns": [
+    "same",
+    "next"
+   ]
   },
   {
    "symbol": "TSTXX",
@@ -279,7 +308,7 @@
    "availability": "Brokerage",
    "risk_tier": 2,
    "fed_taxable_share": 1.0,
-   "sc_taxable_share": 0.5,
+   "sc_taxable_share": 0.4963,
    "same_day": true,
    "cutoff_buy": "5:00 p.m. ET",
    "cutoff_sell": "5:00 p.m. ET",
@@ -287,6 +316,7 @@
    "settlement_note": "Same day; wire by 6:45",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": "BlackRock Liquidity Funds 2025 tax letter (income from Federal Obligations) — prior-year proxy",
    "merrill_eligibility": "Brokerage, IAP",
    "yields": {
     "merrill": {
@@ -306,6 +336,8 @@
    "stale": false,
    "cutoff": {
     "time": "17:00",
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": "17:00",
     "sell": "17:00",
     "early_time": null,
@@ -318,15 +350,20 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.1563,
-    "sc_trust": 2.1563,
+    "sc_partner": 2.157,
+    "sc_trust": 2.157,
     "fl_trust": 2.2555,
     "foundation": 3.757
    },
    "timing": {
-    "cutoff": "5:00 p.m. ET today",
+    "cutoff": "5:00 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
     "cash": "today if ordered by 5:00 p.m. ET; otherwise Mon 11/16"
-   }
+   },
+   "can_recommend": true,
+   "columns": [
+    "same",
+    "next"
+   ]
   },
   {
    "symbol": "FISXX",
@@ -336,7 +373,7 @@
    "availability": "Brokerage",
    "risk_tier": 2,
    "fed_taxable_share": 1.0,
-   "sc_taxable_share": 0.5,
+   "sc_taxable_share": 0.394699,
    "same_day": true,
    "cutoff_buy": "Until NAV strike (4:00/5:00 p.m.)",
    "cutoff_sell": "same",
@@ -344,6 +381,7 @@
    "settlement_note": "Same day for wire redemptions before the strike",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": "Fidelity 2025 percentage of income from U.S. Government securities — prior-year proxy",
    "merrill_eligibility": "Brokerage",
    "yields": {
     "merrill": {
@@ -358,6 +396,8 @@
    "stale": false,
    "cutoff": {
     "time": "16:00",
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
@@ -368,25 +408,30 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.1619,
-    "sc_trust": 2.1619,
+    "sc_partner": 2.1829,
+    "sc_trust": 2.1829,
     "fl_trust": 2.2614,
     "foundation": 3.7669
    },
    "timing": {
-    "cutoff": "4:00 p.m. ET today",
+    "cutoff": "4:00 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
     "cash": "today if ordered by 4:00 p.m. ET; otherwise Mon 11/16"
-   }
+   },
+   "can_recommend": true,
+   "columns": [
+    "same",
+    "next"
+   ]
   },
   {
    "symbol": "TFFXX",
-   "name": "BlackRock Select Treasury Based Liquidity Fund – Institutional Class",
+   "name": "BlackRock Select Treasury Based Liquidity Fund – Institutional",
    "category": "fund",
    "type": "Treasury + Treasury repo",
    "availability": "Brokerage",
    "risk_tier": 2,
    "fed_taxable_share": 1.0,
-   "sc_taxable_share": 0.5,
+   "sc_taxable_share": 0.0814,
    "same_day": true,
    "cutoff_buy": "not verified",
    "cutoff_sell": "not verified",
@@ -394,6 +439,7 @@
    "settlement_note": "",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": "BlackRock Liquidity Funds 2025 tax letter (income from Federal Obligations) — prior-year proxy",
    "merrill_eligibility": "Brokerage, IAP",
    "yields": {
     "merrill": {
@@ -408,6 +454,8 @@
    "stale": false,
    "cutoff": {
     "time": null,
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
@@ -418,15 +466,20 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.145,
-    "sc_trust": 2.145,
+    "sc_partner": 2.2276,
+    "sc_trust": 2.2276,
     "fl_trust": 2.2437,
     "foundation": 3.7373
    },
    "timing": {
     "cutoff": "not verified — ask Merrill",
     "cash": "same day only if Merrill confirms the cutoff; otherwise Mon 11/16"
-   }
+   },
+   "can_recommend": true,
+   "columns": [
+    "same",
+    "next"
+   ]
   },
   {
    "symbol": "TFDXX",
@@ -436,7 +489,7 @@
    "availability": "Brokerage",
    "risk_tier": 3,
    "fed_taxable_share": 1.0,
-   "sc_taxable_share": 0.55,
+   "sc_taxable_share": 0.4648,
    "same_day": true,
    "cutoff_buy": "5:00 p.m. ET",
    "cutoff_sell": "5:00 p.m. ET",
@@ -444,6 +497,7 @@
    "settlement_note": "Same day",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": "BlackRock Liquidity Funds 2025 tax letter (income from Federal Obligations) — prior-year proxy",
    "merrill_eligibility": "Brokerage, IAP",
    "yields": {
     "merrill": {
@@ -463,6 +517,8 @@
    "stale": false,
    "cutoff": {
     "time": "17:00",
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": "17:00",
     "sell": "17:00",
     "early_time": null,
@@ -475,15 +531,20 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.1351,
-    "sc_trust": 2.1351,
+    "sc_partner": 2.1519,
+    "sc_trust": 2.1519,
     "fl_trust": 2.2437,
     "foundation": 3.7373
    },
    "timing": {
-    "cutoff": "5:00 p.m. ET today",
+    "cutoff": "5:00 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
     "cash": "today if ordered by 5:00 p.m. ET; otherwise Mon 11/16"
-   }
+   },
+   "can_recommend": true,
+   "columns": [
+    "same",
+    "next"
+   ]
   },
   {
    "symbol": "FIGXX",
@@ -493,7 +554,7 @@
    "availability": "Brokerage",
    "risk_tier": 3,
    "fed_taxable_share": 1.0,
-   "sc_taxable_share": 0.55,
+   "sc_taxable_share": 0.498926,
    "same_day": true,
    "cutoff_buy": "Until NAV strike (4:00/5:00 p.m.)",
    "cutoff_sell": "same",
@@ -501,6 +562,7 @@
    "settlement_note": "",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": "Fidelity 2025 percentage of income from U.S. Government securities — prior-year proxy",
    "merrill_eligibility": "Brokerage",
    "yields": {
     "merrill": {
@@ -515,6 +577,8 @@
    "stale": false,
    "cutoff": {
     "time": "16:00",
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
@@ -525,15 +589,20 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.1351,
-    "sc_trust": 2.1351,
+    "sc_partner": 2.1452,
+    "sc_trust": 2.1452,
     "fl_trust": 2.2437,
     "foundation": 3.7373
    },
    "timing": {
-    "cutoff": "4:00 p.m. ET today",
+    "cutoff": "4:00 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
     "cash": "today if ordered by 4:00 p.m. ET; otherwise Mon 11/16"
-   }
+   },
+   "can_recommend": true,
+   "columns": [
+    "same",
+    "next"
+   ]
   },
   {
    "symbol": "TOIXX",
@@ -551,6 +620,7 @@
    "settlement_note": "",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": "build-brief estimate — not verified against a sponsor tax letter",
    "merrill_eligibility": "Brokerage",
    "yields": {
     "merrill": {
@@ -565,6 +635,8 @@
    "stale": false,
    "cutoff": {
     "time": null,
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
@@ -583,7 +655,12 @@
    "timing": {
     "cutoff": "not verified — ask Merrill",
     "cash": "same day only if Merrill confirms the cutoff; otherwise Mon 11/16"
-   }
+   },
+   "can_recommend": true,
+   "columns": [
+    "same",
+    "next"
+   ]
   },
   {
    "symbol": "GOIXX",
@@ -601,6 +678,7 @@
    "settlement_note": "",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": "build-brief estimate — not verified against a sponsor tax letter",
    "merrill_eligibility": "Brokerage",
    "yields": {
     "merrill": {
@@ -615,6 +693,8 @@
    "stale": false,
    "cutoff": {
     "time": null,
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
@@ -633,7 +713,12 @@
    "timing": {
     "cutoff": "not verified — ask Merrill",
     "cash": "same day only if Merrill confirms the cutoff; otherwise Mon 11/16"
-   }
+   },
+   "can_recommend": true,
+   "columns": [
+    "same",
+    "next"
+   ]
   },
   {
    "symbol": "TMCXX",
@@ -643,7 +728,7 @@
    "availability": "Brokerage",
    "risk_tier": 4,
    "fed_taxable_share": 1.0,
-   "sc_taxable_share": 1.0,
+   "sc_taxable_share": 0.9889,
    "same_day": true,
    "cutoff_buy": "3:00 p.m. ET",
    "cutoff_sell": "3:00 p.m. ET",
@@ -651,6 +736,7 @@
    "settlement_note": "Floating NAV; liquidity fees possible",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": "BlackRock Liquidity Funds 2025 tax letter (income from Federal Obligations) — prior-year proxy",
    "merrill_eligibility": "Brokerage, IAP",
    "yields": {
     "merrill": {
@@ -670,6 +756,8 @@
    "stale": false,
    "cutoff": {
     "time": "15:00",
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": "15:00",
     "sell": "15:00",
     "early_time": null,
@@ -682,15 +770,20 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.1326,
-    "sc_trust": 2.1326,
+    "sc_partner": 2.1349,
+    "sc_trust": 2.1349,
     "fl_trust": 2.3384,
     "foundation": 3.8951
    },
    "timing": {
-    "cutoff": "3:00 p.m. ET today",
+    "cutoff": "3:00 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
     "cash": "today if ordered by 3:00 p.m. ET; otherwise Mon 11/16"
-   }
+   },
+   "can_recommend": false,
+   "columns": [
+    "same",
+    "next"
+   ]
   },
   {
    "symbol": "POIXX",
@@ -708,6 +801,7 @@
    "settlement_note": "Floating NAV; fees possible",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": "build-brief estimate — not verified against a sponsor tax letter",
    "merrill_eligibility": "Brokerage, IAP",
    "yields": {
     "merrill": {
@@ -722,6 +816,8 @@
    "stale": false,
    "cutoff": {
     "time": null,
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
@@ -740,7 +836,12 @@
    "timing": {
     "cutoff": "not verified — ask Merrill",
     "cash": "same day only if Merrill confirms the cutoff; otherwise Mon 11/16"
-   }
+   },
+   "can_recommend": false,
+   "columns": [
+    "same",
+    "next"
+   ]
   },
   {
    "symbol": "FFTXX",
@@ -758,6 +859,7 @@
    "settlement_note": "Treat as next-day; floating NAV; fees possible; check AMT paper",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": "build-brief estimate — not verified against a sponsor tax letter",
    "merrill_eligibility": "Brokerage",
    "yields": {
     "merrill": {
@@ -777,6 +879,8 @@
    "stale": false,
    "cutoff": {
     "time": "13:00",
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": "13:00",
     "sell": "13:00",
     "early_time": null,
@@ -795,9 +899,13 @@
     "foundation": 2.28
    },
    "timing": {
-    "cutoff": "1:00 p.m. ET today",
+    "cutoff": "1:00 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
     "cash": "same day only if ordered by 1:00 p.m. ET; otherwise Mon 11/16"
-   }
+   },
+   "can_recommend": true,
+   "columns": [
+    "next"
+   ]
   },
   {
    "symbol": "MCSXX",
@@ -815,6 +923,7 @@
    "settlement_note": "Floating NAV",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": "build-brief estimate — not verified against a sponsor tax letter",
    "merrill_eligibility": "Brokerage, IAP",
    "yields": {
     "merrill": {
@@ -834,6 +943,8 @@
    "stale": false,
    "cutoff": {
     "time": "13:00",
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": "14:30",
     "sell": "13:00",
     "early_time": null,
@@ -852,9 +963,13 @@
     "foundation": 2.17
    },
    "timing": {
-    "cutoff": "1:00 p.m. ET today",
+    "cutoff": "1:00 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
     "cash": "same day only if ordered by 1:00 p.m. ET; otherwise Mon 11/16"
-   }
+   },
+   "can_recommend": true,
+   "columns": [
+    "next"
+   ]
   },
   {
    "symbol": "FRSXX",
@@ -864,7 +979,7 @@
    "availability": "IAP only",
    "risk_tier": 1,
    "fed_taxable_share": 1.0,
-   "sc_taxable_share": 0.0,
+   "sc_taxable_share": 0.004086,
    "same_day": true,
    "cutoff_buy": "Until NAV strike",
    "cutoff_sell": "same",
@@ -872,6 +987,7 @@
    "settlement_note": "Advisory-program accounts only",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": "Fidelity 2025 percentage of income from U.S. Government securities — prior-year proxy",
    "merrill_eligibility": "IAP",
    "yields": {
     "merrill": {
@@ -886,6 +1002,8 @@
    "stale": false,
    "cutoff": {
     "time": "16:00",
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
@@ -896,15 +1014,20 @@
    "status": "excluded",
    "status_note": "IAP only — advisory-program accounts (iap_accounts is off)",
    "net": {
-    "sc_partner": 2.3147,
-    "sc_trust": 2.3147,
+    "sc_partner": 2.3139,
+    "sc_trust": 2.3139,
     "fl_trust": 2.3147,
     "foundation": 3.8557
    },
    "timing": {
-    "cutoff": "4:00 p.m. ET today",
+    "cutoff": "4:00 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
     "cash": "today if ordered by 4:00 p.m. ET; otherwise Mon 11/16"
-   }
+   },
+   "can_recommend": false,
+   "columns": [
+    "same",
+    "next"
+   ]
   },
   {
    "symbol": "UTPXX",
@@ -922,6 +1045,7 @@
    "settlement_note": "Advisory-program accounts only",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": "build-brief estimate — not verified against a sponsor tax letter",
    "merrill_eligibility": "IAP",
    "yields": {
     "merrill": {
@@ -941,6 +1065,8 @@
    "stale": false,
    "cutoff": {
     "time": "15:00",
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": "15:00",
     "sell": "15:00",
     "early_time": null,
@@ -959,9 +1085,14 @@
     "foundation": 3.8261
    },
    "timing": {
-    "cutoff": "3:00 p.m. ET today",
+    "cutoff": "3:00 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
     "cash": "today if ordered by 3:00 p.m. ET; otherwise Mon 11/16"
-   }
+   },
+   "can_recommend": false,
+   "columns": [
+    "same",
+    "next"
+   ]
   },
   {
    "symbol": "FTFXX",
@@ -979,6 +1110,7 @@
    "settlement_note": "Advisory-program accounts only",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": "build-brief estimate — not verified against a sponsor tax letter",
    "merrill_eligibility": "IAP",
    "yields": {
     "merrill": {
@@ -998,6 +1130,8 @@
    "stale": false,
    "cutoff": {
     "time": "13:00",
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": "13:00",
     "sell": "13:00",
     "early_time": null,
@@ -1016,9 +1150,13 @@
     "foundation": 2.33
    },
    "timing": {
-    "cutoff": "1:00 p.m. ET today",
+    "cutoff": "1:00 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
     "cash": "same day only if ordered by 1:00 p.m. ET; otherwise Mon 11/16"
-   }
+   },
+   "can_recommend": false,
+   "columns": [
+    "next"
+   ]
   },
   {
    "symbol": "BTFXX",
@@ -1028,7 +1166,7 @@
    "availability": "TMA sweep only",
    "risk_tier": 1,
    "fed_taxable_share": 1.0,
-   "sc_taxable_share": 0.0,
+   "sc_taxable_share": 0.048,
    "same_day": true,
    "cutoff_buy": "automatic sweep",
    "cutoff_sell": "automatic sweep",
@@ -1036,6 +1174,7 @@
    "settlement_note": "Bank-trustee / retirement accounts only",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": "BlackRock Liquidity Funds 2025 tax letter (income from Federal Obligations) — prior-year proxy",
    "merrill_eligibility": "Sweep only",
    "yields": {
     "merrill": {
@@ -1050,6 +1189,8 @@
    "stale": false,
    "cutoff": {
     "time": null,
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
@@ -1060,15 +1201,20 @@
    "status": "excluded",
    "status_note": "TMA sweep only — bank-trustee / retirement accounts; never ranked",
    "net": {
-    "sc_partner": 2.0483,
-    "sc_trust": 2.0483,
+    "sc_partner": 2.0397,
+    "sc_trust": 2.0397,
     "fl_trust": 2.0483,
     "foundation": 3.4119
    },
    "timing": {
     "cutoff": "automatic sweep",
     "cash": "same day (sweep)"
-   }
+   },
+   "can_recommend": false,
+   "columns": [
+    "same",
+    "next"
+   ]
   },
   {
    "symbol": "BFRXX",
@@ -1078,7 +1224,7 @@
    "availability": "TMA sweep only",
    "risk_tier": 3,
    "fed_taxable_share": 1.0,
-   "sc_taxable_share": 0.55,
+   "sc_taxable_share": 0.4648,
    "same_day": true,
    "cutoff_buy": "automatic sweep",
    "cutoff_sell": "automatic sweep",
@@ -1086,6 +1232,7 @@
    "settlement_note": "Bank-trustee / retirement accounts only",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": "BlackRock Liquidity Funds 2025 tax letter (income from Federal Obligations) — prior-year proxy",
    "merrill_eligibility": "Sweep only",
    "yields": {
     "merrill": {
@@ -1100,6 +1247,8 @@
    "stale": false,
    "cutoff": {
     "time": null,
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
@@ -1110,15 +1259,20 @@
    "status": "excluded",
    "status_note": "TMA sweep only — bank-trustee / retirement accounts; never ranked",
    "net": {
-    "sc_partner": 1.9097,
-    "sc_trust": 1.9097,
+    "sc_partner": 1.9248,
+    "sc_trust": 1.9248,
     "fl_trust": 2.0069,
     "foundation": 3.3429
    },
    "timing": {
     "cutoff": "automatic sweep",
     "cash": "same day (sweep)"
-   }
+   },
+   "can_recommend": false,
+   "columns": [
+    "same",
+    "next"
+   ]
   },
   {
    "symbol": "PD-100M",
@@ -1136,6 +1290,7 @@
    "settlement_note": "By instruction; posts next business day; tiers are per account, not aggregated; FDIC to $250,000.",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": null,
    "yields": {
     "merrill": {
      "y": 3.92,
@@ -1149,6 +1304,8 @@
    "stale": false,
    "cutoff": {
     "time": null,
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
@@ -1167,7 +1324,11 @@
    "timing": {
     "cutoff": "by instruction",
     "cash": "posts Mon 11/16"
-   }
+   },
+   "can_recommend": false,
+   "columns": [
+    "next"
+   ]
   },
   {
    "symbol": "PD-10M",
@@ -1185,6 +1346,7 @@
    "settlement_note": "By instruction; posts next business day; tiers are per account, not aggregated; FDIC to $250,000.",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": null,
    "yields": {
     "merrill": {
      "y": 3.87,
@@ -1198,6 +1360,8 @@
    "stale": false,
    "cutoff": {
     "time": null,
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
@@ -1216,7 +1380,11 @@
    "timing": {
     "cutoff": "by instruction",
     "cash": "posts Mon 11/16"
-   }
+   },
+   "can_recommend": false,
+   "columns": [
+    "next"
+   ]
   },
   {
    "symbol": "PD-5M",
@@ -1234,6 +1402,7 @@
    "settlement_note": "By instruction; posts next business day; tiers are per account, not aggregated; FDIC to $250,000.",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": null,
    "yields": {
     "merrill": {
      "y": 3.61,
@@ -1247,6 +1416,8 @@
    "stale": false,
    "cutoff": {
     "time": null,
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
@@ -1265,7 +1436,11 @@
    "timing": {
     "cutoff": "by instruction",
     "cash": "posts Mon 11/16"
-   }
+   },
+   "can_recommend": false,
+   "columns": [
+    "next"
+   ]
   },
   {
    "symbol": "PD-2.5M",
@@ -1283,6 +1458,7 @@
    "settlement_note": "By instruction; posts next business day; tiers are per account, not aggregated; FDIC to $250,000.",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": null,
    "yields": {
     "merrill": {
      "y": 3.51,
@@ -1296,6 +1472,8 @@
    "stale": false,
    "cutoff": {
     "time": null,
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
@@ -1314,7 +1492,11 @@
    "timing": {
     "cutoff": "by instruction",
     "cash": "posts Mon 11/16"
-   }
+   },
+   "can_recommend": false,
+   "columns": [
+    "next"
+   ]
   },
   {
    "symbol": "PD-<2.5M",
@@ -1332,6 +1514,7 @@
    "settlement_note": "By instruction; posts next business day; tiers are per account, not aggregated; FDIC to $250,000.",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": null,
    "yields": {
     "merrill": {
      "y": 3.15,
@@ -1345,6 +1528,8 @@
    "stale": false,
    "cutoff": {
     "time": null,
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
@@ -1363,7 +1548,11 @@
    "timing": {
     "cutoff": "by instruction",
     "cash": "posts Mon 11/16"
-   }
+   },
+   "can_recommend": false,
+   "columns": [
+    "next"
+   ]
   },
   {
    "symbol": "ISA",
@@ -1381,6 +1570,7 @@
    "settlement_note": "By instruction; posts next business day.",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": null,
    "yields": {
     "merrill": {
      "y": 2.06,
@@ -1394,6 +1584,8 @@
    "stale": false,
    "cutoff": {
     "time": null,
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
@@ -1412,7 +1604,11 @@
    "timing": {
     "cutoff": "by instruction",
     "cash": "posts Mon 11/16"
-   }
+   },
+   "can_recommend": true,
+   "columns": [
+    "next"
+   ]
   },
   {
    "symbol": "MLBDP-1",
@@ -1430,6 +1626,7 @@
    "settlement_note": "Automatic sweep.",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": null,
    "yields": {
     "merrill": {
      "y": 0.01,
@@ -1443,6 +1640,8 @@
    "stale": false,
    "cutoff": {
     "time": null,
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
@@ -1461,7 +1660,12 @@
    "timing": {
     "cutoff": "automatic sweep",
     "cash": "same day (sweep)"
-   }
+   },
+   "can_recommend": true,
+   "columns": [
+    "same",
+    "next"
+   ]
   },
   {
    "symbol": "MLBDP-4",
@@ -1479,6 +1683,7 @@
    "settlement_note": "Automatic sweep.",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": null,
    "yields": {
     "merrill": {
      "y": 0.15,
@@ -1492,6 +1697,8 @@
    "stale": false,
    "cutoff": {
     "time": null,
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
@@ -1510,7 +1717,12 @@
    "timing": {
     "cutoff": "automatic sweep",
     "cash": "same day (sweep)"
-   }
+   },
+   "can_recommend": true,
+   "columns": [
+    "same",
+    "next"
+   ]
   },
   {
    "symbol": "MLBDP-5",
@@ -1528,6 +1740,7 @@
    "settlement_note": "Automatic sweep; advisory-program accounts only.",
    "term_weeks": null,
    "expense_ratio": null,
+   "sc_share_source": null,
    "yields": {
     "merrill": {
      "y": 3.35,
@@ -1541,6 +1754,8 @@
    "stale": false,
    "cutoff": {
     "time": null,
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
@@ -1559,7 +1774,12 @@
    "timing": {
     "cutoff": "automatic sweep",
     "cash": "same day (sweep)"
-   }
+   },
+   "can_recommend": false,
+   "columns": [
+    "same",
+    "next"
+   ]
   },
   {
    "symbol": "SGOV",
@@ -1577,6 +1797,7 @@
    "settlement_note": "Trade any time during market hours (9:30–4:00 ET); cash T+1; price moves a few cents through the month as income accrues and is distributed; bid/ask ~0.01%.",
    "term_weeks": null,
    "expense_ratio": 0.09,
+   "sc_share_source": "build-brief estimate — not verified against a sponsor tax letter",
    "ytm": 4.03,
    "yields": {
     "sponsor": {
@@ -1591,6 +1812,8 @@
    "stale": false,
    "cutoff": {
     "time": "16:00",
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
@@ -1607,9 +1830,13 @@
     "foundation": 3.8063
    },
    "timing": {
-    "cutoff": "market hours 9:30 a.m.–4:00 p.m. ET",
-    "cash": "T+1 = Mon 11/16"
-   }
+    "cutoff": "market closed — next session Mon 11/16 9:30 a.m. ET",
+    "cash": "T+1 = Tue 11/17 (traded Mon 11/16)"
+   },
+   "can_recommend": true,
+   "columns": [
+    "next"
+   ]
   },
   {
    "symbol": "BIL",
@@ -1627,6 +1854,7 @@
    "settlement_note": "Trade any time during market hours (9:30–4:00 ET); cash T+1; price moves a few cents through the month as income accrues and is distributed; bid/ask ~0.01%.",
    "term_weeks": null,
    "expense_ratio": 0.1352,
+   "sc_share_source": "build-brief estimate — not verified against a sponsor tax letter",
    "ytm": 4.04,
    "yields": {
     "sponsor": {
@@ -1641,6 +1869,8 @@
    "stale": false,
    "cutoff": {
     "time": "16:00",
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
@@ -1657,9 +1887,13 @@
     "foundation": 3.8162
    },
    "timing": {
-    "cutoff": "market hours 9:30 a.m.–4:00 p.m. ET",
-    "cash": "T+1 = Mon 11/16"
-   }
+    "cutoff": "market closed — next session Mon 11/16 9:30 a.m. ET",
+    "cash": "T+1 = Tue 11/17 (traded Mon 11/16)"
+   },
+   "can_recommend": true,
+   "columns": [
+    "next"
+   ]
   },
   {
    "symbol": "USFR",
@@ -1677,6 +1911,7 @@
    "settlement_note": "Trade any time during market hours (9:30–4:00 ET); cash T+1; price moves a few cents through the month as income accrues and is distributed; bid/ask ~0.01%.",
    "term_weeks": null,
    "expense_ratio": 0.15,
+   "sc_share_source": "build-brief estimate — not verified against a sponsor tax letter",
    "yields": {},
    "gross": null,
    "gross_asof": null,
@@ -1684,6 +1919,8 @@
    "stale": false,
    "cutoff": {
     "time": "16:00",
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
@@ -1700,9 +1937,13 @@
     "foundation": null
    },
    "timing": {
-    "cutoff": "market hours 9:30 a.m.–4:00 p.m. ET",
-    "cash": "T+1 = Mon 11/16"
-   }
+    "cutoff": "market closed — next session Mon 11/16 9:30 a.m. ET",
+    "cash": "T+1 = Tue 11/17 (traded Mon 11/16)"
+   },
+   "can_recommend": false,
+   "columns": [
+    "next"
+   ]
   },
   {
    "symbol": "BILL-4W",
@@ -1720,6 +1961,7 @@
    "settlement_note": "Auction: noncompetitive bids close 11:00 a.m. ET on auction day (Merrill's deadline earlier); secondary market during trading hours; settles T+1; buy to hold to maturity.",
    "term_weeks": 4,
    "expense_ratio": null,
+   "sc_share_source": null,
    "bill_maturity": "2026-12-15",
    "bill_cusip": "912797WF0",
    "auctions": [
@@ -1737,22 +1979,24 @@
     "treasury": {
      "y": 4.02,
      "asof": "2026-11-13",
-     "source": "Treasury daily bill rates (coupon-equivalent)"
+     "source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)"
     }
    },
    "gross": 4.02,
    "gross_asof": "2026-11-13",
-   "gross_source": "Treasury daily bill rates (coupon-equivalent)",
+   "gross_source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)",
    "stale": false,
    "cutoff": {
     "time": null,
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
     "source": null,
     "refreshed_today": null
    },
-   "caveat": null,
+   "caveat": "Indicative yield, not a purchase quote — price it with the desk.",
    "status": "ranked",
    "status_note": null,
    "net": {
@@ -1763,8 +2007,10 @@
    },
    "timing": {
     "cutoff": "next auction to be announced Tue 11/17; secondary: during trading hours",
-    "cash": "next auction settles Tue 11/24; secondary buy or sell settles T+1 = Mon 11/16"
-   }
+    "cash": "next auction settles Tue 11/24; secondary bought today settles T+1 = Mon 11/16"
+   },
+   "can_recommend": true,
+   "columns": []
   },
   {
    "symbol": "BILL-6W",
@@ -1782,6 +2028,7 @@
    "settlement_note": "Auction: noncompetitive bids close 11:00 a.m. ET on auction day (Merrill's deadline earlier); secondary market during trading hours; settles T+1; buy to hold to maturity.",
    "term_weeks": 6,
    "expense_ratio": null,
+   "sc_share_source": null,
    "bill_maturity": "2026-12-24",
    "bill_cusip": "912797TC1",
    "auctions": [
@@ -1808,22 +2055,24 @@
     "treasury": {
      "y": 4.08,
      "asof": "2026-11-13",
-     "source": "Treasury daily bill rates (coupon-equivalent)"
+     "source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)"
     }
    },
    "gross": 4.08,
    "gross_asof": "2026-11-13",
-   "gross_source": "Treasury daily bill rates (coupon-equivalent)",
+   "gross_source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)",
    "stale": false,
    "cutoff": {
     "time": null,
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
     "source": null,
     "refreshed_today": null
    },
-   "caveat": null,
+   "caveat": "Indicative yield, not a purchase quote — price it with the desk.",
    "status": "ranked",
    "status_note": null,
    "net": {
@@ -1834,8 +2083,10 @@
    },
    "timing": {
     "cutoff": "next auction closes Tue 11/17 11:00 a.m. ET (noncompetitive); secondary: during trading hours",
-    "cash": "auction settles Thu 11/19; secondary buy or sell settles T+1 = Mon 11/16"
-   }
+    "cash": "auction settles Thu 11/19; secondary bought today settles T+1 = Mon 11/16"
+   },
+   "can_recommend": true,
+   "columns": []
   },
   {
    "symbol": "BILL-8W",
@@ -1853,6 +2104,7 @@
    "settlement_note": "Auction: noncompetitive bids close 11:00 a.m. ET on auction day (Merrill's deadline earlier); secondary market during trading hours; settles T+1; buy to hold to maturity.",
    "term_weeks": 8,
    "expense_ratio": null,
+   "sc_share_source": null,
    "bill_maturity": "2027-01-12",
    "bill_cusip": "912797WP8",
    "auctions": [
@@ -1870,22 +2122,24 @@
     "treasury": {
      "y": 4.16,
      "asof": "2026-11-13",
-     "source": "Treasury daily bill rates (coupon-equivalent)"
+     "source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)"
     }
    },
    "gross": 4.16,
    "gross_asof": "2026-11-13",
-   "gross_source": "Treasury daily bill rates (coupon-equivalent)",
+   "gross_source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)",
    "stale": false,
    "cutoff": {
     "time": null,
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
     "source": null,
     "refreshed_today": null
    },
-   "caveat": null,
+   "caveat": "Indicative yield, not a purchase quote — price it with the desk.",
    "status": "ranked",
    "status_note": null,
    "net": {
@@ -1896,8 +2150,10 @@
    },
    "timing": {
     "cutoff": "next auction to be announced Tue 11/17; secondary: during trading hours",
-    "cash": "next auction settles Tue 11/24; secondary buy or sell settles T+1 = Mon 11/16"
-   }
+    "cash": "next auction settles Tue 11/24; secondary bought today settles T+1 = Mon 11/16"
+   },
+   "can_recommend": true,
+   "columns": []
   },
   {
    "symbol": "BILL-13W",
@@ -1915,6 +2171,7 @@
    "settlement_note": "Auction: noncompetitive bids close 11:00 a.m. ET on auction day (Merrill's deadline earlier); secondary market during trading hours; settles T+1; buy to hold to maturity.",
    "term_weeks": 13,
    "expense_ratio": null,
+   "sc_share_source": null,
    "bill_maturity": "2027-02-11",
    "bill_cusip": "912797WB9",
    "auctions": [
@@ -1941,22 +2198,24 @@
     "treasury": {
      "y": 4.23,
      "asof": "2026-11-13",
-     "source": "Treasury daily bill rates (coupon-equivalent)"
+     "source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)"
     }
    },
    "gross": 4.23,
    "gross_asof": "2026-11-13",
-   "gross_source": "Treasury daily bill rates (coupon-equivalent)",
+   "gross_source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)",
    "stale": false,
    "cutoff": {
     "time": null,
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
     "source": null,
     "refreshed_today": null
    },
-   "caveat": null,
+   "caveat": "Indicative yield, not a purchase quote — price it with the desk.",
    "status": "ranked",
    "status_note": null,
    "net": {
@@ -1967,8 +2226,10 @@
    },
    "timing": {
     "cutoff": "next auction closes Mon 11/16 11:00 a.m. ET (noncompetitive); secondary: during trading hours",
-    "cash": "auction settles Thu 11/19; secondary buy or sell settles T+1 = Mon 11/16"
-   }
+    "cash": "auction settles Thu 11/19; secondary bought today settles T+1 = Mon 11/16"
+   },
+   "can_recommend": true,
+   "columns": []
   },
   {
    "symbol": "BILL-17W",
@@ -1986,6 +2247,7 @@
    "settlement_note": "Auction: noncompetitive bids close 11:00 a.m. ET on auction day (Merrill's deadline earlier); secondary market during trading hours; settles T+1; buy to hold to maturity.",
    "term_weeks": 17,
    "expense_ratio": null,
+   "sc_share_source": null,
    "bill_maturity": "2027-03-16",
    "bill_cusip": "912797XH5",
    "auctions": [
@@ -2003,22 +2265,24 @@
     "treasury": {
      "y": 4.34,
      "asof": "2026-11-13",
-     "source": "Treasury daily bill rates (coupon-equivalent)"
+     "source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)"
     }
    },
    "gross": 4.34,
    "gross_asof": "2026-11-13",
-   "gross_source": "Treasury daily bill rates (coupon-equivalent)",
+   "gross_source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)",
    "stale": false,
    "cutoff": {
     "time": null,
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
     "source": null,
     "refreshed_today": null
    },
-   "caveat": null,
+   "caveat": "Indicative yield, not a purchase quote — price it with the desk.",
    "status": "ranked",
    "status_note": null,
    "net": {
@@ -2029,8 +2293,10 @@
    },
    "timing": {
     "cutoff": "next auction to be announced Tue 11/17; secondary: during trading hours",
-    "cash": "next auction settles Tue 11/24; secondary buy or sell settles T+1 = Mon 11/16"
-   }
+    "cash": "next auction settles Tue 11/24; secondary bought today settles T+1 = Mon 11/16"
+   },
+   "can_recommend": true,
+   "columns": []
   },
   {
    "symbol": "BILL-26W",
@@ -2048,6 +2314,7 @@
    "settlement_note": "Auction: noncompetitive bids close 11:00 a.m. ET on auction day (Merrill's deadline earlier); secondary market during trading hours; settles T+1; buy to hold to maturity.",
    "term_weeks": 26,
    "expense_ratio": null,
+   "sc_share_source": null,
    "bill_maturity": "2027-05-13",
    "bill_cusip": "912797UX3",
    "auctions": [
@@ -2074,22 +2341,24 @@
     "treasury": {
      "y": 4.47,
      "asof": "2026-11-13",
-     "source": "Treasury daily bill rates (coupon-equivalent)"
+     "source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)"
     }
    },
    "gross": 4.47,
    "gross_asof": "2026-11-13",
-   "gross_source": "Treasury daily bill rates (coupon-equivalent)",
+   "gross_source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)",
    "stale": false,
    "cutoff": {
     "time": null,
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
     "source": null,
     "refreshed_today": null
    },
-   "caveat": null,
+   "caveat": "Indicative yield, not a purchase quote — price it with the desk.",
    "status": "ranked",
    "status_note": null,
    "net": {
@@ -2100,8 +2369,10 @@
    },
    "timing": {
     "cutoff": "next auction closes Mon 11/16 11:00 a.m. ET (noncompetitive); secondary: during trading hours",
-    "cash": "auction settles Thu 11/19; secondary buy or sell settles T+1 = Mon 11/16"
-   }
+    "cash": "auction settles Thu 11/19; secondary bought today settles T+1 = Mon 11/16"
+   },
+   "can_recommend": true,
+   "columns": []
   },
   {
    "symbol": "BILL-52W",
@@ -2119,6 +2390,7 @@
    "settlement_note": "Auction: noncompetitive bids close 11:00 a.m. ET on auction day (Merrill's deadline earlier); secondary market during trading hours; settles T+1; buy to hold to maturity.",
    "term_weeks": 52,
    "expense_ratio": null,
+   "sc_share_source": null,
    "bill_maturity": "2027-10-28",
    "bill_cusip": "912797WT0",
    "auctions": [
@@ -2136,22 +2408,24 @@
     "treasury": {
      "y": 4.63,
      "asof": "2026-11-13",
-     "source": "Treasury daily bill rates (coupon-equivalent)"
+     "source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)"
     }
    },
    "gross": 4.63,
    "gross_asof": "2026-11-13",
-   "gross_source": "Treasury daily bill rates (coupon-equivalent)",
+   "gross_source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)",
    "stale": false,
    "cutoff": {
     "time": null,
+    "merrill_time": null,
+    "merrill_verified": null,
     "buy": null,
     "sell": null,
     "early_time": null,
     "source": null,
     "refreshed_today": null
    },
-   "caveat": null,
+   "caveat": "Indicative yield, not a purchase quote — price it with the desk.",
    "status": "ranked",
    "status_note": null,
    "net": {
@@ -2162,638 +2436,192 @@
    },
    "timing": {
     "cutoff": "next auction to be announced Thu 11/19; secondary: during trading hours",
-    "cash": "next auction settles Fri 11/27; secondary buy or sell settles T+1 = Mon 11/16"
-   }
+    "cash": "next auction settles Fri 11/27; secondary bought today settles T+1 = Mon 11/16"
+   },
+   "can_recommend": true,
+   "columns": []
   }
  ],
  "ranking": {
   "sc_partner": {
-   "same": {
-    "ranked": [
-     "FSIXX",
-     "TTTXX",
-     "UTIXX",
-     "GOTXX",
-     "FISXX",
-     "TSTXX",
-     "TFFXX",
-     "FIGXX",
-     "TFDXX",
-     "TMCXX",
-     "POIXX",
-     "GOIXX",
-     "TOIXX",
-     "MLBDP-4",
-     "MLBDP-1"
-    ],
-    "unranked": [
-     "FRSXX",
-     "UTPXX",
-     "BTFXX",
-     "BFRXX",
-     "MLBDP-5"
-    ],
-    "recommended": "FSIXX"
-   },
-   "next": {
-    "ranked": [
-     "FSIXX",
-     "BIL",
-     "TTTXX",
-     "SGOV",
-     "UTIXX",
-     "GOTXX",
-     "FISXX",
-     "FFTXX",
-     "TSTXX",
-     "TFFXX",
-     "FIGXX",
-     "TFDXX",
-     "TMCXX",
-     "POIXX",
-     "PD-100M",
-     "GOIXX",
-     "PD-10M",
-     "TOIXX",
-     "MCSXX",
-     "PD-5M",
-     "PD-2.5M",
-     "PD-<2.5M",
-     "ISA",
-     "MLBDP-4",
-     "MLBDP-1"
-    ],
-    "unranked": [
-     "FRSXX",
-     "UTPXX",
-     "FTFXX",
-     "BTFXX",
-     "BFRXX",
-     "MLBDP-5",
-     "USFR"
-    ],
-    "recommended": "FSIXX"
-   },
-   "w13": {
-    "ranked": [
-     "BILL-13W",
-     "BILL-8W",
-     "BILL-6W",
-     "BILL-4W",
-     "FSIXX",
-     "BIL",
-     "TTTXX",
-     "SGOV",
-     "UTIXX",
-     "GOTXX",
-     "FISXX",
-     "FFTXX",
-     "TSTXX",
-     "TFFXX",
-     "FIGXX",
-     "TFDXX",
-     "TMCXX",
-     "POIXX",
-     "PD-100M",
-     "GOIXX",
-     "PD-10M",
-     "TOIXX",
-     "MCSXX",
-     "PD-5M",
-     "PD-2.5M",
-     "PD-<2.5M",
-     "ISA",
-     "MLBDP-4",
-     "MLBDP-1"
-    ],
-    "unranked": [
-     "FRSXX",
-     "UTPXX",
-     "FTFXX",
-     "BTFXX",
-     "BFRXX",
-     "MLBDP-5",
-     "USFR"
-    ],
-    "recommended": "BILL-13W"
-   },
-   "w52": {
-    "ranked": [
-     "BILL-52W",
-     "BILL-26W",
-     "BILL-17W",
-     "BILL-13W",
-     "BILL-8W",
-     "BILL-6W",
-     "BILL-4W",
-     "FSIXX",
-     "BIL",
-     "TTTXX",
-     "SGOV",
-     "UTIXX",
-     "GOTXX",
-     "FISXX",
-     "FFTXX",
-     "TSTXX",
-     "TFFXX",
-     "FIGXX",
-     "TFDXX",
-     "TMCXX",
-     "POIXX",
-     "PD-100M",
-     "GOIXX",
-     "PD-10M",
-     "TOIXX",
-     "MCSXX",
-     "PD-5M",
-     "PD-2.5M",
-     "PD-<2.5M",
-     "ISA",
-     "MLBDP-4",
-     "MLBDP-1"
-    ],
-    "unranked": [
-     "FRSXX",
-     "UTPXX",
-     "FTFXX",
-     "BTFXX",
-     "BFRXX",
-     "MLBDP-5",
-     "USFR"
-    ],
-    "recommended": "BILL-52W"
-   }
+   "order": [
+    "BILL-52W",
+    "BILL-26W",
+    "BILL-17W",
+    "BILL-13W",
+    "BILL-8W",
+    "BILL-6W",
+    "BILL-4W",
+    "FSIXX",
+    "BIL",
+    "TTTXX",
+    "SGOV",
+    "UTIXX",
+    "GOTXX",
+    "TFFXX",
+    "FISXX",
+    "TSTXX",
+    "FFTXX",
+    "TFDXX",
+    "FIGXX",
+    "TMCXX",
+    "POIXX",
+    "PD-100M",
+    "GOIXX",
+    "PD-10M",
+    "TOIXX",
+    "MCSXX",
+    "PD-5M",
+    "PD-2.5M",
+    "PD-<2.5M",
+    "ISA",
+    "MLBDP-4",
+    "MLBDP-1"
+   ],
+   "unranked": [
+    "FRSXX",
+    "UTPXX",
+    "FTFXX",
+    "BTFXX",
+    "BFRXX",
+    "MLBDP-5",
+    "USFR"
+   ]
   },
   "sc_trust": {
-   "same": {
-    "ranked": [
-     "FSIXX",
-     "TTTXX",
-     "UTIXX",
-     "GOTXX",
-     "FISXX",
-     "TSTXX",
-     "TFFXX",
-     "FIGXX",
-     "TFDXX",
-     "TMCXX",
-     "POIXX",
-     "GOIXX",
-     "TOIXX",
-     "MLBDP-4",
-     "MLBDP-1"
-    ],
-    "unranked": [
-     "FRSXX",
-     "UTPXX",
-     "BTFXX",
-     "BFRXX",
-     "MLBDP-5"
-    ],
-    "recommended": "FSIXX"
-   },
-   "next": {
-    "ranked": [
-     "FSIXX",
-     "BIL",
-     "TTTXX",
-     "SGOV",
-     "UTIXX",
-     "GOTXX",
-     "FISXX",
-     "FFTXX",
-     "TSTXX",
-     "TFFXX",
-     "FIGXX",
-     "TFDXX",
-     "TMCXX",
-     "POIXX",
-     "PD-100M",
-     "GOIXX",
-     "PD-10M",
-     "TOIXX",
-     "MCSXX",
-     "PD-5M",
-     "PD-2.5M",
-     "PD-<2.5M",
-     "ISA",
-     "MLBDP-4",
-     "MLBDP-1"
-    ],
-    "unranked": [
-     "FRSXX",
-     "UTPXX",
-     "FTFXX",
-     "BTFXX",
-     "BFRXX",
-     "MLBDP-5",
-     "USFR"
-    ],
-    "recommended": "FSIXX"
-   },
-   "w13": {
-    "ranked": [
-     "BILL-13W",
-     "BILL-8W",
-     "BILL-6W",
-     "BILL-4W",
-     "FSIXX",
-     "BIL",
-     "TTTXX",
-     "SGOV",
-     "UTIXX",
-     "GOTXX",
-     "FISXX",
-     "FFTXX",
-     "TSTXX",
-     "TFFXX",
-     "FIGXX",
-     "TFDXX",
-     "TMCXX",
-     "POIXX",
-     "PD-100M",
-     "GOIXX",
-     "PD-10M",
-     "TOIXX",
-     "MCSXX",
-     "PD-5M",
-     "PD-2.5M",
-     "PD-<2.5M",
-     "ISA",
-     "MLBDP-4",
-     "MLBDP-1"
-    ],
-    "unranked": [
-     "FRSXX",
-     "UTPXX",
-     "FTFXX",
-     "BTFXX",
-     "BFRXX",
-     "MLBDP-5",
-     "USFR"
-    ],
-    "recommended": "BILL-13W"
-   },
-   "w52": {
-    "ranked": [
-     "BILL-52W",
-     "BILL-26W",
-     "BILL-17W",
-     "BILL-13W",
-     "BILL-8W",
-     "BILL-6W",
-     "BILL-4W",
-     "FSIXX",
-     "BIL",
-     "TTTXX",
-     "SGOV",
-     "UTIXX",
-     "GOTXX",
-     "FISXX",
-     "FFTXX",
-     "TSTXX",
-     "TFFXX",
-     "FIGXX",
-     "TFDXX",
-     "TMCXX",
-     "POIXX",
-     "PD-100M",
-     "GOIXX",
-     "PD-10M",
-     "TOIXX",
-     "MCSXX",
-     "PD-5M",
-     "PD-2.5M",
-     "PD-<2.5M",
-     "ISA",
-     "MLBDP-4",
-     "MLBDP-1"
-    ],
-    "unranked": [
-     "FRSXX",
-     "UTPXX",
-     "FTFXX",
-     "BTFXX",
-     "BFRXX",
-     "MLBDP-5",
-     "USFR"
-    ],
-    "recommended": "BILL-52W"
-   }
+   "order": [
+    "BILL-52W",
+    "BILL-26W",
+    "BILL-17W",
+    "BILL-13W",
+    "BILL-8W",
+    "BILL-6W",
+    "BILL-4W",
+    "FSIXX",
+    "BIL",
+    "TTTXX",
+    "SGOV",
+    "UTIXX",
+    "GOTXX",
+    "TFFXX",
+    "FISXX",
+    "TSTXX",
+    "FFTXX",
+    "TFDXX",
+    "FIGXX",
+    "TMCXX",
+    "POIXX",
+    "PD-100M",
+    "GOIXX",
+    "PD-10M",
+    "TOIXX",
+    "MCSXX",
+    "PD-5M",
+    "PD-2.5M",
+    "PD-<2.5M",
+    "ISA",
+    "MLBDP-4",
+    "MLBDP-1"
+   ],
+   "unranked": [
+    "FRSXX",
+    "UTPXX",
+    "FTFXX",
+    "BTFXX",
+    "BFRXX",
+    "MLBDP-5",
+    "USFR"
+   ]
   },
   "fl_trust": {
-   "same": {
-    "ranked": [
-     "TMCXX",
-     "POIXX",
-     "FSIXX",
-     "TTTXX",
-     "UTIXX",
-     "FISXX",
-     "TSTXX",
-     "GOTXX",
-     "TFFXX",
-     "FIGXX",
-     "TFDXX",
-     "TOIXX",
-     "GOIXX",
-     "MLBDP-4",
-     "MLBDP-1"
-    ],
-    "unranked": [
-     "FRSXX",
-     "UTPXX",
-     "BTFXX",
-     "BFRXX",
-     "MLBDP-5"
-    ],
-    "recommended": "FSIXX"
-   },
-   "next": {
-    "ranked": [
-     "TMCXX",
-     "POIXX",
-     "PD-100M",
-     "BIL",
-     "FSIXX",
-     "PD-10M",
-     "SGOV",
-     "TTTXX",
-     "FFTXX",
-     "UTIXX",
-     "FISXX",
-     "TSTXX",
-     "GOTXX",
-     "TFFXX",
-     "FIGXX",
-     "TFDXX",
-     "TOIXX",
-     "GOIXX",
-     "MCSXX",
-     "PD-5M",
-     "PD-2.5M",
-     "PD-<2.5M",
-     "ISA",
-     "MLBDP-4",
-     "MLBDP-1"
-    ],
-    "unranked": [
-     "FRSXX",
-     "UTPXX",
-     "FTFXX",
-     "BTFXX",
-     "BFRXX",
-     "MLBDP-5",
-     "USFR"
-    ],
-    "recommended": "BIL"
-   },
-   "w13": {
-    "ranked": [
-     "BILL-13W",
-     "BILL-8W",
-     "BILL-6W",
-     "BILL-4W",
-     "TMCXX",
-     "POIXX",
-     "PD-100M",
-     "BIL",
-     "FSIXX",
-     "PD-10M",
-     "SGOV",
-     "TTTXX",
-     "FFTXX",
-     "UTIXX",
-     "FISXX",
-     "TSTXX",
-     "GOTXX",
-     "TFFXX",
-     "FIGXX",
-     "TFDXX",
-     "TOIXX",
-     "GOIXX",
-     "MCSXX",
-     "PD-5M",
-     "PD-2.5M",
-     "PD-<2.5M",
-     "ISA",
-     "MLBDP-4",
-     "MLBDP-1"
-    ],
-    "unranked": [
-     "FRSXX",
-     "UTPXX",
-     "FTFXX",
-     "BTFXX",
-     "BFRXX",
-     "MLBDP-5",
-     "USFR"
-    ],
-    "recommended": "BILL-13W"
-   },
-   "w52": {
-    "ranked": [
-     "BILL-52W",
-     "BILL-26W",
-     "BILL-17W",
-     "BILL-13W",
-     "BILL-8W",
-     "BILL-6W",
-     "BILL-4W",
-     "TMCXX",
-     "POIXX",
-     "PD-100M",
-     "BIL",
-     "FSIXX",
-     "PD-10M",
-     "SGOV",
-     "TTTXX",
-     "FFTXX",
-     "UTIXX",
-     "FISXX",
-     "TSTXX",
-     "GOTXX",
-     "TFFXX",
-     "FIGXX",
-     "TFDXX",
-     "TOIXX",
-     "GOIXX",
-     "MCSXX",
-     "PD-5M",
-     "PD-2.5M",
-     "PD-<2.5M",
-     "ISA",
-     "MLBDP-4",
-     "MLBDP-1"
-    ],
-    "unranked": [
-     "FRSXX",
-     "UTPXX",
-     "FTFXX",
-     "BTFXX",
-     "BFRXX",
-     "MLBDP-5",
-     "USFR"
-    ],
-    "recommended": "BILL-52W"
-   }
+   "order": [
+    "BILL-52W",
+    "BILL-26W",
+    "BILL-17W",
+    "BILL-13W",
+    "BILL-8W",
+    "BILL-6W",
+    "BILL-4W",
+    "TMCXX",
+    "POIXX",
+    "PD-100M",
+    "FSIXX",
+    "TTTXX",
+    "PD-10M",
+    "BIL",
+    "SGOV",
+    "FFTXX",
+    "UTIXX",
+    "TSTXX",
+    "FISXX",
+    "GOTXX",
+    "TFFXX",
+    "TFDXX",
+    "FIGXX",
+    "TOIXX",
+    "GOIXX",
+    "MCSXX",
+    "PD-5M",
+    "PD-2.5M",
+    "PD-<2.5M",
+    "ISA",
+    "MLBDP-4",
+    "MLBDP-1"
+   ],
+   "unranked": [
+    "FRSXX",
+    "UTPXX",
+    "FTFXX",
+    "BTFXX",
+    "BFRXX",
+    "MLBDP-5",
+    "USFR"
+   ]
   },
   "foundation": {
-   "same": {
-    "ranked": [
-     "TMCXX",
-     "POIXX",
-     "FSIXX",
-     "TTTXX",
-     "UTIXX",
-     "FISXX",
-     "TSTXX",
-     "GOTXX",
-     "TFFXX",
-     "FIGXX",
-     "TFDXX",
-     "TOIXX",
-     "GOIXX",
-     "MLBDP-4",
-     "MLBDP-1"
-    ],
-    "unranked": [
-     "FRSXX",
-     "UTPXX",
-     "BTFXX",
-     "BFRXX",
-     "MLBDP-5"
-    ],
-    "recommended": "FSIXX"
-   },
-   "next": {
-    "ranked": [
-     "TMCXX",
-     "POIXX",
-     "PD-100M",
-     "BIL",
-     "FSIXX",
-     "PD-10M",
-     "SGOV",
-     "TTTXX",
-     "UTIXX",
-     "FISXX",
-     "TSTXX",
-     "GOTXX",
-     "TFFXX",
-     "FIGXX",
-     "TFDXX",
-     "TOIXX",
-     "GOIXX",
-     "PD-5M",
-     "PD-2.5M",
-     "PD-<2.5M",
-     "FFTXX",
-     "MCSXX",
-     "ISA",
-     "MLBDP-4",
-     "MLBDP-1"
-    ],
-    "unranked": [
-     "FRSXX",
-     "UTPXX",
-     "FTFXX",
-     "BTFXX",
-     "BFRXX",
-     "MLBDP-5",
-     "USFR"
-    ],
-    "recommended": "BIL"
-   },
-   "w13": {
-    "ranked": [
-     "BILL-13W",
-     "BILL-8W",
-     "BILL-6W",
-     "BILL-4W",
-     "TMCXX",
-     "POIXX",
-     "PD-100M",
-     "BIL",
-     "FSIXX",
-     "PD-10M",
-     "SGOV",
-     "TTTXX",
-     "UTIXX",
-     "FISXX",
-     "TSTXX",
-     "GOTXX",
-     "TFFXX",
-     "FIGXX",
-     "TFDXX",
-     "TOIXX",
-     "GOIXX",
-     "PD-5M",
-     "PD-2.5M",
-     "PD-<2.5M",
-     "FFTXX",
-     "MCSXX",
-     "ISA",
-     "MLBDP-4",
-     "MLBDP-1"
-    ],
-    "unranked": [
-     "FRSXX",
-     "UTPXX",
-     "FTFXX",
-     "BTFXX",
-     "BFRXX",
-     "MLBDP-5",
-     "USFR"
-    ],
-    "recommended": "BILL-13W"
-   },
-   "w52": {
-    "ranked": [
-     "BILL-52W",
-     "BILL-26W",
-     "BILL-17W",
-     "BILL-13W",
-     "BILL-8W",
-     "BILL-6W",
-     "BILL-4W",
-     "TMCXX",
-     "POIXX",
-     "PD-100M",
-     "BIL",
-     "FSIXX",
-     "PD-10M",
-     "SGOV",
-     "TTTXX",
-     "UTIXX",
-     "FISXX",
-     "TSTXX",
-     "GOTXX",
-     "TFFXX",
-     "FIGXX",
-     "TFDXX",
-     "TOIXX",
-     "GOIXX",
-     "PD-5M",
-     "PD-2.5M",
-     "PD-<2.5M",
-     "FFTXX",
-     "MCSXX",
-     "ISA",
-     "MLBDP-4",
-     "MLBDP-1"
-    ],
-    "unranked": [
-     "FRSXX",
-     "UTPXX",
-     "FTFXX",
-     "BTFXX",
-     "BFRXX",
-     "MLBDP-5",
-     "USFR"
-    ],
-    "recommended": "BILL-52W"
-   }
+   "order": [
+    "BILL-52W",
+    "BILL-26W",
+    "BILL-17W",
+    "BILL-13W",
+    "BILL-8W",
+    "BILL-6W",
+    "BILL-4W",
+    "TMCXX",
+    "POIXX",
+    "PD-100M",
+    "FSIXX",
+    "PD-10M",
+    "BIL",
+    "TTTXX",
+    "SGOV",
+    "UTIXX",
+    "FISXX",
+    "TSTXX",
+    "GOTXX",
+    "TFFXX",
+    "TFDXX",
+    "FIGXX",
+    "TOIXX",
+    "GOIXX",
+    "PD-5M",
+    "PD-2.5M",
+    "PD-<2.5M",
+    "FFTXX",
+    "MCSXX",
+    "ISA",
+    "MLBDP-4",
+    "MLBDP-1"
+   ],
+   "unranked": [
+    "FRSXX",
+    "UTPXX",
+    "FTFXX",
+    "BTFXX",
+    "BFRXX",
+    "MLBDP-5",
+    "USFR"
+   ]
   }
  },
  "watch": [
@@ -2861,19 +2689,19 @@
    "name": "BlackRock daily yields",
    "ok": true,
    "asof": "2026-11-13",
-   "note": "fetched today"
+   "note": "5 of 5 updated today"
   },
   {
    "name": "Federated Hermes daily yields",
-   "ok": true,
-   "asof": "2026-11-13",
-   "note": "fetched today"
+   "ok": false,
+   "asof": null,
+   "note": "0 of 4 updated today — UTIXX, FFTXX, UTPXX, FTFXX not updated, last good value kept"
   },
   {
    "name": "ETF sponsor pages",
    "ok": true,
    "asof": "2026-11-13",
-   "note": "fetched today"
+   "note": "2 of 2 updated today"
   },
   {
    "name": "BlackRock fact sheets (cutoffs)",

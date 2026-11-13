@@ -29,7 +29,7 @@
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--panel); color: var(--ink); font-family: "Archivo", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; font-variation-settings: "wdth" 100; font-size: 15px; line-height: 1.45; -webkit-font-smoothing: antialiased; }
-  .wrap { max-width: 1440px; margin: 0 auto; padding: 24px 16px 56px; }
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 24px 16px 56px; }
   .switch { display: grid; grid-template-columns: repeat(auto-fit, minmax(104px, 1fr)); gap: 8px; margin-bottom: 18px; max-width: 760px; }
   .switch button { min-width: 0; font: inherit; font-weight: 500; padding: 11px 8px 10px; border-radius: 10px; border: 1.5px solid var(--tile-edge); background: var(--tile); color: var(--ink-2); cursor: pointer; text-align: center; line-height: 1.2; }
   .switch button[aria-selected="true"] { color: var(--ink); border-color: var(--ink); }
@@ -54,7 +54,7 @@
   .since b { color: var(--ink); font-weight: 500; }
   .cols { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 16px; align-items: start; }
   @media (min-width: 720px) { .cols { grid-template-columns: 1fr 1fr; } }
-  @media (min-width: 1240px) { .cols { grid-template-columns: repeat(4, 1fr); } }
+  @media (min-width: 1100px) { .cols { grid-template-columns: repeat(3, 1fr); } }
   .col { min-width: 0; }
   .col > h2 { margin: 0; font-size: 19px; font-weight: 700; font-variation-settings: "wdth" 87.5; line-height: 1.2; }
   .col > .sub { margin: 0 0 8px; color: var(--ink-2); font-size: 13.5px; }
@@ -110,6 +110,16 @@
   .log .day p.sum { margin: 0 0 8px; color: var(--ink-2); font-size: 14px; }
   .log .item { display: grid; grid-template-columns: 92px 1fr; gap: 10px; padding: 6px 0; border-top: 1px solid var(--tile-edge); font-size: 14px; }
   .log .item .b { color: var(--ink-3); font-size: 12px; padding-top: 3px; }
+  .tag { display: inline-block; font-size: 11.5px; color: var(--ink-3); border: 1px solid var(--tile-edge); border-radius: 5px; padding: 0 5px; white-space: nowrap; }
+  .rec .note { margin: 8px 0 0; padding-top: 8px; border-top: 1px dashed var(--tile-edge); font-size: 13px; color: var(--ink-2); }
+  .rec .note + .note { border-top: 0; padding-top: 0; margin-top: 4px; }
+  .rec .note b { color: var(--ink); }
+  .picker { background: var(--tile); border: 1.5px solid var(--tile-edge); border-radius: 10px; padding: 10px 12px; margin-bottom: 8px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
+  .picker label { font-size: 13.5px; font-weight: 500; }
+  .picker input { font: inherit; font-size: 16px; padding: 5px 8px; border-radius: 7px; border: 1.5px solid var(--tile-edge); background: var(--panel); color: var(--ink); color-scheme: light dark; min-width: 0; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font: inherit; font-size: 12.5px; padding: 4px 9px; border-radius: 999px; border: 1.5px solid var(--tile-edge); background: transparent; color: var(--ink-2); cursor: pointer; }
+  .chip[aria-pressed="true"] { border-color: var(--ink); color: var(--ink); }
   .legend { margin: 14px 0 0; color: var(--ink-2); font-size: 13.5px; display: flex; flex-wrap: wrap; gap: 6px 18px; }
 </style>
 </head>
@@ -151,103 +161,177 @@
   const clock = hhmm => { const h = +hhmm.slice(0, 2); return `${(h + 11) % 12 + 1}:${hhmm.slice(3)} ${h < 12 ? "a.m." : "p.m."} ET`; };
   const dur = m => m >= 60 ? `${Math.floor(m / 60)}h ${m % 60}m` : `${m}m`;
 
-  // ---- live timing for one row: {cutoff, cash, live, liveClass}
+  // ---- live timing for one row: {cutoff, cash, live, liveClass, tag}
+  const hm = n => String(Math.floor(n.mins / 60)).padStart(2, "0") + ":" + String(n.mins % 60).padStart(2, "0");
+  function fundCutoff(r, tradeIso) {            // the binding same-day time for a fund on a given trade date, or null
+    const c = r.cutoff || {}; let t = c.merrill_time || c.time, flag = "";
+    if (!t) return null;
+    if (EARLY[tradeIso]) { if (c.early_time) { t = t < c.early_time ? t : c.early_time; flag = " (early close)"; } else flag = " (early close — confirm)"; }
+    return { t, flag, merrill: !!c.merrill_time };
+  }
   function timing(r) {
     const n = nowET(), today = D(n.iso), open = isBD(today);
     const trade = open ? today : nextBD(today), day = open ? "today" : md(trade), t1 = md(nextBD(trade));
-    const early = EARLY[isoOf(trade)], c = r.cutoff || {};
-    if (r.category === "bill") {
-      const stamp = n.iso + " " + String(Math.floor(n.mins / 60)).padStart(2, "0") + ":" + String(n.mins % 60).padStart(2, "0");
+    const early = EARLY[isoOf(trade)];
+    if (r.category === "bill" || r.category === "etf") {
+      // a market trade placed after the close happens next session and settles the business day after that
+      const close = r.category === "etf" ? "16:00" : (early ? early.time : "17:00");
+      const mtrade = open && hm(n) >= close ? nextBD(today) : trade, rolled = isoOf(mtrade) !== n.iso;
+      const when = rolled ? md(mtrade) : "today", settle = md(nextBD(mtrade));
+      if (r.category === "etf") return rolled ? { cutoff: `market closed — next session ${md(mtrade)} 9:30 a.m. ET`, cash: `T+1 = ${settle} (traded ${md(mtrade)})` }
+        : { cutoff: "market hours 9:30 a.m.–4:00 p.m. ET" + (early ? " (early close — confirm)" : ""), cash: `T+1 = ${settle}`, live: `closes in ${dur(960 - n.mins)}`, liveClass: 960 - n.mins <= 60 ? "soon" : "ok" };
+      const sec = `secondary bought ${when} settles T+1 = ${settle}`, stamp = n.iso + " " + hm(n);
       const a = (r.auctions || []).find(x => x.close_date ? (x.close_date + " " + x.nc_time) > stamp : x.issue > n.iso);
-      if (a && a.close_date) return { cutoff: `next auction closes ${md(D(a.close_date))} ${clock(a.nc_time)} (noncompetitive); secondary: during trading hours`, cash: `auction settles ${md(D(a.issue))}; secondary buy or sell settles T+1 = ${t1}` };
-      if (a) return { cutoff: `next auction ${a.announced ? "to be announced " + md(D(a.announced)) : "not yet announced"}; secondary: during trading hours`, cash: `next auction settles ${md(D(a.issue))}; secondary buy or sell settles T+1 = ${t1}` };
-      return { cutoff: "no auction announced; secondary: during trading hours", cash: `secondary buy or sell settles T+1 = ${t1}` };
+      if (a && a.close_date) return { cutoff: `next auction closes ${md(D(a.close_date))} ${clock(a.nc_time)} (noncompetitive); secondary: during trading hours`, cash: `auction settles ${md(D(a.issue))}; ${sec}` };
+      if (a) return { cutoff: `next auction ${a.announced ? "to be announced " + md(D(a.announced)) : "not yet announced"}; secondary: during trading hours`, cash: `next auction settles ${md(D(a.issue))}; ${sec}` };
+      return { cutoff: "no auction announced; secondary: during trading hours", cash: sec };
     }
-    if (r.category === "etf") return { cutoff: "market hours 9:30 a.m.–4:00 p.m. ET" + (early ? " (early close — confirm)" : ""), cash: `T+1 = ${t1}` };
     if (r.category === "deposit") return r.same_day ? { cutoff: "automatic sweep", cash: "same day (sweep)" } : { cutoff: "by instruction", cash: `posts ${t1}` };
     if (/sweep/.test(r.cutoff_buy || "")) return { cutoff: "automatic sweep", cash: "same day (sweep)" };
-    let t = c.time;
-    if (!t) return { cutoff: "not verified — ask Merrill", cash: `same day only if Merrill confirms the cutoff; otherwise ${t1}` };
-    let flag = "";
-    if (early) { if (c.early_time) { t = t < c.early_time ? t : c.early_time; flag = " (early close)"; } else flag = " (early close — confirm)"; }
-    const out = { cutoff: `${clock(t)} ${day}${flag}`, cash: r.same_day ? `${day} if ordered by ${clock(t)}; otherwise ${t1}` : `same day only if ordered by ${clock(t)}; otherwise ${t1}` };
+    const fc = fundCutoff(r, isoOf(trade));
+    if (!fc) return { cutoff: "not verified — ask Merrill", cash: `same day only if Merrill confirms the cutoff; otherwise ${t1}` };
+    const t = fc.t;
+    const out = { cutoff: `${clock(t)} ${day}${fc.flag}`, tag: fc.merrill ? "Merrill cutoff" : "fund deadline — Merrill's not verified",
+      cash: r.same_day ? `${day} if ordered by ${clock(t)}; otherwise ${t1}` : `same day only if ordered by ${clock(t)}; otherwise ${t1}` };
     if (open) {
       const left = mins(t) - n.mins;
       if (left > 0) { out.live = `cutoff in ${dur(left)}`; out.liveClass = left <= 60 ? "soon" : "ok"; }
-      else { out.live = `cutoff passed — next business day (${t1})`; out.liveClass = "past"; out.cash = `${t1} (today's cutoff has passed)`; }
+      else { out.live = "cutoff passed"; out.liveClass = "past"; out.cash = `${t1} (today's cutoff has passed)`; }
     } else { out.live = "market closed today"; out.liveClass = "past"; }
     return out;
   }
 
   const pct = v => v == null ? "—" : v.toFixed(2) + "%";
-  const money = net => net == null ? "—" : "$" + Math.round(net * 10000).toLocaleString("en-US");
+  const usd = v => "$" + Math.round(v).toLocaleString("en-US");
+  const money = net => net == null ? "—" : usd(net * 10000);
   const tier = r => `<span class="tier t${r.risk_tier}" title="Risk tier ${r.risk_tier}: ${esc(TIER[r.risk_tier])}">${r.risk_tier}</span>`;
-  const grossLine = r => r.gross == null ? "no data" : r.category === "etf" ? `${pct(r.gross)} 30-day SEC${r.ytm != null ? ` · YTM ${pct(r.ytm)}` : ""}` : `${pct(r.gross)} gross`;
+  const grossLine = r => r.gross == null ? "no data" : r.category === "etf" ? `${pct(r.gross)} 30-day SEC${r.ytm != null ? ` · YTM ${pct(r.ytm)}` : ""}` : r.category === "bill" ? `${pct(r.gross)} indicative` : `${pct(r.gross)} gross`;
+  const kv = t => `<dl class="kv"><dt>Cutoff</dt><dd>${esc(t.cutoff)}${t.live ? ` · <span class="live ${t.liveClass}">${esc(t.live)}</span>` : ""}${t.tag ? ` <span class="tag">${esc(t.tag)}</span>` : ""}</dd><dt>Cash</dt><dd>${esc(t.cash)}</dd></dl>`;
 
   function details(r) {
     const ys = Object.keys(r.yields || {}).map(k => `${esc(r.yields[k].source)}: <b>${pct(r.yields[k].y)}</b> as of ${mdy(r.yields[k].asof)}${r.gross_source === r.yields[k].source ? " (used for ranking)" : ""}`);
-    const c = r.cutoff || {}, f = n => (n * 100).toFixed(0) + "%";
+    const c = r.cutoff || {}, f = n => (n * 100).toFixed(2).replace(/\.?0+$/, "") + "%";
     return `<div class="more">
       <p><b>${esc(r.name)}</b> · ${esc(r.type)} · ${esc(r.availability)}${r.expense_ratio != null ? ` · expense ${r.expense_ratio}%` : ""}</p>
       ${ys.length ? `<p>${ys.join("<br>")}</p>` : "<p>No yield fetched — nothing is estimated.</p>"}
       ${r.ytm != null ? `<p>Average yield to maturity (forward-looking): <b>${pct(r.ytm)}</b></p>` : ""}
-      ${r.category === "bill" && r.bill_maturity ? `<p>Quoted bill matures ${mdy(r.bill_maturity)}${r.bill_cusip ? " · CUSIP " + esc(r.bill_cusip) : ""}</p>` : ""}
-      <p>Buy cutoff: ${esc(c.buy ? clock(c.buy) : r.cutoff_buy)} · Sell cutoff: ${esc(c.sell ? clock(c.sell) : r.cutoff_sell)}${c.t1_time ? ` · orders until ${clock(c.t1_time)} price today, settle next business day` : ""} · NAV strike: ${esc(r.nav_strike || "—")}</p>
-      ${c.source ? `<p>Cutoff source: ${esc(c.source)}</p>` : ""}
+      ${r.category === "bill" && r.bill_maturity ? `<p>Quoted bill matures ${mdy(r.bill_maturity)}${r.bill_cusip ? " · CUSIP " + esc(r.bill_cusip) : ""}. The yield is Treasury's indicative closing rate for that bill, not a price you can buy at.</p>` : ""}
+      <p>Fund buy cutoff: ${esc(c.buy ? clock(c.buy) : r.cutoff_buy)} · sell cutoff: ${esc(c.sell ? clock(c.sell) : r.cutoff_sell)}${c.t1_time ? ` · orders until ${clock(c.t1_time)} price today, settle next business day` : ""} · NAV strike: ${esc(r.nav_strike || "—")}</p>
+      ${r.category === "fund" ? `<p>Merrill's own cutoff: ${c.merrill_time ? `<b>${clock(c.merrill_time)}</b>${c.merrill_verified ? " (verified " + esc(c.merrill_verified) + ")" : ""}` : "not verified — a broker's deadline can be earlier than the fund's; confirm before counting on same-day cash"}</p>` : ""}
+      ${c.source ? `<p>Fund cutoff source: ${esc(c.source)}</p>` : ""}
       ${r.settlement_note ? `<p>${esc(r.settlement_note)}</p>` : ""}
-      <p>Taxable share — federal ${f(r.fed_taxable_share)}, South Carolina ${f(r.sc_taxable_share)}</p>
+      <p>Taxable share — federal ${f(r.fed_taxable_share)}, South Carolina ${f(r.sc_taxable_share)}${r.sc_share_source ? ` (${esc(r.sc_share_source)})` : ""}</p>
       ${r.status_note ? `<p>${esc(r.status_note)}</p>` : ""}
     </div>`;
   }
 
-  function rowHtml(r, col, rank) {
-    const t = timing(r), key = col + "|" + r.symbol, grey = r.status !== "ranked";
+  // extra = {l2, grey, greyNote} lets the dated column supply its own second line
+  function rowHtml(r, col, rank, extra) {
+    extra = extra || {};
+    const t = timing(r), key = col + "|" + r.symbol, grey = r.status !== "ranked" || extra.grey;
     return `<div class="row${grey ? " grey" : ""}${openRows.has(key) ? " open" : ""}" data-key="${esc(key)}" tabindex="0" role="button" aria-expanded="${openRows.has(key)}">
       <div class="rk">${rank || ""}</div>
       <div>
         <div class="l1"><span><span class="sym">${esc(r.symbol)}</span>${tier(r)}</span><span class="net">${grey ? "" : pct(r.net[entity]) + " <small>net</small>"}</span></div>
-        <div class="l2">${grey ? esc(r.status_note || "not ranked") + (r.gross != null ? ` · ${pct(r.gross)} gross` : "") : `${grossLine(r)} · ${money(r.net[entity])} per $1M${r.stale ? ` · <span class="live soon">yield as of ${mdy(r.gross_asof)} — stale</span>` : ""}`}</div>
-        ${grey ? "" : `<dl class="kv"><dt>Cutoff</dt><dd>${esc(t.cutoff)}${t.live ? ` · <span class="live ${t.liveClass}">${esc(t.live)}</span>` : ""}</dd><dt>Cash</dt><dd>${esc(t.cash)}</dd></dl>`}
+        <div class="l2">${grey ? esc(extra.greyNote || r.status_note || "not ranked") + (r.gross != null ? ` · ${grossLine(r)}` : "") : `${extra.l2 || `${grossLine(r)} · ${money(r.net[entity])} per $1M`}${r.stale ? ` · <span class="live soon">yield as of ${mdy(r.gross_asof)} — stale</span>` : ""}`}</div>
+        ${grey ? "" : kv(t)}
         ${!grey && r.caveat ? `<p class="cav">${esc(r.caveat)}</p>` : ""}
         ${details(r)}
       </div></div>`;
   }
 
+  function listHtml(c, rows, greyRows) {
+    const all = openCols.has(c.key), SHOW = 6, shown = all ? rows : rows.slice(0, SHOW), rest = rows.length - SHOW + greyRows.length;
+    return `<div class="list">${shown.join("")}${all && greyRows.length ? `<div class="grouplab">Not ranked</div>` + greyRows.join("") : ""}
+      ${rest > 0 || all ? `<button class="allbtn" data-col="${c.key}">${all ? "Show fewer" : `Show all ${rows.length + greyRows.length}`}</button>` : ""}</div>`;
+  }
+  function recCard(rec, label, moneyLine, notes) {
+    if (!rec) return `<div class="rec none">No eligible instrument with a fetched yield.</div>`;
+    return `<div class="rec"><div class="lab">${esc(label)}</div>
+      <div class="top"><span><span class="sym">${esc(rec.symbol)}</span>${tier(rec)}</span><span class="net">${pct(rec.net[entity])} <small>net</small></span></div>
+      <p class="nm">${esc(rec.name)}</p><p class="money">${moneyLine}</p>${kv(timing(rec))}${(notes || []).map(x => `<p class="note">${x}</p>`).join("")}</div>`;
+  }
+  const stdMoney = r => `<b>${money(r.net[entity])}</b> a year per $1M after tax · ${grossLine(r)}`;
+
   function colHtml(c) {
-    const rk = ((DATA.ranking || {})[entity] || {})[c.key] || { ranked: [], unranked: [] };
-    const rec = ROWS[rk.recommended], all = openCols.has(c.key), SHOW = 6;
-    let recHtml = `<div class="rec none">No eligible instrument with a fetched yield.</div>`;
-    if (rec) {
-      const t = timing(rec);
-      recHtml = `<div class="rec"><div class="lab">Recommended</div>
-        <div class="top"><span><span class="sym">${esc(rec.symbol)}</span>${tier(rec)}</span><span class="net">${pct(rec.net[entity])} <small>net</small></span></div>
-        <p class="nm">${esc(rec.name)}</p>
-        <p class="money"><b>${money(rec.net[entity])}</b> a year per $1M after tax · ${grossLine(rec)}</p>
-        <dl class="kv"><dt>Cutoff</dt><dd>${esc(t.cutoff)}${t.live ? ` · <span class="live ${t.liveClass}">${esc(t.live)}</span>` : ""}</dd><dt>Cash</dt><dd>${esc(t.cash)}</dd></dl></div>`;
+    if (c.key === "dated") return datedHtml(c);
+    const rk = (DATA.ranking || {})[entity] || { order: [], unranked: [] };
+    const rows = rk.order.map(s => ROWS[s]).filter(r => r.columns.includes(c.key));
+    const grey = rk.unranked.map(s => ROWS[s]).filter(r => r.columns.includes(c.key));
+    const elig = rows.filter(r => r.can_recommend);
+    let rec = elig[0], label = "Recommended", notes = [];
+    if (c.key === "same" && rec) {
+      // once a fund's cutoff has passed it can no longer deliver cash today: move to the best fund still open
+      const n = nowET();
+      if (isBD(D(n.iso))) {
+        const openNow = r => { const fc = fundCutoff(r, n.iso); return fc && mins(fc.t) > n.mins; };
+        const timed = elig.filter(r => fundCutoff(r, n.iso)), live = timed.find(openNow);
+        if (live && live !== rec && fundCutoff(rec, n.iso)) {
+          notes.push(`${timed.slice(0, timed.indexOf(live)).map(r => `${esc(r.symbol)} (${pct(r.net[entity])})`).join(", ")} ranked higher but ${timed.indexOf(live) > 1 ? "their cutoffs have" : "its cutoff has"} passed for today.`);
+          rec = live; label = "Recommended now";
+        } else if (!live && timed.length) { label = `Today's cutoffs have passed — for ${md(nextBD(D(n.iso)))}`; }
+      }
     }
-    const ranked = rk.ranked.map((s, i) => rowHtml(ROWS[s], c.key, i + 1));
-    const shown = all ? ranked : ranked.slice(0, SHOW);
-    const rest = ranked.length - SHOW + rk.unranked.length;
-    return `<section class="col" id="col-${c.key}"><h2>${esc(c.name)}</h2><p class="sub">${esc(c.sub)}</p>${recHtml}
-      <div class="list">${shown.join("")}
-        ${all && rk.unranked.length ? `<div class="grouplab">Not ranked</div>` + rk.unranked.map(s => rowHtml(ROWS[s], c.key, "")).join("") : ""}
-        ${rest > 0 || all ? `<button class="allbtn" data-col="${c.key}">${all ? "Show fewer" : `Show all ${ranked.length + rk.unranked.length}`}</button>` : ""}
-      </div></section>`;
+    return `<section class="col" id="col-${c.key}"><h2>${esc(c.name)}</h2><p class="sub">${esc(c.sub)}</p>${recCard(rec, label, rec ? stdMoney(rec) : "", notes)}
+      ${listHtml(c, rows.map((r, i) => rowHtml(r, c.key, i + 1)), grey.map(r => rowHtml(r, c.key, "")))}</section>`;
+  }
+
+  // ---- "By your date": net dollars per $1M from the next business day to the chosen date.  Mirrors dated_rank() in the engine.
+  function datedStart() { const t = D(nowET().iso); return nextBD(isBD(t) ? t : nextBD(t)); }
+  function defaultDate() { return isoOf(new Date(D(nowET().iso).getTime() + 91 * 864e5)); }
+  function needDate() { const s = store.get("cy-date"); return s && /^\d{4}-\d\d-\d\d$/.test(s) && D(s) > datedStart() ? s : defaultDate(); }
+  function datedRank(needIso) {
+    const start = datedStart(), need = D(needIso), total = Math.round((need - start) / 864e5);
+    const rk = (DATA.ranking || {})[entity] || { order: [] }, all = rk.order.map(s => ROWS[s]);
+    const same = all.find(r => r.columns.includes("same") && r.can_recommend), R = same ? same.net[entity] : 0;
+    const list = [], late = [];
+    all.forEach((r, i) => {
+      if (r.category === "bill") {
+        if (!r.bill_maturity) return;
+        const m = D(r.bill_maturity);
+        if (m > need) { late.push(r); return; }
+        if (m <= start) return;
+        const d = Math.round((m - start) / 864e5);
+        list.push({ r, i, d, gap: total - d, inc: Math.round((r.net[entity] * d + R * (total - d)) / 365 * 10000) });
+      } else if (r.columns.includes("next")) list.push({ r, i, inc: Math.round(r.net[entity] * total / 365 * 10000) });
+    });
+    list.sort((a, b) => b.inc - a.inc || a.i - b.i);
+    return { start, need, total, same, R, list, late };
+  }
+  function datedHtml(c) {
+    const need = needDate(), k = datedRank(need), today = D(nowET().iso);
+    const chips = [4, 8, 13, 26, 52].map(w => { const v = isoOf(new Date(today.getTime() + w * 7 * 864e5)); return `<button class="chip" data-date="${v}" aria-pressed="${v === need}">${w} wk</button>`; }).join("");
+    const picker = `<div class="picker"><label for="need">Cash needed on</label><input type="date" id="need" value="${need}" min="${isoOf(new Date(k.start.getTime() + 864e5))}" max="${isoOf(new Date(today.getTime() + 366 * 864e5))}"><div class="chips">${chips}</div></div>`;
+    const line = x => `<b>${usd(x.inc)}</b> net per $1M by ${md(k.need)}` + (x.d != null ? (x.gap > 0 ? ` · matures ${md(D(x.r.bill_maturity))}, then ${x.gap} day${x.gap > 1 ? "s" : ""} at ${k.same ? esc(k.same.symbol) + " " + pct(k.R) : "0%"}` : ` · matures ${md(D(x.r.bill_maturity))}`) : "") + ` · ${grossLine(x.r)}`;
+    const top = k.list.find(x => x.r.can_recommend), notes = [];
+    if (top && top.d != null) {
+      // roll-or-lock: the reinvestment rate at which a shorter bill, rolled, would match the recommended bill
+      k.list.filter(x => x.d != null && x.d < top.d).sort((a, b) => b.d - a.d).slice(0, 2).forEach(s => {
+        const be = (top.r.gross * top.d - s.r.gross * s.d) / (top.d - s.d);
+        notes.push(`Rolling instead: the ${esc(s.r.name.toLowerCase())} (${pct(s.r.gross)}) only matches if you can reinvest at <b>${pct(be)}</b> or better from ${md(D(s.r.bill_maturity))} to ${md(D(top.r.bill_maturity))}.`);
+      });
+    }
+    if (top && k.late.length) notes.push(`Not offered: ${k.late.map(r => `${esc(r.name.toLowerCase())} (matures ${mdy(r.bill_maturity)})`).join(", ")} — after your date.`);
+    if (top && top.d != null) notes.push("Bills between these maturities trade in the secondary market — ask the desk for one maturing nearer your date.");
+    const rows = k.list.map((x, i) => rowHtml(x.r, c.key, i + 1, { l2: line(x) }));
+    const grey = k.late.map(r => rowHtml(r, c.key, "", { grey: true, greyNote: `matures ${mdy(r.bill_maturity)} — after your date` }));
+    return `<section class="col" id="col-${c.key}"><h2>${esc(c.name)}</h2><p class="sub">${k.total} days from ${md(k.start)} to ${md(k.need)}; bills must mature on or before it</p>${picker}
+      ${recCard(top && top.r, "Recommended", top ? line(top) : "", notes)}${listHtml(c, rows, grey)}</section>`;
   }
 
   function checksHtml() {
     const k = DATA.checks || {}, m = k.muni, p1 = v => (v * 100).toFixed(1) + "%";
-    const sc = entity !== "fl_trust", st = m ? (entity === "fl_trust" ? m.fl : entity === "foundation" ? "green" : m.sc) : "";
+    const st = m ? (entity === "fl_trust" ? m.fl : entity === "foundation" ? "green" : m.sc) : "";
     const muni = m ? `<div class="check"><i class="lamp ${st}"></i><h3>Muni test — FFTXX ÷ TTTXX</h3>
         <p><b>${p1(m.ratio)}</b> vs break-even <b>${p1(m.be_sc)}</b> (SC) / <b>${p1(m.be_fl)}</b> (FL)</p>
         <p>SC: ${m.sc === "green" ? "Treasury-only wins" : "FFTXX wins for sitting cash"} · FL: ${m.fl === "green" ? "Treasury-only wins" : "FFTXX wins for sitting cash"}${entity === "foundation" ? " · Foundation: taxable funds win by a wide margin" : ""}</p></div>`
       : `<div class="check"><i class="lamp"></i><h3>Muni test</h3><p>No data for FFTXX or TTTXX.</p></div>`;
     const repo = k.repo ? `<div class="check"><i class="lamp ${k.repo.status}"></i><h3>Repo signal — TSTXX − TTTXX</h3><p><b>${k.repo.bp} bp</b> · ${k.repo.status === "green" ? "normal (10 bp or less)" : k.repo.status === "amber" ? "watch (10–25 bp)" : "repo paying up over bills — check the plumbing board"}</p></div>`
       : `<div class="check"><i class="lamp"></i><h3>Repo signal</h3><p>No data.</p></div>`;
-    const bill = k.bill_premium ? `<div class="check"><i class="lamp green"></i><h3>Bill premium — 13-week − TTTXX</h3><p><b>${k.bill_premium.bp} bp</b> for committing to a date</p></div>`
+    const bill = k.bill_premium ? `<div class="check"><i class="lamp green"></i><h3>Bill premium — 13-week − TTTXX</h3><p><b>${k.bill_premium.bp} bp</b> for committing to a date (indicative)</p></div>`
       : `<div class="check"><i class="lamp"></i><h3>Bill premium</h3><p>No data.</p></div>`;
     const bad = (DATA.feeds || []).filter(f => !f.ok).length;
-    const asof = `<div class="check"><i class="lamp ${bad ? "amber" : "green"}"></i><h3>Data as of</h3><p>Merrill sheet <b>${mdy(DATA.merrill_asof)}</b> · Treasury <b>${mdy(DATA.treasury_asof)}</b></p><p>Run ${esc(DATA.updated || "")}${bad ? ` · ${bad} feed${bad > 1 ? "s" : ""} failed, see foot` : ""}</p></div>`;
+    const asof = `<div class="check"><i class="lamp ${bad ? "amber" : "green"}"></i><h3>Data as of</h3><p>Merrill sheet <b>${mdy(DATA.merrill_asof)}</b> · Treasury <b>${mdy(DATA.treasury_asof)}</b></p><p>Run ${esc(DATA.updated || "")}${bad ? ` · ${bad} feed${bad > 1 ? "s" : ""} incomplete, see foot` : ""}</p></div>`;
     return `<div class="checks">${muni}${repo}${bill}${asof}</div>`;
   }
 
@@ -260,10 +344,15 @@
         <li>FL trust: <code>net = gross × (1 − fed share × (${p(t.fed_rate_trust)} + ${p(t.niit_trust)}))</code></li>
         <li>Foundation: <code>net = gross × (1 − ${p(t.foundation_excise)} × fed share)</code> — ${esc(t.foundation_excise_note || "")}</li>
         <li>SC rate ${p(t.sc_rate)}: ${esc(t.sc_rate_note || "")}. Federal deductibility of state tax is ignored.</li>
-        <li>Each fund is ranked on the newer of the Merrill-sheet yield and the sponsor's daily yield; tap a row to see both. ETFs rank on the 30-day SEC yield. Bills use Treasury's coupon-equivalent yield.</li>
-        <li>Recommended = highest net yield among instruments at or below risk tier ${t.max_risk_tier_recommended}; advisory-program (IAP) share classes are ${t.iap_accounts ? "included" : "excluded"}. An instrument with no fetched yield is never ranked or estimated.</li>
+        <li>SC-taxable shares for the BlackRock and Fidelity funds come from the sponsors' 2025 tax letters — last year's figures, used as a planning proxy for this year. The Federated funds, the ETFs and the deposits still use unverified estimates. Tap a row to see which.</li>
+        <li>Each fund is ranked on the newer of the Merrill-sheet yield and the sponsor's daily yield; tap a row to see both. ETFs rank on the 30-day SEC yield.</li>
+        <li><b>Bill yields are indicative.</b> They are Treasury's closing bid-side rates for the most recently auctioned bill of each term — not a price Merrill is offering and not what the next auction will clear at. Before buying, get the CUSIP, price, amount and settlement date from the desk.</li>
+        <li><b>Cutoffs are the funds' own deadlines</b> unless a row says "Merrill cutoff". Merrill's deadline can be earlier; add it as <code>merrill_cutoff</code> in <code>config/instruments.json</code> once confirmed.</li>
+        <li>Yields are compared at the two decimals they are published to. On a tie a fund ranks ahead of a bill, a deposit, then an ETF, so an ETF has to out-yield a fund to be picked; then the safer tier, then the later cutoff.</li>
+        <li>Recommended = first in that order at or below risk tier ${t.max_risk_tier_recommended}; advisory-program (IAP) share classes are ${t.iap_accounts ? "included" : "excluded"}. In Same day, a fund whose cutoff has passed gives way to the best one still open. An instrument with no fetched yield is never ranked or estimated.</li>
+        <li><b>By your date</b> ranks on net dollars per $1M earned from the next business day to your date. A bill qualifies only if it matures on or before the date; after it matures the cash is assumed to sit in the Same-day pick at today's net yield. Funds, deposits and ETFs are assumed to keep today's yield, which they won't exactly. The "rolling instead" line is the reinvestment rate at which a shorter bill would match the recommended one.</li>
         <li>Preferred Deposit tiers are ranked but ${t.preferred_deposit_tier ? `only <b>${esc(t.preferred_deposit_tier)}</b> can be Recommended` : "never Recommended"}: the rate depends on one account's own balance. Set <code>preferred_deposit_tier</code> in <code>config/tax.json</code> to the tier that applies.</li>
-        <li>Dollars per $1M are a year of net income at today's yield. Rates are edited in <code>config/tax.json</code>.</li>
+        <li>Dollars per $1M a year are a year of net income at today's yield. Rates are edited in <code>config/tax.json</code>.</li>
       </ul>
       <p class="legend"><span>Risk tier:</span><span><span class="tier t1">1</span> Treasury-only</span><span><span class="tier t2">2</span> Treasury repo</span><span><span class="tier t3">3</span> government / deposit / muni</span><span><span class="tier t4">4</span> prime</span></p>
       <h3>Feeds this run</h3>
@@ -290,13 +379,13 @@
     const main = document.getElementById("main");
     if (view === "log") {
       const cl = DATA.changelog || [];
-      main.innerHTML = `<div class="section"><h3>Change log</h3><p>Each entry compares a run with the one before it: changes in a Recommended pick, a fetched cutoff, the muni test, or a new early close inside ten business days.</p></div>
+      main.innerHTML = `<div class="section"><h3>Change log</h3><p>Each day's entry compares that day with the previous day's run: changes in a Recommended pick (Same day, Next day, and the dated pick 13 and 52 weeks out), a fund cutoff, the muni test, or a new early close inside ten business days.</p></div>
         <div class="log">${cl.length ? cl.map(d => `<div class="day"><h4>${mdy(d.date)}</h4><p class="sum">${esc(d.summary)}</p>${(d.items || []).map(i => `<div class="item"><span class="b">${esc(i.label)}</span><div>${esc(i.text)}</div></div>`).join("")}</div>`).join("") : `<div class="day"><p class="sum">Nothing has changed since the first run.</p></div>`}</div>`;
       return;
     }
     const since = DATA.since_last_run || [];
     main.innerHTML = checksHtml()
-      + `<p class="since">Since last run: ${DATA.first_run ? "first run — nothing to compare yet." : since.length ? since.map(i => `<b>${esc(i.text)}</b>`).join(" · ") : "nothing moved."}</p>`
+      + `<p class="since">Since the previous day's run${DATA.compared_with ? ` (${mdy(DATA.compared_with)})` : ""}: ${DATA.first_run ? "first day — nothing to compare yet." : since.length ? since.map(i => `<b>${esc(i.text)}</b>`).join(" · ") : "nothing moved."}</p>`
       + `<div class="cols">${(DATA.columns || []).map(colHtml).join("")}</div>`
       + ((DATA.watch || []).length ? `<div class="section"><h3>Desk quote — not ranked</h3><p>No automated feed yet; ask the desk.</p></div><div class="watch">${DATA.watch.map(w => `<div><b>${esc(w.name)} <span class="tier t${w.risk_tier}">${w.risk_tier}</span></b>${esc(w.note)}</div>`).join("")}</div>` : "")
       + footHtml();
@@ -306,12 +395,14 @@
     const b = ev.target.closest("button"), row = ev.target.closest(".row");
     if (b && b.dataset.entity) { entity = b.dataset.entity; view = "board"; store.set("cy-entity", entity); render(); }
     else if (b && b.dataset.log) { view = "log"; render(); }
+    else if (b && b.dataset.date) { store.set("cy-date", b.dataset.date); render(); }
     else if (b && b.dataset.col) { openCols.has(b.dataset.col) ? openCols.delete(b.dataset.col) : openCols.add(b.dataset.col); render(); }
-    else if (row && !ev.target.closest("a")) { const k = row.dataset.key; openRows.has(k) ? openRows.delete(k) : openRows.add(k); row.classList.toggle("open"); row.setAttribute("aria-expanded", openRows.has(k)); }
+    else if (row && !ev.target.closest("a, input, button")) { const k = row.dataset.key; openRows.has(k) ? openRows.delete(k) : openRows.add(k); row.classList.toggle("open"); row.setAttribute("aria-expanded", openRows.has(k)); }
   });
   document.addEventListener("keydown", ev => { if ((ev.key === "Enter" || ev.key === " ") && ev.target.classList && ev.target.classList.contains("row")) { ev.preventDefault(); ev.target.click(); } });
+  document.addEventListener("change", ev => { if (ev.target.id === "need" && ev.target.value) { store.set("cy-date", ev.target.value); render(); } });
   render();
-  setInterval(() => { if (view === "board" && !document.hidden) render(); }, 60000);
+  setInterval(() => { if (view === "board" && !document.hidden && !(document.activeElement && document.activeElement.id === "need")) render(); }, 60000);
 })();
 </script>
 </body>

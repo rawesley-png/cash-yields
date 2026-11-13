@@ -8,7 +8,7 @@
    "availability": "Brokerage",
    "risk_tier": 1,
    "fed_taxable_share": 1.0,
-   "sc_taxable_share": 0.0,
+   "sc_taxable_share": 0.004086,
    "same_day": true,
    "cutoff_buy": "Until NAV strike (4:00 p.m. ET)",
    "cutoff_sell": "same",
@@ -16,7 +16,8 @@
    "nav_strike": "4:00 p.m. (5:00 also cited)",
    "settlement_note": "Same day for wire redemptions received before the strike; confirm with Merrill",
    "source": "merrill",
-   "cutoff_verified": "Fidelity prospectus 5/30/2026"
+   "cutoff_verified": "Fidelity prospectus 5/30/2026",
+   "sc_share_source": "Fidelity 2025 percentage of income from U.S. Government securities — prior-year proxy"
   },
   {
    "symbol": "TTTXX",
@@ -26,7 +27,7 @@
    "availability": "Brokerage",
    "risk_tier": 1,
    "fed_taxable_share": 1.0,
-   "sc_taxable_share": 0.0,
+   "sc_taxable_share": 0.048,
    "same_day": true,
    "cutoff_buy": "2:30 p.m. ET (2:00 around holidays)",
    "cutoff_sell": "same",
@@ -41,7 +42,8 @@
     "kind": "blackrock_factsheet",
     "url": "https://www.blackrock.com/cash/literature/fact-sheet/brlf-treasury-trust-institutional-factsheet.pdf"
    },
-   "early_close_time": "14:00"
+   "early_close_time": "14:00",
+   "sc_share_source": "BlackRock Liquidity Funds 2025 tax letter (income from Federal Obligations) — prior-year proxy"
   },
   {
    "symbol": "UTIXX",
@@ -66,7 +68,8 @@
    "cutoff_feed": {
     "kind": "federated_page",
     "url": "https://www.federatedhermes.com/us/products/mutual-funds/us-treasury-cash-reserves/is.do"
-   }
+   },
+   "sc_share_source": "build-brief estimate — not verified against a sponsor tax letter"
   },
   {
    "symbol": "GOTXX",
@@ -83,7 +86,8 @@
    "cutoff_time": null,
    "nav_strike": "—",
    "settlement_note": "ask Merrill",
-   "source": "merrill"
+   "source": "merrill",
+   "sc_share_source": "build-brief estimate — not verified against a sponsor tax letter"
   },
   {
    "symbol": "TSTXX",
@@ -93,7 +97,7 @@
    "availability": "Brokerage",
    "risk_tier": 2,
    "fed_taxable_share": 1.0,
-   "sc_taxable_share": 0.5,
+   "sc_taxable_share": 0.4963,
    "same_day": true,
    "cutoff_buy": "5:00 p.m. ET",
    "cutoff_sell": "5:00 p.m. ET",
@@ -107,7 +111,8 @@
    "cutoff_feed": {
     "kind": "blackrock_factsheet",
     "url": "https://www.blackrock.com/cash/literature/fact-sheet/brlf-t-fund-institutional-factsheet.pdf"
-   }
+   },
+   "sc_share_source": "BlackRock Liquidity Funds 2025 tax letter (income from Federal Obligations) — prior-year proxy"
   },
   {
    "symbol": "FISXX",
@@ -117,7 +122,7 @@
    "availability": "Brokerage",
    "risk_tier": 2,
    "fed_taxable_share": 1.0,
-   "sc_taxable_share": 0.5,
+   "sc_taxable_share": 0.394699,
    "same_day": true,
    "cutoff_buy": "Until NAV strike (4:00/5:00 p.m.)",
    "cutoff_sell": "same",
@@ -125,24 +130,26 @@
    "nav_strike": "4:00 & 5:00 p.m.",
    "settlement_note": "Same day for wire redemptions before the strike",
    "source": "merrill",
-   "cutoff_verified": "Fidelity prospectus 5/30/2026"
+   "cutoff_verified": "Fidelity prospectus 5/30/2026",
+   "sc_share_source": "Fidelity 2025 percentage of income from U.S. Government securities — prior-year proxy"
   },
   {
    "symbol": "TFFXX",
-   "name": null,
+   "name": "BlackRock Select Treasury Based Liquidity Fund – Institutional",
    "category": "fund",
    "type": "Treasury + Treasury repo",
    "availability": "Brokerage",
    "risk_tier": 2,
    "fed_taxable_share": 1.0,
-   "sc_taxable_share": 0.5,
+   "sc_taxable_share": 0.0814,
    "same_day": true,
    "cutoff_buy": "not verified",
    "cutoff_sell": "not verified",
    "cutoff_time": null,
    "nav_strike": "—",
    "settlement_note": "",
-   "source": "merrill"
+   "source": "merrill",
+   "sc_share_source": "BlackRock Liquidity Funds 2025 tax letter (income from Federal Obligations) — prior-year proxy"
   },
   {
    "symbol": "TFDXX",
@@ -152,7 +159,7 @@
    "availability": "Brokerage",
    "risk_tier": 3,
    "fed_taxable_share": 1.0,
-   "sc_taxable_share": 0.55,
+   "sc_taxable_share": 0.4648,
    "same_day": true,
    "cutoff_buy": "5:00 p.m. ET",
    "cutoff_sell": "5:00 p.m. ET",
@@ -166,7 +173,8 @@
    "cutoff_feed": {
     "kind": "blackrock_factsheet",
     "url": "https://www.blackrock.com/cash/literature/fact-sheet/brlf-fedfund-institutional-factsheet.pdf"
-   }
+   },
+   "sc_share_source": "BlackRock Liquidity Funds 2025 tax letter (income from Federal Obligations) — prior-year proxy"
   },
   {
    "symbol": "FIGXX",
@@ -176,7 +184,7 @@
    "availability": "Brokerage",
    "risk_tier": 3,
    "fed_taxable_share": 1.0,
-   "sc_taxable_share": 0.55,
+   "sc_taxable_share": 0.498926,
    "same_day": true,
    "cutoff_buy": "Until NAV strike (4:00/5:00 p.m.)",
    "cutoff_sell": "same",
@@ -184,7 +192,8 @@
    "nav_strike": "4:00 & 5:00 p.m.",
    "settlement_note": "",
    "source": "merrill",
-   "cutoff_verified": "Fidelity prospectus 5/30/2026"
+   "cutoff_verified": "Fidelity prospectus 5/30/2026",
+   "sc_share_source": "Fidelity 2025 percentage of income from U.S. Government securities — prior-year proxy"
   },
   {
    "symbol": "TOIXX",
@@ -201,7 +210,8 @@
    "cutoff_time": null,
    "nav_strike": "—",
    "settlement_note": "",
-   "source": "merrill"
+   "source": "merrill",
+   "sc_share_source": "build-brief estimate — not verified against a sponsor tax letter"
   },
   {
    "symbol": "GOIXX",
@@ -218,7 +228,8 @@
    "cutoff_time": null,
    "nav_strike": "—",
    "settlement_note": "",
-   "source": "merrill"
+   "source": "merrill",
+   "sc_share_source": "build-brief estimate — not verified against a sponsor tax letter"
   },
   {
    "symbol": "TMCXX",
@@ -228,7 +239,7 @@
    "availability": "Brokerage",
    "risk_tier": 4,
    "fed_taxable_share": 1.0,
-   "sc_taxable_share": 1.0,
+   "sc_taxable_share": 0.9889,
    "same_day": true,
    "cutoff_buy": "3:00 p.m. ET",
    "cutoff_sell": "3:00 p.m. ET",
@@ -242,7 +253,8 @@
    "cutoff_feed": {
     "kind": "blackrock_factsheet",
     "url": "https://www.blackrock.com/cash/literature/fact-sheet/brlf-tempcash-institutional-factsheet.pdf"
-   }
+   },
+   "sc_share_source": "BlackRock Liquidity Funds 2025 tax letter (income from Federal Obligations) — prior-year proxy"
   },
   {
    "symbol": "POIXX",
@@ -259,7 +271,8 @@
    "cutoff_time": null,
    "nav_strike": "—",
    "settlement_note": "Floating NAV; fees possible",
-   "source": "merrill"
+   "source": "merrill",
+   "sc_share_source": "build-brief estimate — not verified against a sponsor tax letter"
   },
   {
    "symbol": "FFTXX",
@@ -284,7 +297,8 @@
    "cutoff_feed": {
     "kind": "federated_page",
     "url": "https://www.federatedhermes.com/us/products/mutual-funds/instl-tax-free-cash-trust/is.do"
-   }
+   },
+   "sc_share_source": "build-brief estimate — not verified against a sponsor tax letter"
   },
   {
    "symbol": "MCSXX",
@@ -308,7 +322,8 @@
    "cutoff_feed": {
     "kind": "blackrock_factsheet",
     "url": "https://www.blackrock.com/cash/literature/fact-sheet/brlf-municash-institutional-factsheet.pdf"
-   }
+   },
+   "sc_share_source": "build-brief estimate — not verified against a sponsor tax letter"
   },
   {
    "symbol": "FRSXX",
@@ -318,7 +333,7 @@
    "availability": "IAP only",
    "risk_tier": 1,
    "fed_taxable_share": 1.0,
-   "sc_taxable_share": 0.0,
+   "sc_taxable_share": 0.004086,
    "same_day": true,
    "cutoff_buy": "Until NAV strike",
    "cutoff_sell": "same",
@@ -326,7 +341,8 @@
    "nav_strike": "4:00 p.m.",
    "settlement_note": "Advisory-program accounts only",
    "source": "merrill",
-   "cutoff_verified": "Fidelity prospectus 5/30/2026"
+   "cutoff_verified": "Fidelity prospectus 5/30/2026",
+   "sc_share_source": "Fidelity 2025 percentage of income from U.S. Government securities — prior-year proxy"
   },
   {
    "symbol": "UTPXX",
@@ -351,7 +367,8 @@
    "cutoff_feed": {
     "kind": "federated_page",
     "url": "https://www.federatedhermes.com/us/products/mutual-funds/us-treasury-cash-reserves/prm.do"
-   }
+   },
+   "sc_share_source": "build-brief estimate — not verified against a sponsor tax letter"
   },
   {
    "symbol": "FTFXX",
@@ -376,7 +393,8 @@
    "cutoff_feed": {
     "kind": "federated_page",
     "url": "https://www.federatedhermes.com/us/products/mutual-funds/instl-tax-free-cash-trust/prm.do"
-   }
+   },
+   "sc_share_source": "build-brief estimate — not verified against a sponsor tax letter"
   },
   {
    "symbol": "BTFXX",
@@ -386,14 +404,15 @@
    "availability": "TMA sweep only",
    "risk_tier": 1,
    "fed_taxable_share": 1.0,
-   "sc_taxable_share": 0.0,
+   "sc_taxable_share": 0.048,
    "same_day": true,
    "cutoff_buy": "automatic sweep",
    "cutoff_sell": "automatic sweep",
    "cutoff_time": null,
    "nav_strike": "4:00 p.m.",
    "settlement_note": "Bank-trustee / retirement accounts only",
-   "source": "merrill"
+   "source": "merrill",
+   "sc_share_source": "BlackRock Liquidity Funds 2025 tax letter (income from Federal Obligations) — prior-year proxy"
   },
   {
    "symbol": "BFRXX",
@@ -403,14 +422,15 @@
    "availability": "TMA sweep only",
    "risk_tier": 3,
    "fed_taxable_share": 1.0,
-   "sc_taxable_share": 0.55,
+   "sc_taxable_share": 0.4648,
    "same_day": true,
    "cutoff_buy": "automatic sweep",
    "cutoff_sell": "automatic sweep",
    "cutoff_time": null,
    "nav_strike": "6:00 p.m.",
    "settlement_note": "Bank-trustee / retirement accounts only",
-   "source": "merrill"
+   "source": "merrill",
+   "sc_share_source": "BlackRock Liquidity Funds 2025 tax letter (income from Federal Obligations) — prior-year proxy"
   },
   {
    "symbol": "PD-100M",
@@ -585,7 +605,8 @@
    "sponsor": {
     "kind": "ishares",
     "url": "https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf"
-   }
+   },
+   "sc_share_source": "build-brief estimate — not verified against a sponsor tax letter"
   },
   {
    "symbol": "BIL",
@@ -607,7 +628,8 @@
    "sponsor": {
     "kind": "ssga",
     "url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-bloomberg-1-3-month-t-bill-etf-bil"
-   }
+   },
+   "sc_share_source": "build-brief estimate — not verified against a sponsor tax letter"
   },
   {
    "symbol": "USFR",
@@ -626,7 +648,8 @@
    "settlement_note": "Trade any time during market hours (9:30–4:00 ET); cash T+1; price moves a few cents through the month as income accrues and is distributed; bid/ask ~0.01%.",
    "expense_ratio": 0.15,
    "source": "sponsor",
-   "sponsor": null
+   "sponsor": null,
+   "sc_share_source": "build-brief estimate — not verified against a sponsor tax letter"
   },
   {
    "symbol": "BILL-4W",

@@ -23,6 +23,7 @@ import ssl
 import subprocess
 import sys
 import tempfile
+import time
 import urllib.parse
 import urllib.request
 from email.mime.text import MIMEText
@@ -45,7 +46,10 @@ BREAK = {s.strip() for s in os.environ.get("CY_BREAK", "").split(",") if s.strip
 
 ENTITIES = [("sc_partner", "SC partners"), ("sc_trust", "SC trust"), ("fl_trust", "FL trust"), ("foundation", "Foundation")]
 COLUMNS = [("same", "Same day", "Needed any day"), ("next", "Next day, no date", "T+1 liquidity, no maturity to match"),
-           ("w13", "Dated inside 13 weeks", "Payment date within 13 weeks"), ("w52", "Dated inside 52 weeks", "Payment date within 52 weeks")]
+           ("dated", "By your date", "Cash needed on a date you pick")]
+# Columns the engine tracks in the change log.  The page's date picker takes any date; the log follows two reference dates.
+LOG_COLUMNS = [("same", "Same day"), ("next", "Next day, no date"), ("d13", "Dated, 13 weeks out"), ("d52", "Dated, 52 weeks out")]
+CAT_PREF = {"fund": 0, "bill": 1, "deposit": 2, "etf": 3}
 MONTHS = {m: i for i, m in enumerate(["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], 1)}
 MON3 = {m[:3]: i for m, i in MONTHS.items()}
 
@@ -85,9 +89,15 @@ def now_et():
 def http_get(url, kind):
     if kind in BREAK:
         raise RuntimeError(f"fetch disabled by CY_BREAK={kind}")
-    r = requests.get(url, headers={"User-Agent": UA}, timeout=60)
-    r.raise_for_status()
-    return r
+    for attempt in range(3):        # some hosts refuse or drop the odd request; two polite retries, then give up
+        try:
+            r = requests.get(url, headers={"User-Agent": UA}, timeout=60)
+            r.raise_for_status()
+            return r
+        except requests.RequestException:
+            if attempt == 2:
+                raise
+            time.sleep(8)
 
 
 def pdf_text(content):
@@ -393,9 +403,12 @@ def get_sponsor_yields(instruments, sources, state, today, feeds):
     store = state.setdefault("sponsor", {})
     ok = {"BlackRock daily yields": None, "Federated Hermes daily yields": None, "ETF sponsor pages": None}
 
+    fresh = set()
+
     def put(sym, y, asof, source, **extra):
         if y is None or not asof:
             return
+        fresh.add(sym)
         if sym not in store or asof >= store[sym]["asof"]:
             store[sym] = dict({"y": round(float(y), 2), "asof": asof, "source": source, "fetched": iso(today)}, **extra)
 
@@ -441,21 +454,25 @@ def get_sponsor_yields(instruments, sources, state, today, feeds):
                     ok["ETF sponsor pages"] = True
         except Exception as ex:
             print(f"sponsor yield failed for {i['symbol']}: {ex}")
-    for name, v in ok.items():
-        if v is not None:
-            feeds.append({"name": name, "ok": v, "asof": iso(today) if v else None, "note": "fetched today" if v else "fetch failed — last good values kept"})
+    groups = {"BlackRock daily yields": ["blackrock"], "Federated Hermes daily yields": ["federated"], "ETF sponsor pages": ["ishares", "ssga"]}
+    for name, kinds in groups.items():
+        syms = [i["symbol"] for i in instruments if (i.get("sponsor") or {}).get("kind") in kinds]
+        missing = [x for x in syms if x not in fresh]
+        if syms:
+            feeds.append({"name": name, "ok": not missing, "asof": iso(today) if not missing else None,
+                          "note": f"{len(syms) - len(missing)} of {len(syms)} updated today" + (f" — {', '.join(missing)} not updated, last good value kept" if missing else "")})
     return store
 
 
 # ---------------------------------------------------------------- cutoffs
-def get_cutoffs(instruments, state, today, feeds, log_items):
+def get_cutoffs(instruments, state, today, feeds):
     store = state.setdefault("cutoffs", {})
     pages, out = {}, {}
     status = {}
     for i in instruments:
         feed = i.get("cutoff_feed")
         sym = i["symbol"]
-        base = {"time": i.get("cutoff_time"), "buy": None, "sell": None, "early_time": i.get("early_close_time"),
+        base = {"time": i.get("cutoff_time"), "merrill_time": i.get("merrill_cutoff"), "merrill_verified": i.get("merrill_cutoff_verified"), "buy": None, "sell": None, "early_time": i.get("early_close_time"),
                 "source": i.get("cutoff_verified") or ("config (not verified)" if i.get("cutoff_time") else None), "refreshed_today": None}
         if not feed:
             out[sym] = base
@@ -484,9 +501,6 @@ def get_cutoffs(instruments, state, today, feeds, log_items):
             if not (buy and sell):
                 raise RuntimeError("cutoff not found in the sponsor document")
             new = {"time": min(buy, sell), "buy": buy, "sell": sell, "t1_time": t1, "source": src, "verified": iso(today)}
-            prev_time = (store.get(sym) or {}).get("time") or i.get("cutoff_time")
-            if prev_time and prev_time != new["time"]:
-                log_items.append({"kind": "cutoff", "label": sym, "text": f"{sym} same-day cutoff changed: {clock(prev_time)} → {clock(new['time'])} ({src})"})
             store[sym] = new
             out[sym] = dict(base, **new, refreshed_today=True)
             status[label] = status.get(label, True)
@@ -517,12 +531,40 @@ def net_factor(entity, inst, tax):
 
 
 def in_column(col, r):
+    """Same day: same-day funds and sweep deposits.  Next day: every fund, deposit and ETF.  Bills only enter by date (dated_rank)."""
     c = r["category"]
     if col == "same":
         return c in ("fund", "deposit") and r["same_day"]
-    if c in ("fund", "deposit", "etf"):
-        return True
-    return c == "bill" and r["term_weeks"] <= (13 if col == "w13" else 52) and col != "next"
+    return c in ("fund", "deposit", "etf")
+
+
+def order_key(r, e):
+    """Ranking order.  Yields are compared at the two decimals they are published to; on a tie a fund beats a bill beats a
+    deposit beats an ETF (an ETF has to out-yield a fund to justify its spread and price movement), then the safer tier,
+    then the later cutoff."""
+    t = (r.get("cutoff") or {}).get("time") or "00:00"
+    return (-round(r["net"][e], 2), CAT_PREF[r["category"]], r["risk_tier"], -int(t[:2]) * 60 - int(t[3:]), r["symbol"])
+
+
+def dated_rank(by, order, e, start, needed, reinvest):
+    """Rank for cash needed on `needed`: net dollars per $1M earned from `start` (the next business day) to that date.
+    A bill only qualifies if it matures on or before the date; after it matures the cash is assumed to sit in the
+    Same-day pick at today's net yield (`reinvest`).  Funds, deposits and ETFs are assumed to hold today's yield."""
+    total = (needed - start).days
+    if total <= 0:
+        return []
+    out = []
+    for i, sym in enumerate(order):
+        r = by[sym]
+        if r["category"] == "bill":
+            m = parse_iso(r.get("bill_maturity"))
+            if not m or m > needed or m <= start:
+                continue
+            d = (m - start).days
+            out.append((-round((r["net"][e] * d + reinvest * (total - d)) / 365 * 10000), i, sym))
+        else:
+            out.append((-round(r["net"][e] * total / 365 * 10000), i, sym))
+    return [(sym, -inc) for inc, _, sym in sorted(out)]
 
 
 def caveat(i):
@@ -531,6 +573,8 @@ def caveat(i):
         return "Prime fund: floating NAV, liquidity fees possible — above the recommended risk tier."
     if t.startswith("Municipal"):
         return "Municipal fund: floating NAV, fees possible, check AMT paper; only wins when the muni test is amber."
+    if i["category"] == "bill":
+        return "Indicative yield, not a purchase quote — price it with the desk."
     if i["symbol"].startswith("PD-"):
         return "Rate applies only to an account whose own balance is in this tier; FDIC to $250,000. Not eligible for Recommended unless set as preferred_deposit_tier."
     return None
@@ -538,32 +582,39 @@ def caveat(i):
 
 # ---------------------------------------------------------------- timing (for the run date; the page recomputes live)
 def timing(r, now, cal):
-    today = now.date()
+    today, hm = now.date(), now.strftime("%H:%M")
     open_today = cal.is_bd(today)
     nbd = cal.next_bd(today)
     trade = today if open_today else nbd
     day = "today" if open_today else md(trade)
     early = cal.early.get(trade)
     cat, cut = r["category"], r["cutoff"]
+    if cat in ("bill", "etf"):
+        # a market trade placed after the close happens on the next session and settles the business day after that
+        close = "16:00" if cat == "etf" else (early["time"] if early else "17:00")
+        mtrade = cal.next_bd(today) if (open_today and hm >= close) else trade
+        when, settle = ("today" if mtrade == today else md(mtrade)), md(cal.next_bd(mtrade))
     if cat == "bill":
+        sec = f"secondary bought {when} settles T+1 = {settle}"
         a = (r.get("auctions") or [None])[0]
         if a and not a["close_date"]:
             ann = f"to be announced {md(parse_iso(a['announced']))}" if a.get("announced") else "not yet announced"
-            return {"cutoff": f"next auction {ann}; secondary: during trading hours",
-                    "cash": f"next auction settles {md(parse_iso(a['issue']))}; secondary buy or sell settles T+1 = {md(cal.next_bd(trade))}"}
+            return {"cutoff": f"next auction {ann}; secondary: during trading hours", "cash": f"next auction settles {md(parse_iso(a['issue']))}; {sec}"}
         if a:
             return {"cutoff": f"next auction closes {md(parse_iso(a['close_date']))} {clock(a['nc_time'])} (noncompetitive); secondary: during trading hours",
-                    "cash": f"auction settles {md(parse_iso(a['issue']))}; secondary buy or sell settles T+1 = {md(cal.next_bd(trade))}"}
-        return {"cutoff": "no auction announced; secondary: during trading hours", "cash": f"secondary buy or sell settles T+1 = {md(cal.next_bd(trade))}"}
+                    "cash": f"auction settles {md(parse_iso(a['issue']))}; {sec}"}
+        return {"cutoff": "no auction announced; secondary: during trading hours", "cash": sec}
     if cat == "etf":
-        return {"cutoff": "market hours 9:30 a.m.–4:00 p.m. ET" + (" (early close — confirm)" if early else ""), "cash": f"T+1 = {md(cal.next_bd(trade))}"}
+        if mtrade != today:
+            return {"cutoff": f"market closed — next session {md(mtrade)} 9:30 a.m. ET", "cash": f"T+1 = {settle} (traded {md(mtrade)})"}
+        return {"cutoff": "market hours 9:30 a.m.–4:00 p.m. ET" + (" (early close — confirm)" if early else ""), "cash": f"T+1 = {settle}"}
     if cat == "deposit":
         if r["same_day"]:
             return {"cutoff": "automatic sweep", "cash": "same day (sweep)"}
         return {"cutoff": "by instruction", "cash": f"posts {md(cal.next_bd(trade))}"}
     if "sweep" in r["cutoff_buy"]:
         return {"cutoff": "automatic sweep", "cash": "same day (sweep)"}
-    t = cut.get("time")
+    t = cut.get("merrill_time") or cut.get("time")
     if not t:
         return {"cutoff": "not verified — ask Merrill", "cash": f"same day only if Merrill confirms the cutoff; otherwise {md(cal.next_bd(trade))}"}
     flag = ""
@@ -572,7 +623,8 @@ def timing(r, now, cal):
             t, flag = min(t, cut["early_time"]), " (early close)"
         else:
             flag = " (early close — confirm)"
-    c = f"{clock(t)} {day}{flag}"
+    basis = "Merrill cutoff" if cut.get("merrill_time") else "fund deadline; Merrill's own cutoff not verified"
+    c = f"{clock(t)} {day}{flag} ({basis})"
     after = md(cal.next_bd(trade))
     if r["same_day"]:
         return {"cutoff": c, "cash": f"{day} if ordered by {clock(t)}; otherwise {after}"}
@@ -631,13 +683,13 @@ def run():
     bills = get_bills(sources, state, today, feeds, banners)
     auctions = get_auctions(sources, state, now, feeds)
     sponsor = get_sponsor_yields(instruments, sources, state, today, feeds)
-    cutoffs = get_cutoffs(instruments, state, today, feeds, log_items)
+    cutoffs = get_cutoffs(instruments, state, today, feeds)
 
     rows = []
     for i in instruments:
         sym, cat = i["symbol"], i["category"]
         r = {k: i.get(k) for k in ("symbol", "name", "category", "type", "availability", "risk_tier", "fed_taxable_share", "sc_taxable_share",
-                                   "same_day", "cutoff_buy", "cutoff_sell", "nav_strike", "settlement_note", "term_weeks", "expense_ratio")}
+                                   "same_day", "cutoff_buy", "cutoff_sell", "nav_strike", "settlement_note", "term_weeks", "expense_ratio", "sc_share_source")}
         ys = {}
         if merrill and cat == "fund" and sym in merrill["funds"]:
             m = merrill["funds"][sym]
@@ -652,7 +704,7 @@ def run():
                 r["ytm"] = sponsor[sym]["ytm"]
         if cat == "bill" and bills and sym in bills["yields"]:
             b = bills["yields"][sym]
-            ys["treasury"] = {"y": b["y"], "asof": bills["asof"], "source": "Treasury daily bill rates (coupon-equivalent)"}
+            ys["treasury"] = {"y": b["y"], "asof": bills["asof"], "source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)"}
             r["bill_maturity"], r["bill_cusip"] = b.get("maturity"), b.get("cusip")
         if cat == "bill":
             r["auctions"] = auctions.get(sym, [])
@@ -676,18 +728,25 @@ def run():
         rows.append(r)
     by = {r["symbol"]: r for r in rows}
 
+    # Preferred Deposit rates depend on one account's own balance, so a tier can only be Recommended when
+    # config/tax.json names it as the tier that applies (preferred_deposit_tier); the others stay in the list.
+    for r in rows:
+        r["can_recommend"] = (r["status"] == "ranked" and r["risk_tier"] <= tax["max_risk_tier_recommended"]
+                              and (not r["symbol"].startswith("PD-") or r["symbol"] == tax.get("preferred_deposit_tier")))
+        r["columns"] = [c for c in ("same", "next") if in_column(c, r)]
+    start = cal.next_bd(today if cal.is_bd(today) else cal.next_bd(today))     # a purchase made on the next trading day settles here
     ranking, picks = {}, {}
     for e, _ in ENTITIES:
-        ranking[e], picks[e] = {}, {}
-        for col, _, _ in COLUMNS:
-            members = [r for r in rows if in_column(col, r)]
-            ranked = sorted((r for r in members if r["status"] == "ranked"), key=lambda r: (-r["net"][e], r["risk_tier"], r["symbol"]))
-            # Preferred Deposit rates depend on one account's own balance, so a tier can only be Recommended when
-            # config/tax.json names it as the tier that applies (preferred_deposit_tier); the others stay in the list.
-            rec = next((r for r in ranked if r["risk_tier"] <= tax["max_risk_tier_recommended"]
-                        and (not r["symbol"].startswith("PD-") or r["symbol"] == tax.get("preferred_deposit_tier"))), None)
-            ranking[e][col] = {"ranked": [r["symbol"] for r in ranked], "unranked": [r["symbol"] for r in members if r["status"] != "ranked"],
-                               "recommended": rec["symbol"] if rec else None}
+        order = [r["symbol"] for r in sorted((r for r in rows if r["status"] == "ranked"), key=lambda r: order_key(r, e))]
+        ranking[e] = {"order": order, "unranked": [r["symbol"] for r in rows if r["status"] != "ranked"]}
+        picks[e] = {}
+        for col in ("same", "next"):
+            rec = next((by[x] for x in order if col in by[x]["columns"] and by[x]["can_recommend"]), None)
+            picks[e][col] = {"symbol": rec["symbol"], "net": rec["net"][e]} if rec else None
+        reinvest = picks[e]["same"]["net"] if picks[e]["same"] else 0.0
+        for col, days in (("d13", 91), ("d52", 364)):
+            rk = dated_rank(by, order, e, start, today + dt.timedelta(days=days), reinvest)
+            rec = next((by[x] for x, _ in rk if by[x]["can_recommend"]), None)
             picks[e][col] = {"symbol": rec["symbol"], "net": rec["net"][e]} if rec else None
 
     # checks
@@ -705,47 +764,68 @@ def run():
     if g("BILL-13W") and g("TTTXX"):
         checks["bill_premium"] = {"bp": round((g("BILL-13W") - g("TTTXX")) * 100)}
 
-    # change log
-    ename, cname = dict(ENTITIES), {c: n for c, n, _ in COLUMNS}
-    prev = state.get("picks")
-    alerts = []
-    if prev:
+    # change log — every run today is compared with the last run of an EARLIER day, so a second run on the same day
+    # rebuilds today's entry instead of wiping it
+    for k in ("picks", "muni", "early_seen"):          # keys from the first version of this file
+        state.pop(k, None)
+    last = state.get("last")
+    if last and last.get("date") != iso(today):
+        state["baseline"] = last
+    baseline = state.get("baseline")
+    ename, cname = dict(ENTITIES), dict(LOG_COLUMNS)
+    if baseline:
         for e, _ in ENTITIES:
-            for col, _, _ in COLUMNS:
-                o, n = (prev.get(e) or {}).get(col), picks[e][col]
+            for col, _ in LOG_COLUMNS:
+                o, n = (baseline["picks"].get(e) or {}).get(col), picks[e][col]
                 if (o or {}).get("symbol") != (n or {}).get("symbol"):
                     f = lambda p: f"{p['symbol']} ({p['net']:.2f}% net)" if p else "none"
                     log_items.append({"kind": "pick", "label": ename[e], "entity": e, "column": col, "old": (o or {}).get("symbol"), "new": (n or {}).get("symbol"),
-                                      "old_net": (o or {}).get("net"), "new_net": (n or {}).get("net"), "text": f"{ename[e]} · {cname[col]}: {f(o)} → {f(n)}"})
-                    alerts.append(log_items[-1]["text"])
-    pm = state.get("muni")
-    if checks["muni"] and pm:
-        for k, lab in (("sc", "SC"), ("fl", "FL")):
-            if pm.get(k) and pm[k] != checks["muni"][k]:
-                txt = f"Muni test ({lab}) flipped: {'FFTXX wins for sitting cash' if checks['muni'][k] == 'amber' else 'Treasury-only wins'} (ratio {checks['muni']['ratio']:.1%})"
-                log_items.append({"kind": "muni", "label": "Muni test", "text": txt})
-                alerts.append(txt)
+                                      "old_net": (o or {}).get("net"), "new_net": (n or {}).get("net"), "text": f"{ename[e]} · {cname[col]}: {f(o)} → {f(n)}", "alert": True})
+        pm = baseline.get("muni")
+        if checks["muni"] and pm:
+            for k, lab in (("sc", "SC"), ("fl", "FL")):
+                if pm.get(k) and pm[k] != checks["muni"][k]:
+                    txt = f"Muni test ({lab}) flipped: {'FFTXX wins for sitting cash' if checks['muni'][k] == 'amber' else 'Treasury-only wins'} (ratio {checks['muni']['ratio']:.1%})"
+                    log_items.append({"kind": "muni", "label": "Muni test", "text": txt, "alert": True})
+    cut_now = {sym: c["time"] for sym, c in cutoffs.items() if c.get("time")}
+    cut_base = (baseline or {}).get("cutoffs") or {i["symbol"]: i["cutoff_time"] for i in instruments if i.get("cutoff_time")}
+    for sym, t in cut_now.items():
+        if cutoffs[sym].get("refreshed_today") and cut_base.get(sym) and cut_base[sym] != t:
+            log_items.append({"kind": "cutoff", "label": sym, "text": f"{sym} fund cutoff changed: {clock(cut_base[sym])} → {clock(t)} ({cutoffs[sym]['source']})"})
     horizon = cal.add_bd(today, 10)
-    seen = set(state.get("early_seen", []))
     upcoming = [{"date": iso(d), "kind": "holiday", "name": n} for d, n in cal.holidays.items() if today <= d <= horizon]
     upcoming += [{"date": e["date"], "kind": "early", "name": e["name"], "time": e["time"]} for d, e in cal.early.items() if today <= d <= horizon]
     upcoming.sort(key=lambda u: u["date"])
-    for u in upcoming:
-        if u["kind"] == "early" and u["date"] not in seen:
-            log_items.append({"kind": "early_close", "label": "Calendar", "text": f"SIFMA early close ({clock(u['time'])}) on {md(parse_iso(u['date']))} is now inside the next 10 business days ({u['name']})"})
-            seen.add(u["date"])
-    state["early_seen"] = sorted(d for d in seen if d >= iso(today))
-    state["picks"] = picks
-    if checks["muni"]:
-        state["muni"] = {"sc": checks["muni"]["sc"], "fl": checks["muni"]["fl"]}
+    early_now = [u["date"] for u in upcoming if u["kind"] == "early"]
+    if baseline:
+        for u in upcoming:
+            if u["kind"] == "early" and u["date"] not in baseline.get("early_seen", []):
+                log_items.append({"kind": "early_close", "label": "Calendar", "text": f"SIFMA early close ({clock(u['time'])}) on {md(parse_iso(u['date']))} is now inside the next 10 business days ({u['name']})"})
+    state["last"] = {"date": iso(today), "picks": picks, "cutoffs": cut_now, "early_seen": early_now,
+                     "muni": {"sc": checks["muni"]["sc"], "fl": checks["muni"]["fl"]} if checks["muni"] else (last or {}).get("muni")}
 
     changelog = load(CHANGELOG, [])
+    already = {i["text"] for c in changelog if c.get("date") == iso(today) for i in c.get("items", [])}
+    alerts = [i["text"] for i in log_items if i.get("alert") and i["text"] not in already]      # alert once, not on every run of the day
     changelog = [c for c in changelog if c.get("date") != iso(today)]
     if log_items:
-        changelog.insert(0, {"date": iso(today), "summary": f"{len(log_items)} change{'s' if len(log_items) != 1 else ''} against the previous run", "items": log_items})
+        changelog.insert(0, {"date": iso(today), "summary": f"{len(log_items)} change{'s' if len(log_items) != 1 else ''} against the previous day's run", "items": log_items})
     cutoff_date = iso(today - dt.timedelta(days=365))
     changelog = [c for c in changelog if c["date"] >= cutoff_date]
     save(CHANGELOG, changelog)
+
+    # feed notes that depend on the assembled rows: a feed is only green when every instrument it should cover has a value
+    for f in feeds:
+        if f["name"] == "Merrill Yields at a Glance":
+            miss = [r["symbol"] for r in rows if r["category"] in ("fund", "deposit") and "merrill" not in r["yields"]]
+            if miss:
+                f["note"] += f" — not found on the sheet: {', '.join(miss)}"
+                f["ok"] = False
+        if f["name"] == "Treasury bill rates":
+            miss = [r["symbol"] for r in rows if r["category"] == "bill" and "treasury" not in r["yields"]]
+            if miss:
+                f["note"] += f" — no rate for {', '.join(miss)}"
+                f["ok"] = False
 
     history = [h for h in load(HISTORY, []) if h.get("date") != iso(today)]
     history.append({"date": iso(today), "gross": {r["symbol"]: r["gross"] for r in rows if r["gross"] is not None},
@@ -754,8 +834,8 @@ def run():
     save(STATE, state)
 
     data = {
-        "updated": now.strftime("%a %-m/%-d/%Y %-I:%M %p ET"), "run_date": iso(today), "first_run": prev is None,
-        "entities": [{"key": k, "name": n} for k, n in ENTITIES], "columns": [{"key": k, "name": n, "sub": s} for k, n, s in COLUMNS],
+        "updated": now.strftime("%a %-m/%-d/%Y %-I:%M %p ET"), "run_date": iso(today), "first_run": baseline is None, "compared_with": (baseline or {}).get("date"), "dated_start": iso(start),
+        "entities": [{"key": k, "name": n} for k, n in ENTITIES], "columns": [{"key": k, "name": n, "sub": sub} for k, n, sub in COLUMNS],
         "tax": tax, "rows": rows, "ranking": ranking, "watch": cfg.get("watch", []), "checks": checks, "banners": banners, "feeds": feeds,
         "merrill_asof": merrill["asof"] if merrill else None, "treasury_asof": bills["asof"] if bills else None,
         "calendar": {"holidays": [h for h in cal_data["holidays"] if h["date"] >= iso(today - dt.timedelta(days=7))],
