@@ -1,5 +1,5 @@
 {
- "updated": "Fri 11/13/2026 4:01 PM ET",
+ "updated": "Fri 11/13/2026 4:07 PM ET",
  "run_date": "2026-11-13",
  "first_run": false,
  "entities": [
@@ -1581,12 +1581,12 @@
    "yields": {
     "sponsor": {
      "y": 3.86,
-     "asof": "2026-11-11",
+     "asof": "2026-11-12",
      "source": "iShares (30-day SEC yield)"
     }
    },
    "gross": 3.86,
-   "gross_asof": "2026-11-11",
+   "gross_asof": "2026-11-12",
    "gross_source": "iShares (30-day SEC yield)",
    "stale": false,
    "cutoff": {
@@ -3015,58 +3015,6 @@
   ],
   "fetched": "2026-11-13"
  },
- "since_last_run": [
-  {
-   "kind": "pick",
-   "label": "FL trust",
-   "entity": "fl_trust",
-   "column": "next",
-   "old": "PD-100M",
-   "new": "BIL",
-   "old_net": 2.3206,
-   "new_net": 2.291,
-   "text": "FL trust · Next day, no date: PD-100M (2.32% net) → BIL (2.29% net)"
-  },
-  {
-   "kind": "pick",
-   "label": "Foundation",
-   "entity": "foundation",
-   "column": "next",
-   "old": "PD-100M",
-   "new": "BIL",
-   "old_net": 3.8655,
-   "new_net": 3.8162,
-   "text": "Foundation · Next day, no date: PD-100M (3.87% net) → BIL (3.82% net)"
-  }
- ],
- "changelog": [
-  {
-   "date": "2026-11-13",
-   "summary": "2 changes against the previous run",
-   "items": [
-    {
-     "kind": "pick",
-     "label": "FL trust",
-     "entity": "fl_trust",
-     "column": "next",
-     "old": "PD-100M",
-     "new": "BIL",
-     "old_net": 2.3206,
-     "new_net": 2.291,
-     "text": "FL trust · Next day, no date: PD-100M (2.32% net) → BIL (2.29% net)"
-    },
-    {
-     "kind": "pick",
-     "label": "Foundation",
-     "entity": "foundation",
-     "column": "next",
-     "old": "PD-100M",
-     "new": "BIL",
-     "old_net": 3.8655,
-     "new_net": 3.8162,
-     "text": "Foundation · Next day, no date: PD-100M (3.87% net) → BIL (3.82% net)"
-    }
-   ]
-  }
- ]
+ "since_last_run": [],
+ "changelog": []
 }
