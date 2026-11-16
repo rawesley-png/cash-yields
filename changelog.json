@@ -1,1 +1,56 @@
-[]
+[
+ {
+  "date": "2026-11-16",
+  "summary": "5 changes against the previous day's run",
+  "items": [
+   {
+    "kind": "pick",
+    "label": "SC partners",
+    "entity": "sc_partner",
+    "column": "next",
+    "old": "FSIXX",
+    "new": "FFTXX",
+    "old_net": 2.2902,
+    "new_net": 2.3413,
+    "text": "SC partners · Next day, no date: FSIXX (2.29% net) → FFTXX (2.34% net)",
+    "alert": true
+   },
+   {
+    "kind": "pick",
+    "label": "SC trust",
+    "entity": "sc_trust",
+    "column": "next",
+    "old": "FSIXX",
+    "new": "FFTXX",
+    "old_net": 2.2902,
+    "new_net": 2.3413,
+    "text": "SC trust · Next day, no date: FSIXX (2.29% net) → FFTXX (2.34% net)",
+    "alert": true
+   },
+   {
+    "kind": "pick",
+    "label": "FL trust",
+    "entity": "fl_trust",
+    "column": "next",
+    "old": "FSIXX",
+    "new": "FFTXX",
+    "old_net": 2.291,
+    "new_net": 2.47,
+    "text": "FL trust · Next day, no date: FSIXX (2.29% net) → FFTXX (2.47% net)",
+    "alert": true
+   },
+   {
+    "kind": "muni",
+    "label": "Muni test",
+    "text": "Muni test (SC) flipped: FFTXX wins for sitting cash (ratio 63.8%)",
+    "alert": true
+   },
+   {
+    "kind": "muni",
+    "label": "Muni test",
+    "text": "Muni test (FL) flipped: FFTXX wins for sitting cash (ratio 63.8%)",
+    "alert": true
+   }
+  ]
+ }
+]

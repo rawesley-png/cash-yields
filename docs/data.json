@@ -1,9 +1,9 @@
 {
- "updated": "Fri 11/13/2026 4:33 PM ET",
- "run_date": "2026-11-13",
- "first_run": true,
- "compared_with": null,
- "dated_start": "2026-11-16",
+ "updated": "Mon 11/16/2026 9:59 AM ET",
+ "run_date": "2026-11-16",
+ "first_run": false,
+ "compared_with": "2026-11-13",
+ "dated_start": "2026-11-17",
  "entities": [
   {
    "key": "sc_partner",
@@ -74,13 +74,13 @@
    "merrill_eligibility": "Brokerage",
    "yields": {
     "merrill": {
-     "y": 3.87,
-     "asof": "2026-11-12",
+     "y": 3.88,
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (7-day yield)"
     }
    },
-   "gross": 3.87,
-   "gross_asof": "2026-11-12",
+   "gross": 3.88,
+   "gross_asof": "2026-11-13",
    "gross_source": "Merrill Yields at a Glance (7-day yield)",
    "stale": false,
    "cutoff": {
@@ -97,14 +97,14 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.2902,
-    "sc_trust": 2.2902,
-    "fl_trust": 2.291,
-    "foundation": 3.8162
+    "sc_partner": 2.2961,
+    "sc_trust": 2.2961,
+    "fl_trust": 2.297,
+    "foundation": 3.8261
    },
    "timing": {
     "cutoff": "4:00 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
-    "cash": "today if ordered by 4:00 p.m. ET; otherwise Mon 11/16"
+    "cash": "today if ordered by 4:00 p.m. ET; otherwise Tue 11/17"
    },
    "can_recommend": true,
    "columns": [
@@ -132,18 +132,18 @@
    "merrill_eligibility": "Brokerage, IAP",
    "yields": {
     "merrill": {
-     "y": 3.86,
-     "asof": "2026-11-12",
+     "y": 3.87,
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (7-day yield)"
     },
     "sponsor": {
-     "y": 3.86,
-     "asof": "2026-11-12",
+     "y": 3.87,
+     "asof": "2026-11-13",
      "source": "BlackRock (7-day SEC yield)"
     }
    },
-   "gross": 3.86,
-   "gross_asof": "2026-11-12",
+   "gross": 3.87,
+   "gross_asof": "2026-11-13",
    "gross_source": "Merrill Yields at a Glance (7-day yield)",
    "stale": false,
    "cutoff": {
@@ -156,20 +156,20 @@
     "source": "BlackRock fact sheet Oct 2026",
     "refreshed_today": true,
     "t1_time": null,
-    "verified": "2026-11-13"
+    "verified": "2026-11-16"
    },
    "caveat": null,
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.2755,
-    "sc_trust": 2.2755,
-    "fl_trust": 2.2851,
-    "foundation": 3.8063
+    "sc_partner": 2.2814,
+    "sc_trust": 2.2814,
+    "fl_trust": 2.291,
+    "foundation": 3.8162
    },
    "timing": {
     "cutoff": "2:30 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
-    "cash": "today if ordered by 2:30 p.m. ET; otherwise Mon 11/16"
+    "cash": "today if ordered by 2:30 p.m. ET; otherwise Tue 11/17"
    },
    "can_recommend": true,
    "columns": [
@@ -198,18 +198,18 @@
    "yields": {
     "merrill": {
      "y": 3.84,
-     "asof": "2026-11-12",
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (7-day yield)"
     },
     "sponsor": {
-     "y": 3.84,
-     "asof": "2026-11-12",
+     "y": 3.85,
+     "asof": "2026-11-15",
      "source": "Federated Hermes (7-day net yield)"
     }
    },
-   "gross": 3.84,
-   "gross_asof": "2026-11-12",
-   "gross_source": "Merrill Yields at a Glance (7-day yield)",
+   "gross": 3.85,
+   "gross_asof": "2026-11-15",
+   "gross_source": "Federated Hermes (7-day net yield)",
    "stale": false,
    "cutoff": {
     "time": "15:00",
@@ -218,23 +218,23 @@
     "buy": "15:00",
     "sell": "15:00",
     "early_time": null,
-    "source": "Federated page 11/13/2026",
+    "source": "Federated page 11/16/2026",
     "refreshed_today": true,
     "t1_time": "16:00",
-    "verified": "2026-11-13"
+    "verified": "2026-11-16"
    },
    "caveat": null,
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.2733,
-    "sc_trust": 2.2733,
-    "fl_trust": 2.2733,
-    "foundation": 3.7866
+    "sc_partner": 2.2792,
+    "sc_trust": 2.2792,
+    "fl_trust": 2.2792,
+    "foundation": 3.7965
    },
    "timing": {
     "cutoff": "3:00 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
-    "cash": "today if ordered by 3:00 p.m. ET; otherwise Mon 11/16"
+    "cash": "today if ordered by 3:00 p.m. ET; otherwise Tue 11/17"
    },
    "can_recommend": true,
    "columns": [
@@ -263,12 +263,12 @@
    "yields": {
     "merrill": {
      "y": 3.81,
-     "asof": "2026-11-12",
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (7-day yield)"
     }
    },
    "gross": 3.81,
-   "gross_asof": "2026-11-12",
+   "gross_asof": "2026-11-13",
    "gross_source": "Merrill Yields at a Glance (7-day yield)",
    "stale": false,
    "cutoff": {
@@ -292,7 +292,7 @@
    },
    "timing": {
     "cutoff": "not verified — ask Merrill",
-    "cash": "same day only if Merrill confirms the cutoff; otherwise Mon 11/16"
+    "cash": "same day only if Merrill confirms the cutoff; otherwise Tue 11/17"
    },
    "can_recommend": true,
    "columns": [
@@ -321,17 +321,17 @@
    "yields": {
     "merrill": {
      "y": 3.81,
-     "asof": "2026-11-12",
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (7-day yield)"
     },
     "sponsor": {
      "y": 3.81,
-     "asof": "2026-11-12",
+     "asof": "2026-11-13",
      "source": "BlackRock (7-day SEC yield)"
     }
    },
    "gross": 3.81,
-   "gross_asof": "2026-11-12",
+   "gross_asof": "2026-11-13",
    "gross_source": "Merrill Yields at a Glance (7-day yield)",
    "stale": false,
    "cutoff": {
@@ -344,7 +344,7 @@
     "source": "BlackRock fact sheet Oct 2026",
     "refreshed_today": true,
     "t1_time": null,
-    "verified": "2026-11-13"
+    "verified": "2026-11-16"
    },
    "caveat": null,
    "status": "ranked",
@@ -357,7 +357,7 @@
    },
    "timing": {
     "cutoff": "5:00 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
-    "cash": "today if ordered by 5:00 p.m. ET; otherwise Mon 11/16"
+    "cash": "today if ordered by 5:00 p.m. ET; otherwise Tue 11/17"
    },
    "can_recommend": true,
    "columns": [
@@ -385,13 +385,13 @@
    "merrill_eligibility": "Brokerage",
    "yields": {
     "merrill": {
-     "y": 3.82,
-     "asof": "2026-11-12",
+     "y": 3.83,
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (7-day yield)"
     }
    },
-   "gross": 3.82,
-   "gross_asof": "2026-11-12",
+   "gross": 3.83,
+   "gross_asof": "2026-11-13",
    "gross_source": "Merrill Yields at a Glance (7-day yield)",
    "stale": false,
    "cutoff": {
@@ -408,14 +408,14 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.1829,
-    "sc_trust": 2.1829,
-    "fl_trust": 2.2614,
-    "foundation": 3.7669
+    "sc_partner": 2.1886,
+    "sc_trust": 2.1886,
+    "fl_trust": 2.2674,
+    "foundation": 3.7768
    },
    "timing": {
     "cutoff": "4:00 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
-    "cash": "today if ordered by 4:00 p.m. ET; otherwise Mon 11/16"
+    "cash": "today if ordered by 4:00 p.m. ET; otherwise Tue 11/17"
    },
    "can_recommend": true,
    "columns": [
@@ -443,13 +443,13 @@
    "merrill_eligibility": "Brokerage, IAP",
    "yields": {
     "merrill": {
-     "y": 3.79,
-     "asof": "2026-11-12",
+     "y": 3.8,
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (7-day yield)"
     }
    },
-   "gross": 3.79,
-   "gross_asof": "2026-11-12",
+   "gross": 3.8,
+   "gross_asof": "2026-11-13",
    "gross_source": "Merrill Yields at a Glance (7-day yield)",
    "stale": false,
    "cutoff": {
@@ -466,14 +466,14 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.2276,
-    "sc_trust": 2.2276,
-    "fl_trust": 2.2437,
-    "foundation": 3.7373
+    "sc_partner": 2.2335,
+    "sc_trust": 2.2335,
+    "fl_trust": 2.2496,
+    "foundation": 3.7472
    },
    "timing": {
     "cutoff": "not verified — ask Merrill",
-    "cash": "same day only if Merrill confirms the cutoff; otherwise Mon 11/16"
+    "cash": "same day only if Merrill confirms the cutoff; otherwise Tue 11/17"
    },
    "can_recommend": true,
    "columns": [
@@ -502,17 +502,17 @@
    "yields": {
     "merrill": {
      "y": 3.79,
-     "asof": "2026-11-12",
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (7-day yield)"
     },
     "sponsor": {
      "y": 3.79,
-     "asof": "2026-11-12",
+     "asof": "2026-11-13",
      "source": "BlackRock (7-day SEC yield)"
     }
    },
    "gross": 3.79,
-   "gross_asof": "2026-11-12",
+   "gross_asof": "2026-11-13",
    "gross_source": "Merrill Yields at a Glance (7-day yield)",
    "stale": false,
    "cutoff": {
@@ -525,7 +525,7 @@
     "source": "BlackRock fact sheet Oct 2026",
     "refreshed_today": true,
     "t1_time": null,
-    "verified": "2026-11-13"
+    "verified": "2026-11-16"
    },
    "caveat": null,
    "status": "ranked",
@@ -538,7 +538,7 @@
    },
    "timing": {
     "cutoff": "5:00 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
-    "cash": "today if ordered by 5:00 p.m. ET; otherwise Mon 11/16"
+    "cash": "today if ordered by 5:00 p.m. ET; otherwise Tue 11/17"
    },
    "can_recommend": true,
    "columns": [
@@ -567,12 +567,12 @@
    "yields": {
     "merrill": {
      "y": 3.79,
-     "asof": "2026-11-12",
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (7-day yield)"
     }
    },
    "gross": 3.79,
-   "gross_asof": "2026-11-12",
+   "gross_asof": "2026-11-13",
    "gross_source": "Merrill Yields at a Glance (7-day yield)",
    "stale": false,
    "cutoff": {
@@ -596,7 +596,7 @@
    },
    "timing": {
     "cutoff": "4:00 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
-    "cash": "today if ordered by 4:00 p.m. ET; otherwise Mon 11/16"
+    "cash": "today if ordered by 4:00 p.m. ET; otherwise Tue 11/17"
    },
    "can_recommend": true,
    "columns": [
@@ -625,12 +625,12 @@
    "yields": {
     "merrill": {
      "y": 3.76,
-     "asof": "2026-11-12",
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (7-day yield)"
     }
    },
    "gross": 3.76,
-   "gross_asof": "2026-11-12",
+   "gross_asof": "2026-11-13",
    "gross_source": "Merrill Yields at a Glance (7-day yield)",
    "stale": false,
    "cutoff": {
@@ -654,7 +654,7 @@
    },
    "timing": {
     "cutoff": "not verified — ask Merrill",
-    "cash": "same day only if Merrill confirms the cutoff; otherwise Mon 11/16"
+    "cash": "same day only if Merrill confirms the cutoff; otherwise Tue 11/17"
    },
    "can_recommend": true,
    "columns": [
@@ -683,12 +683,12 @@
    "yields": {
     "merrill": {
      "y": 3.75,
-     "asof": "2026-11-12",
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (7-day yield)"
     }
    },
    "gross": 3.75,
-   "gross_asof": "2026-11-12",
+   "gross_asof": "2026-11-13",
    "gross_source": "Merrill Yields at a Glance (7-day yield)",
    "stale": false,
    "cutoff": {
@@ -712,7 +712,7 @@
    },
    "timing": {
     "cutoff": "not verified — ask Merrill",
-    "cash": "same day only if Merrill confirms the cutoff; otherwise Mon 11/16"
+    "cash": "same day only if Merrill confirms the cutoff; otherwise Tue 11/17"
    },
    "can_recommend": true,
    "columns": [
@@ -741,17 +741,17 @@
    "yields": {
     "merrill": {
      "y": 3.95,
-     "asof": "2026-11-12",
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (7-day yield)"
     },
     "sponsor": {
      "y": 3.95,
-     "asof": "2026-11-12",
+     "asof": "2026-11-13",
      "source": "BlackRock (7-day SEC yield)"
     }
    },
    "gross": 3.95,
-   "gross_asof": "2026-11-12",
+   "gross_asof": "2026-11-13",
    "gross_source": "Merrill Yields at a Glance (7-day yield)",
    "stale": false,
    "cutoff": {
@@ -764,7 +764,7 @@
     "source": "BlackRock fact sheet Oct 2026",
     "refreshed_today": true,
     "t1_time": null,
-    "verified": "2026-11-13"
+    "verified": "2026-11-16"
    },
    "caveat": "Prime fund: floating NAV, liquidity fees possible — above the recommended risk tier.",
    "status": "ranked",
@@ -777,7 +777,7 @@
    },
    "timing": {
     "cutoff": "3:00 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
-    "cash": "today if ordered by 3:00 p.m. ET; otherwise Mon 11/16"
+    "cash": "today if ordered by 3:00 p.m. ET; otherwise Tue 11/17"
    },
    "can_recommend": false,
    "columns": [
@@ -806,12 +806,12 @@
    "yields": {
     "merrill": {
      "y": 3.94,
-     "asof": "2026-11-12",
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (7-day yield)"
     }
    },
    "gross": 3.94,
-   "gross_asof": "2026-11-12",
+   "gross_asof": "2026-11-13",
    "gross_source": "Merrill Yields at a Glance (7-day yield)",
    "stale": false,
    "cutoff": {
@@ -835,7 +835,7 @@
    },
    "timing": {
     "cutoff": "not verified — ask Merrill",
-    "cash": "same day only if Merrill confirms the cutoff; otherwise Mon 11/16"
+    "cash": "same day only if Merrill confirms the cutoff; otherwise Tue 11/17"
    },
    "can_recommend": false,
    "columns": [
@@ -863,19 +863,19 @@
    "merrill_eligibility": "Brokerage",
    "yields": {
     "merrill": {
-     "y": 2.28,
-     "asof": "2026-11-12",
+     "y": 2.34,
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (7-day yield)"
     },
     "sponsor": {
-     "y": 2.28,
-     "asof": "2026-11-12",
+     "y": 2.47,
+     "asof": "2026-11-15",
      "source": "Federated Hermes (7-day net yield)"
     }
    },
-   "gross": 2.28,
-   "gross_asof": "2026-11-12",
-   "gross_source": "Merrill Yields at a Glance (7-day yield)",
+   "gross": 2.47,
+   "gross_asof": "2026-11-15",
+   "gross_source": "Federated Hermes (7-day net yield)",
    "stale": false,
    "cutoff": {
     "time": "13:00",
@@ -884,23 +884,23 @@
     "buy": "13:00",
     "sell": "13:00",
     "early_time": null,
-    "source": "Federated page 11/13/2026",
+    "source": "Federated page 11/16/2026",
     "refreshed_today": true,
     "t1_time": null,
-    "verified": "2026-11-13"
+    "verified": "2026-11-16"
    },
    "caveat": "Municipal fund: floating NAV, fees possible, check AMT paper; only wins when the muni test is amber.",
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.1612,
-    "sc_trust": 2.1612,
-    "fl_trust": 2.28,
-    "foundation": 2.28
+    "sc_partner": 2.3413,
+    "sc_trust": 2.3413,
+    "fl_trust": 2.47,
+    "foundation": 2.47
    },
    "timing": {
     "cutoff": "1:00 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
-    "cash": "same day only if ordered by 1:00 p.m. ET; otherwise Mon 11/16"
+    "cash": "same day only if ordered by 1:00 p.m. ET; otherwise Tue 11/17"
    },
    "can_recommend": true,
    "columns": [
@@ -927,18 +927,18 @@
    "merrill_eligibility": "Brokerage, IAP",
    "yields": {
     "merrill": {
-     "y": 2.17,
-     "asof": "2026-11-12",
+     "y": 2.37,
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (7-day yield)"
     },
     "sponsor": {
-     "y": 2.17,
-     "asof": "2026-11-12",
+     "y": 2.37,
+     "asof": "2026-11-13",
      "source": "BlackRock (7-day SEC yield)"
     }
    },
-   "gross": 2.17,
-   "gross_asof": "2026-11-12",
+   "gross": 2.37,
+   "gross_asof": "2026-11-13",
    "gross_source": "Merrill Yields at a Glance (7-day yield)",
    "stale": false,
    "cutoff": {
@@ -951,20 +951,20 @@
     "source": "BlackRock fact sheet Oct 2026",
     "refreshed_today": true,
     "t1_time": null,
-    "verified": "2026-11-13"
+    "verified": "2026-11-16"
    },
    "caveat": "Municipal fund: floating NAV, fees possible, check AMT paper; only wins when the muni test is amber.",
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.0569,
-    "sc_trust": 2.0569,
-    "fl_trust": 2.17,
-    "foundation": 2.17
+    "sc_partner": 2.2465,
+    "sc_trust": 2.2465,
+    "fl_trust": 2.37,
+    "foundation": 2.37
    },
    "timing": {
     "cutoff": "1:00 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
-    "cash": "same day only if ordered by 1:00 p.m. ET; otherwise Mon 11/16"
+    "cash": "same day only if ordered by 1:00 p.m. ET; otherwise Tue 11/17"
    },
    "can_recommend": true,
    "columns": [
@@ -991,13 +991,13 @@
    "merrill_eligibility": "IAP",
    "yields": {
     "merrill": {
-     "y": 3.91,
-     "asof": "2026-11-12",
+     "y": 3.92,
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (7-day yield)"
     }
    },
-   "gross": 3.91,
-   "gross_asof": "2026-11-12",
+   "gross": 3.92,
+   "gross_asof": "2026-11-13",
    "gross_source": "Merrill Yields at a Glance (7-day yield)",
    "stale": false,
    "cutoff": {
@@ -1014,14 +1014,14 @@
    "status": "excluded",
    "status_note": "IAP only — advisory-program accounts (iap_accounts is off)",
    "net": {
-    "sc_partner": 2.3139,
-    "sc_trust": 2.3139,
-    "fl_trust": 2.3147,
-    "foundation": 3.8557
+    "sc_partner": 2.3198,
+    "sc_trust": 2.3198,
+    "fl_trust": 2.3206,
+    "foundation": 3.8655
    },
    "timing": {
     "cutoff": "4:00 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
-    "cash": "today if ordered by 4:00 p.m. ET; otherwise Mon 11/16"
+    "cash": "today if ordered by 4:00 p.m. ET; otherwise Tue 11/17"
    },
    "can_recommend": false,
    "columns": [
@@ -1049,19 +1049,19 @@
    "merrill_eligibility": "IAP",
    "yields": {
     "merrill": {
-     "y": 3.88,
-     "asof": "2026-11-12",
+     "y": 3.89,
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (7-day yield)"
     },
     "sponsor": {
-     "y": 3.88,
-     "asof": "2026-11-12",
+     "y": 3.89,
+     "asof": "2026-11-15",
      "source": "Federated Hermes (7-day net yield)"
     }
    },
-   "gross": 3.88,
-   "gross_asof": "2026-11-12",
-   "gross_source": "Merrill Yields at a Glance (7-day yield)",
+   "gross": 3.89,
+   "gross_asof": "2026-11-15",
+   "gross_source": "Federated Hermes (7-day net yield)",
    "stale": false,
    "cutoff": {
     "time": "15:00",
@@ -1070,23 +1070,23 @@
     "buy": "15:00",
     "sell": "15:00",
     "early_time": null,
-    "source": "Federated page 11/13/2026",
+    "source": "Federated page 11/16/2026",
     "refreshed_today": true,
     "t1_time": "16:00",
-    "verified": "2026-11-13"
+    "verified": "2026-11-16"
    },
    "caveat": null,
    "status": "excluded",
    "status_note": "IAP only — advisory-program accounts (iap_accounts is off)",
    "net": {
-    "sc_partner": 2.297,
-    "sc_trust": 2.297,
-    "fl_trust": 2.297,
-    "foundation": 3.8261
+    "sc_partner": 2.3029,
+    "sc_trust": 2.3029,
+    "fl_trust": 2.3029,
+    "foundation": 3.8359
    },
    "timing": {
     "cutoff": "3:00 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
-    "cash": "today if ordered by 3:00 p.m. ET; otherwise Mon 11/16"
+    "cash": "today if ordered by 3:00 p.m. ET; otherwise Tue 11/17"
    },
    "can_recommend": false,
    "columns": [
@@ -1114,19 +1114,19 @@
    "merrill_eligibility": "IAP",
    "yields": {
     "merrill": {
-     "y": 2.33,
-     "asof": "2026-11-12",
+     "y": 2.39,
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (7-day yield)"
     },
     "sponsor": {
-     "y": 2.33,
-     "asof": "2026-11-12",
+     "y": 2.52,
+     "asof": "2026-11-15",
      "source": "Federated Hermes (7-day net yield)"
     }
    },
-   "gross": 2.33,
-   "gross_asof": "2026-11-12",
-   "gross_source": "Merrill Yields at a Glance (7-day yield)",
+   "gross": 2.52,
+   "gross_asof": "2026-11-15",
+   "gross_source": "Federated Hermes (7-day net yield)",
    "stale": false,
    "cutoff": {
     "time": "13:00",
@@ -1135,23 +1135,23 @@
     "buy": "13:00",
     "sell": "13:00",
     "early_time": null,
-    "source": "Federated page 11/13/2026",
+    "source": "Federated page 11/16/2026",
     "refreshed_today": true,
     "t1_time": null,
-    "verified": "2026-11-13"
+    "verified": "2026-11-16"
    },
    "caveat": "Municipal fund: floating NAV, fees possible, check AMT paper; only wins when the muni test is amber.",
    "status": "excluded",
    "status_note": "IAP only — advisory-program accounts (iap_accounts is off)",
    "net": {
-    "sc_partner": 2.2086,
-    "sc_trust": 2.2086,
-    "fl_trust": 2.33,
-    "foundation": 2.33
+    "sc_partner": 2.3887,
+    "sc_trust": 2.3887,
+    "fl_trust": 2.52,
+    "foundation": 2.52
    },
    "timing": {
     "cutoff": "1:00 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
-    "cash": "same day only if ordered by 1:00 p.m. ET; otherwise Mon 11/16"
+    "cash": "same day only if ordered by 1:00 p.m. ET; otherwise Tue 11/17"
    },
    "can_recommend": false,
    "columns": [
@@ -1178,13 +1178,13 @@
    "merrill_eligibility": "Sweep only",
    "yields": {
     "merrill": {
-     "y": 3.46,
-     "asof": "2026-11-12",
+     "y": 3.47,
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (7-day yield)"
     }
    },
-   "gross": 3.46,
-   "gross_asof": "2026-11-12",
+   "gross": 3.47,
+   "gross_asof": "2026-11-13",
    "gross_source": "Merrill Yields at a Glance (7-day yield)",
    "stale": false,
    "cutoff": {
@@ -1201,10 +1201,10 @@
    "status": "excluded",
    "status_note": "TMA sweep only — bank-trustee / retirement accounts; never ranked",
    "net": {
-    "sc_partner": 2.0397,
-    "sc_trust": 2.0397,
-    "fl_trust": 2.0483,
-    "foundation": 3.4119
+    "sc_partner": 2.0456,
+    "sc_trust": 2.0456,
+    "fl_trust": 2.0542,
+    "foundation": 3.4218
    },
    "timing": {
     "cutoff": "automatic sweep",
@@ -1237,12 +1237,12 @@
    "yields": {
     "merrill": {
      "y": 3.39,
-     "asof": "2026-11-12",
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (7-day yield)"
     }
    },
    "gross": 3.39,
-   "gross_asof": "2026-11-12",
+   "gross_asof": "2026-11-13",
    "gross_source": "Merrill Yields at a Glance (7-day yield)",
    "stale": false,
    "cutoff": {
@@ -1294,12 +1294,12 @@
    "yields": {
     "merrill": {
      "y": 3.92,
-     "asof": "2026-11-12",
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (APY)"
     }
    },
    "gross": 3.92,
-   "gross_asof": "2026-11-12",
+   "gross_asof": "2026-11-13",
    "gross_source": "Merrill Yields at a Glance (APY)",
    "stale": false,
    "cutoff": {
@@ -1323,7 +1323,7 @@
    },
    "timing": {
     "cutoff": "by instruction",
-    "cash": "posts Mon 11/16"
+    "cash": "posts Tue 11/17"
    },
    "can_recommend": false,
    "columns": [
@@ -1350,12 +1350,12 @@
    "yields": {
     "merrill": {
      "y": 3.87,
-     "asof": "2026-11-12",
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (APY)"
     }
    },
    "gross": 3.87,
-   "gross_asof": "2026-11-12",
+   "gross_asof": "2026-11-13",
    "gross_source": "Merrill Yields at a Glance (APY)",
    "stale": false,
    "cutoff": {
@@ -1379,7 +1379,7 @@
    },
    "timing": {
     "cutoff": "by instruction",
-    "cash": "posts Mon 11/16"
+    "cash": "posts Tue 11/17"
    },
    "can_recommend": false,
    "columns": [
@@ -1406,12 +1406,12 @@
    "yields": {
     "merrill": {
      "y": 3.61,
-     "asof": "2026-11-12",
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (APY)"
     }
    },
    "gross": 3.61,
-   "gross_asof": "2026-11-12",
+   "gross_asof": "2026-11-13",
    "gross_source": "Merrill Yields at a Glance (APY)",
    "stale": false,
    "cutoff": {
@@ -1435,7 +1435,7 @@
    },
    "timing": {
     "cutoff": "by instruction",
-    "cash": "posts Mon 11/16"
+    "cash": "posts Tue 11/17"
    },
    "can_recommend": false,
    "columns": [
@@ -1462,12 +1462,12 @@
    "yields": {
     "merrill": {
      "y": 3.51,
-     "asof": "2026-11-12",
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (APY)"
     }
    },
    "gross": 3.51,
-   "gross_asof": "2026-11-12",
+   "gross_asof": "2026-11-13",
    "gross_source": "Merrill Yields at a Glance (APY)",
    "stale": false,
    "cutoff": {
@@ -1491,7 +1491,7 @@
    },
    "timing": {
     "cutoff": "by instruction",
-    "cash": "posts Mon 11/16"
+    "cash": "posts Tue 11/17"
    },
    "can_recommend": false,
    "columns": [
@@ -1518,12 +1518,12 @@
    "yields": {
     "merrill": {
      "y": 3.15,
-     "asof": "2026-11-12",
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (APY)"
     }
    },
    "gross": 3.15,
-   "gross_asof": "2026-11-12",
+   "gross_asof": "2026-11-13",
    "gross_source": "Merrill Yields at a Glance (APY)",
    "stale": false,
    "cutoff": {
@@ -1547,7 +1547,7 @@
    },
    "timing": {
     "cutoff": "by instruction",
-    "cash": "posts Mon 11/16"
+    "cash": "posts Tue 11/17"
    },
    "can_recommend": false,
    "columns": [
@@ -1574,12 +1574,12 @@
    "yields": {
     "merrill": {
      "y": 2.06,
-     "asof": "2026-11-12",
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (APY)"
     }
    },
    "gross": 2.06,
-   "gross_asof": "2026-11-12",
+   "gross_asof": "2026-11-13",
    "gross_source": "Merrill Yields at a Glance (APY)",
    "stale": false,
    "cutoff": {
@@ -1603,7 +1603,7 @@
    },
    "timing": {
     "cutoff": "by instruction",
-    "cash": "posts Mon 11/16"
+    "cash": "posts Tue 11/17"
    },
    "can_recommend": true,
    "columns": [
@@ -1630,12 +1630,12 @@
    "yields": {
     "merrill": {
      "y": 0.01,
-     "asof": "2026-11-12",
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (APY)"
     }
    },
    "gross": 0.01,
-   "gross_asof": "2026-11-12",
+   "gross_asof": "2026-11-13",
    "gross_source": "Merrill Yields at a Glance (APY)",
    "stale": false,
    "cutoff": {
@@ -1687,12 +1687,12 @@
    "yields": {
     "merrill": {
      "y": 0.15,
-     "asof": "2026-11-12",
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (APY)"
     }
    },
    "gross": 0.15,
-   "gross_asof": "2026-11-12",
+   "gross_asof": "2026-11-13",
    "gross_source": "Merrill Yields at a Glance (APY)",
    "stale": false,
    "cutoff": {
@@ -1744,12 +1744,12 @@
    "yields": {
     "merrill": {
      "y": 3.35,
-     "asof": "2026-11-12",
+     "asof": "2026-11-13",
      "source": "Merrill Yields at a Glance (APY)"
     }
    },
    "gross": 3.35,
-   "gross_asof": "2026-11-12",
+   "gross_asof": "2026-11-13",
    "gross_source": "Merrill Yields at a Glance (APY)",
    "stale": false,
    "cutoff": {
@@ -1830,8 +1830,8 @@
     "foundation": 3.8063
    },
    "timing": {
-    "cutoff": "market closed — next session Mon 11/16 9:30 a.m. ET",
-    "cash": "T+1 = Tue 11/17 (traded Mon 11/16)"
+    "cutoff": "market hours 9:30 a.m.–4:00 p.m. ET",
+    "cash": "T+1 = Tue 11/17"
    },
    "can_recommend": true,
    "columns": [
@@ -1887,8 +1887,8 @@
     "foundation": 3.8162
    },
    "timing": {
-    "cutoff": "market closed — next session Mon 11/16 9:30 a.m. ET",
-    "cash": "T+1 = Tue 11/17 (traded Mon 11/16)"
+    "cutoff": "market hours 9:30 a.m.–4:00 p.m. ET",
+    "cash": "T+1 = Tue 11/17"
    },
    "can_recommend": true,
    "columns": [
@@ -1937,8 +1937,8 @@
     "foundation": null
    },
    "timing": {
-    "cutoff": "market closed — next session Mon 11/16 9:30 a.m. ET",
-    "cash": "T+1 = Tue 11/17 (traded Mon 11/16)"
+    "cutoff": "market hours 9:30 a.m.–4:00 p.m. ET",
+    "cash": "T+1 = Tue 11/17"
    },
    "can_recommend": false,
    "columns": [
@@ -2007,7 +2007,7 @@
    },
    "timing": {
     "cutoff": "next auction to be announced Tue 11/17; secondary: during trading hours",
-    "cash": "next auction settles Tue 11/24; secondary bought today settles T+1 = Mon 11/16"
+    "cash": "next auction settles Tue 11/24; secondary bought today settles T+1 = Tue 11/17"
    },
    "can_recommend": true,
    "columns": []
@@ -2083,7 +2083,7 @@
    },
    "timing": {
     "cutoff": "next auction closes Tue 11/17 11:00 a.m. ET (noncompetitive); secondary: during trading hours",
-    "cash": "auction settles Thu 11/19; secondary bought today settles T+1 = Mon 11/16"
+    "cash": "auction settles Thu 11/19; secondary bought today settles T+1 = Tue 11/17"
    },
    "can_recommend": true,
    "columns": []
@@ -2150,7 +2150,7 @@
    },
    "timing": {
     "cutoff": "next auction to be announced Tue 11/17; secondary: during trading hours",
-    "cash": "next auction settles Tue 11/24; secondary bought today settles T+1 = Mon 11/16"
+    "cash": "next auction settles Tue 11/24; secondary bought today settles T+1 = Tue 11/17"
    },
    "can_recommend": true,
    "columns": []
@@ -2226,7 +2226,7 @@
    },
    "timing": {
     "cutoff": "next auction closes Mon 11/16 11:00 a.m. ET (noncompetitive); secondary: during trading hours",
-    "cash": "auction settles Thu 11/19; secondary bought today settles T+1 = Mon 11/16"
+    "cash": "auction settles Thu 11/19; secondary bought today settles T+1 = Tue 11/17"
    },
    "can_recommend": true,
    "columns": []
@@ -2293,7 +2293,7 @@
    },
    "timing": {
     "cutoff": "next auction to be announced Tue 11/17; secondary: during trading hours",
-    "cash": "next auction settles Tue 11/24; secondary bought today settles T+1 = Mon 11/16"
+    "cash": "next auction settles Tue 11/24; secondary bought today settles T+1 = Tue 11/17"
    },
    "can_recommend": true,
    "columns": []
@@ -2369,7 +2369,7 @@
    },
    "timing": {
     "cutoff": "next auction closes Mon 11/16 11:00 a.m. ET (noncompetitive); secondary: during trading hours",
-    "cash": "auction settles Thu 11/19; secondary bought today settles T+1 = Mon 11/16"
+    "cash": "auction settles Thu 11/19; secondary bought today settles T+1 = Tue 11/17"
    },
    "can_recommend": true,
    "columns": []
@@ -2436,7 +2436,7 @@
    },
    "timing": {
     "cutoff": "next auction to be announced Thu 11/19; secondary: during trading hours",
-    "cash": "next auction settles Fri 11/27; secondary bought today settles T+1 = Mon 11/16"
+    "cash": "next auction settles Fri 11/27; secondary bought today settles T+1 = Tue 11/17"
    },
    "can_recommend": true,
    "columns": []
@@ -2452,16 +2452,17 @@
     "BILL-8W",
     "BILL-6W",
     "BILL-4W",
+    "FFTXX",
     "FSIXX",
     "BIL",
+    "UTIXX",
     "TTTXX",
     "SGOV",
-    "UTIXX",
+    "MCSXX",
     "GOTXX",
     "TFFXX",
     "FISXX",
     "TSTXX",
-    "FFTXX",
     "TFDXX",
     "FIGXX",
     "TMCXX",
@@ -2470,7 +2471,6 @@
     "GOIXX",
     "PD-10M",
     "TOIXX",
-    "MCSXX",
     "PD-5M",
     "PD-2.5M",
     "PD-<2.5M",
@@ -2497,16 +2497,17 @@
     "BILL-8W",
     "BILL-6W",
     "BILL-4W",
+    "FFTXX",
     "FSIXX",
     "BIL",
+    "UTIXX",
     "TTTXX",
     "SGOV",
-    "UTIXX",
+    "MCSXX",
     "GOTXX",
     "TFFXX",
     "FISXX",
     "TSTXX",
-    "FFTXX",
     "TFDXX",
     "FIGXX",
     "TMCXX",
@@ -2515,7 +2516,6 @@
     "GOIXX",
     "PD-10M",
     "TOIXX",
-    "MCSXX",
     "PD-5M",
     "PD-2.5M",
     "PD-<2.5M",
@@ -2539,9 +2539,11 @@
     "BILL-26W",
     "BILL-17W",
     "BILL-13W",
+    "FFTXX",
     "BILL-8W",
     "BILL-6W",
     "BILL-4W",
+    "MCSXX",
     "TMCXX",
     "POIXX",
     "PD-100M",
@@ -2550,17 +2552,15 @@
     "PD-10M",
     "BIL",
     "SGOV",
-    "FFTXX",
     "UTIXX",
-    "TSTXX",
     "FISXX",
+    "TSTXX",
     "GOTXX",
     "TFFXX",
     "TFDXX",
     "FIGXX",
     "TOIXX",
     "GOIXX",
-    "MCSXX",
     "PD-5M",
     "PD-2.5M",
     "PD-<2.5M",
@@ -2591,9 +2591,9 @@
     "POIXX",
     "PD-100M",
     "FSIXX",
+    "TTTXX",
     "PD-10M",
     "BIL",
-    "TTTXX",
     "SGOV",
     "UTIXX",
     "FISXX",
@@ -2643,20 +2643,20 @@
  ],
  "checks": {
   "muni": {
-   "ratio": 0.5907,
+   "ratio": 0.6382,
    "be_sc": 0.6245,
    "be_fl": 0.592,
-   "fftxx": 2.28,
-   "tttxx": 3.86,
-   "sc": "green",
-   "fl": "green"
+   "fftxx": 2.47,
+   "tttxx": 3.87,
+   "sc": "amber",
+   "fl": "amber"
   },
   "repo": {
-   "bp": -5,
+   "bp": -6,
    "status": "green"
   },
   "bill_premium": {
-   "bp": 37
+   "bp": 36
   }
  },
  "banners": [],
@@ -2670,7 +2670,7 @@
   {
    "name": "Merrill Yields at a Glance",
    "ok": true,
-   "asof": "2026-11-12",
+   "asof": "2026-11-13",
    "note": "fetched today"
   },
   {
@@ -2682,41 +2682,41 @@
   {
    "name": "TreasuryDirect auction calendar",
    "ok": true,
-   "asof": "2026-11-13",
+   "asof": "2026-11-16",
    "note": "fetched today"
   },
   {
    "name": "BlackRock daily yields",
    "ok": true,
-   "asof": "2026-11-13",
+   "asof": "2026-11-16",
    "note": "5 of 5 updated today"
   },
   {
    "name": "Federated Hermes daily yields",
    "ok": true,
-   "asof": "2026-11-13",
+   "asof": "2026-11-16",
    "note": "4 of 4 updated today"
   },
   {
    "name": "ETF sponsor pages",
    "ok": true,
-   "asof": "2026-11-13",
+   "asof": "2026-11-16",
    "note": "2 of 2 updated today"
   },
   {
    "name": "BlackRock fact sheets (cutoffs)",
    "ok": true,
-   "asof": "2026-11-13",
+   "asof": "2026-11-16",
    "note": "fetched today"
   },
   {
    "name": "Federated Hermes pages (cutoffs)",
    "ok": true,
-   "asof": "2026-11-13",
+   "asof": "2026-11-16",
    "note": "fetched today"
   }
  ],
- "merrill_asof": "2026-11-12",
+ "merrill_asof": "2026-11-13",
  "treasury_asof": "2026-11-13",
  "calendar": {
   "holidays": [
@@ -2843,6 +2843,110 @@
   ],
   "fetched": "2026-11-13"
  },
- "since_last_run": [],
- "changelog": []
+ "since_last_run": [
+  {
+   "kind": "pick",
+   "label": "SC partners",
+   "entity": "sc_partner",
+   "column": "next",
+   "old": "FSIXX",
+   "new": "FFTXX",
+   "old_net": 2.2902,
+   "new_net": 2.3413,
+   "text": "SC partners · Next day, no date: FSIXX (2.29% net) → FFTXX (2.34% net)",
+   "alert": true
+  },
+  {
+   "kind": "pick",
+   "label": "SC trust",
+   "entity": "sc_trust",
+   "column": "next",
+   "old": "FSIXX",
+   "new": "FFTXX",
+   "old_net": 2.2902,
+   "new_net": 2.3413,
+   "text": "SC trust · Next day, no date: FSIXX (2.29% net) → FFTXX (2.34% net)",
+   "alert": true
+  },
+  {
+   "kind": "pick",
+   "label": "FL trust",
+   "entity": "fl_trust",
+   "column": "next",
+   "old": "FSIXX",
+   "new": "FFTXX",
+   "old_net": 2.291,
+   "new_net": 2.47,
+   "text": "FL trust · Next day, no date: FSIXX (2.29% net) → FFTXX (2.47% net)",
+   "alert": true
+  },
+  {
+   "kind": "muni",
+   "label": "Muni test",
+   "text": "Muni test (SC) flipped: FFTXX wins for sitting cash (ratio 63.8%)",
+   "alert": true
+  },
+  {
+   "kind": "muni",
+   "label": "Muni test",
+   "text": "Muni test (FL) flipped: FFTXX wins for sitting cash (ratio 63.8%)",
+   "alert": true
+  }
+ ],
+ "changelog": [
+  {
+   "date": "2026-11-16",
+   "summary": "5 changes against the previous day's run",
+   "items": [
+    {
+     "kind": "pick",
+     "label": "SC partners",
+     "entity": "sc_partner",
+     "column": "next",
+     "old": "FSIXX",
+     "new": "FFTXX",
+     "old_net": 2.2902,
+     "new_net": 2.3413,
+     "text": "SC partners · Next day, no date: FSIXX (2.29% net) → FFTXX (2.34% net)",
+     "alert": true
+    },
+    {
+     "kind": "pick",
+     "label": "SC trust",
+     "entity": "sc_trust",
+     "column": "next",
+     "old": "FSIXX",
+     "new": "FFTXX",
+     "old_net": 2.2902,
+     "new_net": 2.3413,
+     "text": "SC trust · Next day, no date: FSIXX (2.29% net) → FFTXX (2.34% net)",
+     "alert": true
+    },
+    {
+     "kind": "pick",
+     "label": "FL trust",
+     "entity": "fl_trust",
+     "column": "next",
+     "old": "FSIXX",
+     "new": "FFTXX",
+     "old_net": 2.291,
+     "new_net": 2.47,
+     "text": "FL trust · Next day, no date: FSIXX (2.29% net) → FFTXX (2.47% net)",
+     "alert": true
+    },
+    {
+     "kind": "muni",
+     "label": "Muni test",
+     "text": "Muni test (SC) flipped: FFTXX wins for sitting cash (ratio 63.8%)",
+     "alert": true
+    },
+    {
+     "kind": "muni",
+     "label": "Muni test",
+     "text": "Muni test (FL) flipped: FFTXX wins for sitting cash (ratio 63.8%)",
+     "alert": true
+    }
+   ]
+  }
+ ]
 }
