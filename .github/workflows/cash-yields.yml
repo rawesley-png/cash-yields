@@ -1,8 +1,11 @@
 name: Cash yields
 on:
   schedule:
-    - cron: "30 11 * * 1-5"    # 7:30am EDT (summer)
-    - cron: "30 12 * * 1-5"    # 7:30am EST (winter); the other line's run is a harmless second refresh
+    # GitHub starts scheduled runs late, and sometimes skips them, at busy minutes such as :00 and :30,
+    # so these use an odd minute and repeat through the morning. A repeat run only refreshes the page.
+    - cron: "17 11 * * 1-5"    # 7:17am EDT / 6:17am EST
+    - cron: "17 12 * * 1-5"    # 8:17am EDT / 7:17am EST
+    - cron: "17 14 * * 1-5"    # 10:17am EDT / 9:17am EST, backup if the earlier ones were skipped
   workflow_dispatch:
 permissions:
   contents: write
