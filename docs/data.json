@@ -1,5 +1,5 @@
 {
- "updated": "Tue 11/17/2026 2:50 PM ET",
+ "updated": "Tue 11/17/2026 4:00 PM ET",
  "run_date": "2026-11-17",
  "first_run": false,
  "compared_with": "2026-11-16",
@@ -1801,13 +1801,13 @@
    "ytm": 4.05,
    "yields": {
     "sponsor": {
-     "y": 3.87,
-     "asof": "2026-11-13",
+     "y": 3.88,
+     "asof": "2026-11-16",
      "source": "iShares (30-day SEC yield)"
     }
    },
-   "gross": 3.87,
-   "gross_asof": "2026-11-13",
+   "gross": 3.88,
+   "gross_asof": "2026-11-16",
    "gross_source": "iShares (30-day SEC yield)",
    "stale": false,
    "cutoff": {
@@ -1824,14 +1824,14 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.287,
-    "sc_trust": 2.287,
-    "fl_trust": 2.291,
-    "foundation": 3.8162
+    "sc_partner": 2.2929,
+    "sc_trust": 2.2929,
+    "fl_trust": 2.297,
+    "foundation": 3.8261
    },
    "timing": {
-    "cutoff": "market hours 9:30 a.m.–4:00 p.m. ET",
-    "cash": "T+1 = Wed 11/18"
+    "cutoff": "market closed — next session Wed 11/18 9:30 a.m. ET",
+    "cash": "T+1 = Thu 11/19 (traded Wed 11/18)"
    },
    "can_recommend": true,
    "columns": [
@@ -1887,8 +1887,8 @@
     "foundation": 3.8261
    },
    "timing": {
-    "cutoff": "market hours 9:30 a.m.–4:00 p.m. ET",
-    "cash": "T+1 = Wed 11/18"
+    "cutoff": "market closed — next session Wed 11/18 9:30 a.m. ET",
+    "cash": "T+1 = Thu 11/19 (traded Wed 11/18)"
    },
    "can_recommend": true,
    "columns": [
@@ -1937,8 +1937,8 @@
     "foundation": null
    },
    "timing": {
-    "cutoff": "market hours 9:30 a.m.–4:00 p.m. ET",
-    "cash": "T+1 = Wed 11/18"
+    "cutoff": "market closed — next session Wed 11/18 9:30 a.m. ET",
+    "cash": "T+1 = Thu 11/19 (traded Wed 11/18)"
    },
    "can_recommend": false,
    "columns": [
@@ -1977,13 +1977,13 @@
    ],
    "yields": {
     "treasury": {
-     "y": 4.02,
-     "asof": "2026-11-16",
+     "y": 3.99,
+     "asof": "2026-11-17",
      "source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)"
     }
    },
-   "gross": 4.02,
-   "gross_asof": "2026-11-16",
+   "gross": 3.99,
+   "gross_asof": "2026-11-17",
    "gross_source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)",
    "stale": false,
    "cutoff": {
@@ -2000,10 +2000,10 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.3798,
-    "sc_trust": 2.3798,
-    "fl_trust": 2.3798,
-    "foundation": 3.9641
+    "sc_partner": 2.3621,
+    "sc_trust": 2.3621,
+    "fl_trust": 2.3621,
+    "foundation": 3.9345
    },
    "timing": {
     "cutoff": "next auction closes Thu 11/19 11:00 a.m. ET (noncompetitive); secondary: during trading hours",
@@ -2029,8 +2029,8 @@
    "term_weeks": 6,
    "expense_ratio": null,
    "sc_share_source": null,
-   "bill_maturity": "2026-12-24",
-   "bill_cusip": "912797TC1",
+   "bill_maturity": "2026-12-31",
+   "bill_cusip": "912797VJ3",
    "auctions": [
     {
      "close_date": null,
@@ -2044,13 +2044,13 @@
    ],
    "yields": {
     "treasury": {
-     "y": 4.07,
-     "asof": "2026-11-16",
+     "y": 4.14,
+     "asof": "2026-11-17",
      "source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)"
     }
    },
-   "gross": 4.07,
-   "gross_asof": "2026-11-16",
+   "gross": 4.14,
+   "gross_asof": "2026-11-17",
    "gross_source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)",
    "stale": false,
    "cutoff": {
@@ -2067,10 +2067,10 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.4094,
-    "sc_trust": 2.4094,
-    "fl_trust": 2.4094,
-    "foundation": 4.0134
+    "sc_partner": 2.4509,
+    "sc_trust": 2.4509,
+    "fl_trust": 2.4509,
+    "foundation": 4.0825
    },
    "timing": {
     "cutoff": "next auction to be announced Thu 11/19; secondary: during trading hours",
@@ -2112,12 +2112,12 @@
    "yields": {
     "treasury": {
      "y": 4.15,
-     "asof": "2026-11-16",
+     "asof": "2026-11-17",
      "source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)"
     }
    },
    "gross": 4.15,
-   "gross_asof": "2026-11-16",
+   "gross_asof": "2026-11-17",
    "gross_source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)",
    "stale": false,
    "cutoff": {
@@ -2178,13 +2178,13 @@
    ],
    "yields": {
     "treasury": {
-     "y": 4.26,
-     "asof": "2026-11-16",
+     "y": 4.25,
+     "asof": "2026-11-17",
      "source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)"
     }
    },
-   "gross": 4.26,
-   "gross_asof": "2026-11-16",
+   "gross": 4.25,
+   "gross_asof": "2026-11-17",
    "gross_source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)",
    "stale": false,
    "cutoff": {
@@ -2201,10 +2201,10 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.5219,
-    "sc_trust": 2.5219,
-    "fl_trust": 2.5219,
-    "foundation": 4.2008
+    "sc_partner": 2.516,
+    "sc_trust": 2.516,
+    "fl_trust": 2.516,
+    "foundation": 4.1909
    },
    "timing": {
     "cutoff": "next auction to be announced Thu 11/19; secondary: during trading hours",
@@ -2245,13 +2245,13 @@
    ],
    "yields": {
     "treasury": {
-     "y": 4.33,
-     "asof": "2026-11-16",
+     "y": 4.32,
+     "asof": "2026-11-17",
      "source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)"
     }
    },
-   "gross": 4.33,
-   "gross_asof": "2026-11-16",
+   "gross": 4.32,
+   "gross_asof": "2026-11-17",
    "gross_source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)",
    "stale": false,
    "cutoff": {
@@ -2268,10 +2268,10 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.5634,
-    "sc_trust": 2.5634,
-    "fl_trust": 2.5634,
-    "foundation": 4.2698
+    "sc_partner": 2.5574,
+    "sc_trust": 2.5574,
+    "fl_trust": 2.5574,
+    "foundation": 4.26
    },
    "timing": {
     "cutoff": "next auction closes Wed 11/18 11:00 a.m. ET (noncompetitive); secondary: during trading hours",
@@ -2312,13 +2312,13 @@
    ],
    "yields": {
     "treasury": {
-     "y": 4.46,
-     "asof": "2026-11-16",
+     "y": 4.45,
+     "asof": "2026-11-17",
      "source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)"
     }
    },
-   "gross": 4.46,
-   "gross_asof": "2026-11-16",
+   "gross": 4.45,
+   "gross_asof": "2026-11-17",
    "gross_source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)",
    "stale": false,
    "cutoff": {
@@ -2335,10 +2335,10 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.6403,
-    "sc_trust": 2.6403,
-    "fl_trust": 2.6403,
-    "foundation": 4.398
+    "sc_partner": 2.6344,
+    "sc_trust": 2.6344,
+    "fl_trust": 2.6344,
+    "foundation": 4.3881
    },
    "timing": {
     "cutoff": "next auction to be announced Thu 11/19; secondary: during trading hours",
@@ -2379,13 +2379,13 @@
    ],
    "yields": {
     "treasury": {
-     "y": 4.6,
-     "asof": "2026-11-16",
+     "y": 4.57,
+     "asof": "2026-11-17",
      "source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)"
     }
    },
-   "gross": 4.6,
-   "gross_asof": "2026-11-16",
+   "gross": 4.57,
+   "gross_asof": "2026-11-17",
    "gross_source": "Treasury daily bill rates (indicative closing bid-side, coupon-equivalent)",
    "stale": false,
    "cutoff": {
@@ -2402,10 +2402,10 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.7232,
-    "sc_trust": 2.7232,
-    "fl_trust": 2.7232,
-    "foundation": 4.5361
+    "sc_partner": 2.7054,
+    "sc_trust": 2.7054,
+    "fl_trust": 2.7054,
+    "foundation": 4.5065
    },
    "timing": {
     "cutoff": "next auction to be announced Thu 11/19; secondary: during trading hours",
@@ -2424,8 +2424,8 @@
     "BILL-13W",
     "BILL-8W",
     "BILL-6W",
-    "BILL-4W",
     "FFTXX",
+    "BILL-4W",
     "FSIXX",
     "MCSXX",
     "BIL",
@@ -2469,8 +2469,8 @@
     "BILL-13W",
     "BILL-8W",
     "BILL-6W",
-    "BILL-4W",
     "FFTXX",
+    "BILL-4W",
     "FSIXX",
     "MCSXX",
     "BIL",
@@ -2514,17 +2514,17 @@
     "BILL-13W",
     "FFTXX",
     "BILL-8W",
-    "MCSXX",
     "BILL-6W",
+    "MCSXX",
     "BILL-4W",
     "TMCXX",
     "POIXX",
     "PD-100M",
     "FSIXX",
     "BIL",
+    "SGOV",
     "TTTXX",
     "PD-10M",
-    "SGOV",
     "UTIXX",
     "FISXX",
     "TSTXX",
@@ -2565,9 +2565,9 @@
     "PD-100M",
     "FSIXX",
     "BIL",
+    "SGOV",
     "TTTXX",
     "PD-10M",
-    "SGOV",
     "UTIXX",
     "FISXX",
     "TSTXX",
@@ -2629,7 +2629,7 @@
    "status": "green"
   },
   "bill_premium": {
-   "bp": 39
+   "bp": 38
   }
  },
  "banners": [],
@@ -2649,7 +2649,7 @@
   {
    "name": "Treasury bill rates",
    "ok": true,
-   "asof": "2026-11-16",
+   "asof": "2026-11-17",
    "note": "fetched today"
   },
   {
@@ -2690,7 +2690,7 @@
   }
  ],
  "merrill_asof": "2026-11-16",
- "treasury_asof": "2026-11-16",
+ "treasury_asof": "2026-11-17",
  "calendar": {
   "holidays": [
    {
