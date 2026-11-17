@@ -1,5 +1,5 @@
 {
- "updated": "Tue 11/17/2026 4:00 PM ET",
+ "updated": "Tue 11/17/2026 5:27 PM ET",
  "run_date": "2026-11-17",
  "first_run": false,
  "compared_with": "2026-11-16",
@@ -2007,7 +2007,7 @@
    },
    "timing": {
     "cutoff": "next auction closes Thu 11/19 11:00 a.m. ET (noncompetitive); secondary: during trading hours",
-    "cash": "auction settles Tue 11/24; secondary bought today settles T+1 = Wed 11/18"
+    "cash": "auction settles Tue 11/24; secondary bought Wed 11/18 settles T+1 = Thu 11/19"
    },
    "can_recommend": true,
    "columns": []
@@ -2074,7 +2074,7 @@
    },
    "timing": {
     "cutoff": "next auction to be announced Thu 11/19; secondary: during trading hours",
-    "cash": "next auction settles Fri 11/27; secondary bought today settles T+1 = Wed 11/18"
+    "cash": "next auction settles Fri 11/27; secondary bought Wed 11/18 settles T+1 = Thu 11/19"
    },
    "can_recommend": true,
    "columns": []
@@ -2141,7 +2141,7 @@
    },
    "timing": {
     "cutoff": "next auction closes Thu 11/19 11:00 a.m. ET (noncompetitive); secondary: during trading hours",
-    "cash": "auction settles Tue 11/24; secondary bought today settles T+1 = Wed 11/18"
+    "cash": "auction settles Tue 11/24; secondary bought Wed 11/18 settles T+1 = Thu 11/19"
    },
    "can_recommend": true,
    "columns": []
@@ -2208,7 +2208,7 @@
    },
    "timing": {
     "cutoff": "next auction to be announced Thu 11/19; secondary: during trading hours",
-    "cash": "next auction settles Fri 11/27; secondary bought today settles T+1 = Wed 11/18"
+    "cash": "next auction settles Fri 11/27; secondary bought Wed 11/18 settles T+1 = Thu 11/19"
    },
    "can_recommend": true,
    "columns": []
@@ -2275,7 +2275,7 @@
    },
    "timing": {
     "cutoff": "next auction closes Wed 11/18 11:00 a.m. ET (noncompetitive); secondary: during trading hours",
-    "cash": "auction settles Tue 11/24; secondary bought today settles T+1 = Wed 11/18"
+    "cash": "auction settles Tue 11/24; secondary bought Wed 11/18 settles T+1 = Thu 11/19"
    },
    "can_recommend": true,
    "columns": []
@@ -2342,7 +2342,7 @@
    },
    "timing": {
     "cutoff": "next auction to be announced Thu 11/19; secondary: during trading hours",
-    "cash": "next auction settles Fri 11/27; secondary bought today settles T+1 = Wed 11/18"
+    "cash": "next auction settles Fri 11/27; secondary bought Wed 11/18 settles T+1 = Thu 11/19"
    },
    "can_recommend": true,
    "columns": []
@@ -2409,7 +2409,7 @@
    },
    "timing": {
     "cutoff": "next auction to be announced Thu 11/19; secondary: during trading hours",
-    "cash": "next auction settles Fri 11/27; secondary bought today settles T+1 = Wed 11/18"
+    "cash": "next auction settles Fri 11/27; secondary bought Wed 11/18 settles T+1 = Thu 11/19"
    },
    "can_recommend": true,
    "columns": []
