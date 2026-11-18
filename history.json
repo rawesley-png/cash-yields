@@ -240,13 +240,13 @@
    "MLBDP-5": 3.35,
    "SGOV": 3.88,
    "BIL": 3.89,
-   "BILL-4W": 3.99,
+   "BILL-4W": 3.98,
    "BILL-6W": 4.14,
    "BILL-8W": 4.15,
-   "BILL-13W": 4.25,
-   "BILL-17W": 4.32,
-   "BILL-26W": 4.45,
-   "BILL-52W": 4.57
+   "BILL-13W": 4.26,
+   "BILL-17W": 4.36,
+   "BILL-26W": 4.47,
+   "BILL-52W": 4.6
   },
   "picks": {
    "sc_partner": {
