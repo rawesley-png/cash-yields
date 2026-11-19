@@ -1,5 +1,5 @@
 {
- "updated": "Thu 11/19/2026 2:30 PM ET",
+ "updated": "Thu 11/19/2026 3:44 PM ET",
  "run_date": "2026-11-19",
  "first_run": false,
  "compared_with": "2026-11-18",
@@ -1801,13 +1801,13 @@
    "ytm": 4.06,
    "yields": {
     "sponsor": {
-     "y": 3.88,
-     "asof": "2026-11-17",
+     "y": 3.89,
+     "asof": "2026-11-18",
      "source": "iShares (30-day SEC yield)"
     }
    },
-   "gross": 3.88,
-   "gross_asof": "2026-11-17",
+   "gross": 3.89,
+   "gross_asof": "2026-11-18",
    "gross_source": "iShares (30-day SEC yield)",
    "stale": false,
    "cutoff": {
@@ -1824,10 +1824,10 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.2929,
-    "sc_trust": 2.2929,
-    "fl_trust": 2.297,
-    "foundation": 3.8261
+    "sc_partner": 2.2988,
+    "sc_trust": 2.2988,
+    "fl_trust": 2.3029,
+    "foundation": 3.8359
    },
    "timing": {
     "cutoff": "market hours 9:30 a.m.–4:00 p.m. ET",
@@ -2399,9 +2399,9 @@
     "FFTXX",
     "FSIXX",
     "BIL",
+    "SGOV",
     "UTIXX",
     "TTTXX",
-    "SGOV",
     "TFFXX",
     "GOTXX",
     "FISXX",
@@ -2444,9 +2444,9 @@
     "FFTXX",
     "FSIXX",
     "BIL",
+    "SGOV",
     "UTIXX",
     "TTTXX",
-    "SGOV",
     "TFFXX",
     "GOTXX",
     "FISXX",
@@ -2535,8 +2535,8 @@
     "PD-100M",
     "FSIXX",
     "BIL",
-    "TTTXX",
     "SGOV",
+    "TTTXX",
     "PD-10M",
     "UTIXX",
     "FISXX",
