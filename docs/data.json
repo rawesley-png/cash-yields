@@ -1,5 +1,5 @@
 {
- "updated": "Fri 11/20/2026 2:06 PM ET",
+ "updated": "Fri 11/20/2026 3:28 PM ET",
  "run_date": "2026-11-20",
  "first_run": false,
  "compared_with": "2026-11-19",
@@ -1802,12 +1802,12 @@
    "yields": {
     "sponsor": {
      "y": 3.89,
-     "asof": "2026-11-18",
+     "asof": "2026-11-19",
      "source": "iShares (30-day SEC yield)"
     }
    },
    "gross": 3.89,
-   "gross_asof": "2026-11-18",
+   "gross_asof": "2026-11-19",
    "gross_source": "iShares (30-day SEC yield)",
    "stale": false,
    "cutoff": {
@@ -2665,7 +2665,7 @@
    "name": "SIFMA calendar",
    "ok": true,
    "asof": "2026-11-20",
-   "note": "fetched today"
+   "note": "cached (refetched weekly)"
   },
   {
    "name": "Merrill Yields at a Glance",
