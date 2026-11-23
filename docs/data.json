@@ -1,5 +1,5 @@
 {
- "updated": "Mon 11/23/2026 5:38 PM ET",
+ "updated": "Mon 11/23/2026 6:59 PM ET",
  "run_date": "2026-11-23",
  "first_run": false,
  "compared_with": "2026-11-20",
@@ -202,13 +202,13 @@
      "source": "Merrill Yields at a Glance (7-day yield)"
     },
     "sponsor": {
-     "y": 3.87,
-     "asof": "2026-11-22",
+     "y": 3.88,
+     "asof": "2026-11-23",
      "source": "Federated Hermes (7-day net yield)"
     }
    },
-   "gross": 3.87,
-   "gross_asof": "2026-11-22",
+   "gross": 3.88,
+   "gross_asof": "2026-11-23",
    "gross_source": "Federated Hermes (7-day net yield)",
    "stale": false,
    "cutoff": {
@@ -227,10 +227,10 @@
    "status": "ranked",
    "status_note": null,
    "net": {
-    "sc_partner": 2.291,
-    "sc_trust": 2.291,
-    "fl_trust": 2.291,
-    "foundation": 3.8162
+    "sc_partner": 2.297,
+    "sc_trust": 2.297,
+    "fl_trust": 2.297,
+    "foundation": 3.8261
    },
    "timing": {
     "cutoff": "3:00 p.m. ET today (fund deadline; Merrill's own cutoff not verified)",
@@ -1055,12 +1055,12 @@
     },
     "sponsor": {
      "y": 3.92,
-     "asof": "2026-11-22",
+     "asof": "2026-11-23",
      "source": "Federated Hermes (7-day net yield)"
     }
    },
    "gross": 3.92,
-   "gross_asof": "2026-11-22",
+   "gross_asof": "2026-11-23",
    "gross_source": "Federated Hermes (7-day net yield)",
    "stale": false,
    "cutoff": {
@@ -1802,12 +1802,12 @@
    "yields": {
     "sponsor": {
      "y": 3.89,
-     "asof": "2026-11-19",
+     "asof": "2026-11-20",
      "source": "iShares (30-day SEC yield)"
     }
    },
    "gross": 3.89,
-   "gross_asof": "2026-11-19",
+   "gross_asof": "2026-11-20",
    "gross_source": "iShares (30-day SEC yield)",
    "stale": false,
    "cutoff": {
@@ -2435,9 +2435,9 @@
     "BILL-6W",
     "BILL-4W",
     "FSIXX",
+    "UTIXX",
     "BIL",
     "SGOV",
-    "UTIXX",
     "TTTXX",
     "TFFXX",
     "MCSXX",
@@ -2480,9 +2480,9 @@
     "BILL-6W",
     "BILL-4W",
     "FSIXX",
+    "UTIXX",
     "BIL",
     "SGOV",
-    "UTIXX",
     "TTTXX",
     "TFFXX",
     "MCSXX",
@@ -2531,9 +2531,9 @@
     "PD-100M",
     "FSIXX",
     "BIL",
+    "UTIXX",
     "TTTXX",
     "SGOV",
-    "UTIXX",
     "FISXX",
     "PD-10M",
     "TSTXX",

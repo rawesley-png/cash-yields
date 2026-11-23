@@ -315,8 +315,8 @@
    "fetched": "2026-11-23"
   },
   "UTIXX": {
-   "y": 3.87,
-   "asof": "2026-11-22",
+   "y": 3.88,
+   "asof": "2026-11-23",
    "source": "Federated Hermes (7-day net yield)",
    "fetched": "2026-11-23"
   },
@@ -328,7 +328,7 @@
   },
   "UTPXX": {
    "y": 3.92,
-   "asof": "2026-11-22",
+   "asof": "2026-11-23",
    "source": "Federated Hermes (7-day net yield)",
    "fetched": "2026-11-23"
   },
@@ -340,7 +340,7 @@
   },
   "SGOV": {
    "y": 3.89,
-   "asof": "2026-11-19",
+   "asof": "2026-11-20",
    "source": "iShares (30-day SEC yield)",
    "fetched": "2026-11-23",
    "ytm": 4.1
