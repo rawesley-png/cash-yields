@@ -1,10 +1,10 @@
 {
  "merrill": {
-  "asof": "2026-11-19",
-  "deposit_asof": "2026-11-19",
+  "asof": "2026-11-20",
+  "deposit_asof": "2026-11-20",
   "funds": {
    "TFFXX": {
-    "y": 3.81,
+    "y": 3.83,
     "name": "BlackRock Select Treasury Based Liquidity Fund – Institutional Class",
     "eligibility": "Brokerage, IAP"
    },
@@ -19,17 +19,17 @@
     "eligibility": "IAP"
    },
    "TSTXX": {
-    "y": 3.83,
+    "y": 3.84,
     "name": "BlackRock Liquidity Funds: T-Fund – institutional Class",
     "eligibility": "Brokerage, IAP"
    },
    "BEMXX": {
-    "y": 3.83,
+    "y": 3.84,
     "name": "BlackRock Liquidity Funds: T-Fund – Premier Class",
     "eligibility": "IAP"
    },
    "TTTXX": {
-    "y": 3.88,
+    "y": 3.89,
     "name": "BlackRock Liquidity Funds: Treasury Trust – Inst Class",
     "eligibility": "Brokerage, IAP"
    },
@@ -39,32 +39,32 @@
     "eligibility": "Brokerage, IAP"
    },
    "GOIXX": {
-    "y": 3.77,
+    "y": 3.78,
     "name": "Federated Hermes Government Obligations Fund – Institutional Class",
     "eligibility": "Brokerage"
    },
    "GOFXX": {
-    "y": 3.82,
-    "name": "Federated Hermes Government Obligations Fund – Premier Class",
+    "y": 3.83,
+    "name": "Federated Hermes Government ObligationsFund – Premier Class",
     "eligibility": "IAP"
    },
    "GOVXX": {
-    "y": 3.82,
+    "y": 3.83,
     "name": "Federated Hermes Government Obligations Fund – Advisor Class",
     "eligibility": "IAP"
    },
    "TOIXX": {
-    "y": 3.78,
+    "y": 3.79,
     "name": "Federated Hermes Treasury Obligations Fund – Institutional Class",
     "eligibility": "Brokerage"
    },
    "TOPXX": {
-    "y": 3.83,
+    "y": 3.84,
     "name": "Federated Hermes Treasury Obligations Fund – Premier Class",
     "eligibility": "IAP"
    },
    "UTIXX": {
-    "y": 3.86,
+    "y": 3.87,
     "name": "Federated Hermes U.S. Treasury Cash Reserves – Institutional Class",
     "eligibility": "Brokerage"
    },
@@ -94,12 +94,12 @@
     "eligibility": "IAP"
    },
    "FSIXX": {
-    "y": 3.9,
+    "y": 3.91,
     "name": "Fidelity Investments Money Market Treasury Only Portfolio – Class I",
     "eligibility": "Brokerage"
    },
    "FRSXX": {
-    "y": 3.94,
+    "y": 3.95,
     "name": "Fidelity Investments Money Market Treasury Only Portfolio – Institutional Class I",
     "eligibility": "IAP"
    },
@@ -114,17 +114,17 @@
     "eligibility": "Brokerage, IAP"
    },
    "MCSXX": {
-    "y": 2.45,
+    "y": 2.36,
     "name": "BlackRock Liquidity Funds: MuniCash – Institutional Class",
     "eligibility": "Brokerage, IAP"
    },
    "FFTXX": {
-    "y": 2.44,
+    "y": 2.4,
     "name": "Federated Hermes Institutional Tax-Free Cash Trust – Institutional Class",
     "eligibility": "Brokerage"
    },
    "FTFXX": {
-    "y": 2.49,
+    "y": 2.45,
     "name": "Federated Hermes Institutional Tax-Free Cash Trust – Premier Class",
     "eligibility": "IAP"
    },
@@ -134,7 +134,7 @@
     "eligibility": "Sweep only"
    },
    "BTFXX": {
-    "y": 3.48,
+    "y": 3.49,
     "name": "BlackRock Liquidity Funds: Treasury Trust – Cash Reserve Class",
     "eligibility": "Sweep only"
    }
@@ -150,10 +150,10 @@
    "MLBDP-4": 0.15,
    "MLBDP-5": 3.35
   },
-  "fetched": "2026-11-20"
+  "fetched": "2026-11-23"
  },
  "treasury": {
-  "asof": "2026-11-20",
+  "asof": "2026-11-23",
   "yields": {
    "BILL-4W": {
     "y": 4.11,
@@ -161,80 +161,40 @@
     "cusip": "912797WG8"
    },
    "BILL-6W": {
-    "y": 4.14,
+    "y": 4.15,
     "maturity": "2026-12-31",
     "cusip": "912797VJ3"
    },
    "BILL-8W": {
-    "y": 4.18,
+    "y": 4.19,
     "maturity": "2027-01-19",
     "cusip": "912797WQ6"
    },
    "BILL-13W": {
-    "y": 4.23,
-    "maturity": "2027-02-18",
-    "cusip": "912797TV9"
+    "y": 4.28,
+    "maturity": "2027-02-25",
+    "cusip": "912797WC7"
    },
    "BILL-17W": {
-    "y": 4.33,
+    "y": 4.36,
     "maturity": "2027-03-23",
     "cusip": "912797XJ1"
    },
    "BILL-26W": {
-    "y": 4.41,
-    "maturity": "2027-05-20",
-    "cusip": "912797XD4"
+    "y": 4.49,
+    "maturity": "2027-05-27",
+    "cusip": "912797XE2"
    },
    "BILL-52W": {
-    "y": 4.5,
+    "y": 4.55,
     "maturity": "2027-10-28",
     "cusip": "912797WT0"
    }
   }
  },
  "auctions": {
-  "fetched": "2026-11-20",
+  "fetched": "2026-11-23",
   "by_term": {
-   "BILL-13W": [
-    {
-     "close_date": "2026-11-23",
-     "nc_time": "11:00",
-     "c_time": "11:30",
-     "issue": "2026-11-27",
-     "maturity": "2027-02-25",
-     "cusip": "912797WC7",
-     "announced": "2026-11-19"
-    },
-    {
-     "close_date": null,
-     "nc_time": "11:00",
-     "c_time": "11:30",
-     "issue": "2026-12-03",
-     "maturity": null,
-     "cusip": "912797WD5",
-     "announced": "2026-11-25"
-    }
-   ],
-   "BILL-26W": [
-    {
-     "close_date": "2026-11-23",
-     "nc_time": "11:00",
-     "c_time": "11:30",
-     "issue": "2026-11-27",
-     "maturity": "2027-05-27",
-     "cusip": "912797XE2",
-     "announced": "2026-11-19"
-    },
-    {
-     "close_date": null,
-     "nc_time": "11:00",
-     "c_time": "11:30",
-     "issue": "2026-12-03",
-     "maturity": null,
-     "cusip": "912797XF9",
-     "announced": "2026-11-25"
-    }
-   ],
    "BILL-52W": [
     {
      "close_date": "2026-11-24",
@@ -298,76 +258,98 @@
      "cusip": "912797WR4",
      "announced": "2026-11-24"
     }
+   ],
+   "BILL-13W": [
+    {
+     "close_date": null,
+     "nc_time": "11:00",
+     "c_time": "11:30",
+     "issue": "2026-12-03",
+     "maturity": null,
+     "cusip": "912797WD5",
+     "announced": "2026-11-25"
+    }
+   ],
+   "BILL-26W": [
+    {
+     "close_date": null,
+     "nc_time": "11:00",
+     "c_time": "11:30",
+     "issue": "2026-12-03",
+     "maturity": null,
+     "cusip": "912797XF9",
+     "announced": "2026-11-25"
+    }
    ]
   }
  },
  "sponsor": {
   "TTTXX": {
-   "y": 3.88,
-   "asof": "2026-11-19",
+   "y": 3.89,
+   "asof": "2026-11-20",
    "source": "BlackRock (7-day SEC yield)",
-   "fetched": "2026-11-20"
+   "fetched": "2026-11-23"
   },
   "TSTXX": {
-   "y": 3.83,
-   "asof": "2026-11-19",
+   "y": 3.84,
+   "asof": "2026-11-20",
    "source": "BlackRock (7-day SEC yield)",
-   "fetched": "2026-11-20"
+   "fetched": "2026-11-23"
   },
   "TFDXX": {
    "y": 3.81,
-   "asof": "2026-11-19",
+   "asof": "2026-11-20",
    "source": "BlackRock (7-day SEC yield)",
-   "fetched": "2026-11-20"
+   "fetched": "2026-11-23"
   },
   "TMCXX": {
    "y": 3.95,
-   "asof": "2026-11-19",
+   "asof": "2026-11-20",
    "source": "BlackRock (7-day SEC yield)",
-   "fetched": "2026-11-20"
+   "fetched": "2026-11-23"
   },
   "MCSXX": {
-   "y": 2.45,
-   "asof": "2026-11-19",
+   "y": 2.36,
+   "asof": "2026-11-20",
    "source": "BlackRock (7-day SEC yield)",
-   "fetched": "2026-11-20"
+   "fetched": "2026-11-23"
   },
   "UTIXX": {
-   "y": 3.86,
-   "asof": "2026-11-19",
+   "y": 3.87,
+   "asof": "2026-11-22",
    "source": "Federated Hermes (7-day net yield)",
-   "fetched": "2026-11-20"
+   "fetched": "2026-11-23"
   },
   "FFTXX": {
-   "y": 2.44,
-   "asof": "2026-11-19",
+   "y": 2.34,
+   "asof": "2026-11-22",
    "source": "Federated Hermes (7-day net yield)",
-   "fetched": "2026-11-20"
+   "fetched": "2026-11-23"
   },
   "UTPXX": {
-   "y": 3.91,
-   "asof": "2026-11-19",
+   "y": 3.92,
+   "asof": "2026-11-22",
    "source": "Federated Hermes (7-day net yield)",
-   "fetched": "2026-11-20"
+   "fetched": "2026-11-23"
   },
   "FTFXX": {
-   "y": 2.49,
-   "asof": "2026-11-19",
+   "y": 2.39,
+   "asof": "2026-11-22",
    "source": "Federated Hermes (7-day net yield)",
-   "fetched": "2026-11-20"
+   "fetched": "2026-11-23"
   },
   "SGOV": {
    "y": 3.89,
    "asof": "2026-11-19",
    "source": "iShares (30-day SEC yield)",
-   "fetched": "2026-11-20",
-   "ytm": 4.08
+   "fetched": "2026-11-23",
+   "ytm": 4.1
   },
   "BIL": {
-   "y": 3.89,
-   "asof": "2026-11-19",
+   "y": 3.9,
+   "asof": "2026-11-20",
    "source": "State Street (30-day SEC yield)",
-   "fetched": "2026-11-20",
+   "fetched": "2026-11-23",
    "ytm": 4.08
   }
  },
@@ -378,15 +360,15 @@
    "sell": "14:30",
    "t1_time": null,
    "source": "BlackRock fact sheet Oct 2026",
-   "verified": "2026-11-20"
+   "verified": "2026-11-23"
   },
   "UTIXX": {
    "time": "15:00",
    "buy": "15:00",
    "sell": "15:00",
    "t1_time": "16:00",
-   "source": "Federated page 11/20/2026",
-   "verified": "2026-11-20"
+   "source": "Federated page 11/23/2026",
+   "verified": "2026-11-23"
   },
   "TSTXX": {
    "time": "17:00",
@@ -394,7 +376,7 @@
    "sell": "17:00",
    "t1_time": null,
    "source": "BlackRock fact sheet Oct 2026",
-   "verified": "2026-11-20"
+   "verified": "2026-11-23"
   },
   "TFDXX": {
    "time": "17:00",
@@ -402,7 +384,7 @@
    "sell": "17:00",
    "t1_time": null,
    "source": "BlackRock fact sheet Oct 2026",
-   "verified": "2026-11-20"
+   "verified": "2026-11-23"
   },
   "TMCXX": {
    "time": "15:00",
@@ -410,15 +392,15 @@
    "sell": "15:00",
    "t1_time": null,
    "source": "BlackRock fact sheet Oct 2026",
-   "verified": "2026-11-20"
+   "verified": "2026-11-23"
   },
   "FFTXX": {
    "time": "13:00",
    "buy": "13:00",
    "sell": "13:00",
    "t1_time": null,
-   "source": "Federated page 11/20/2026",
-   "verified": "2026-11-20"
+   "source": "Federated page 11/23/2026",
+   "verified": "2026-11-23"
   },
   "MCSXX": {
    "time": "13:00",
@@ -426,26 +408,128 @@
    "sell": "13:00",
    "t1_time": null,
    "source": "BlackRock fact sheet Oct 2026",
-   "verified": "2026-11-20"
+   "verified": "2026-11-23"
   },
   "UTPXX": {
    "time": "15:00",
    "buy": "15:00",
    "sell": "15:00",
    "t1_time": "16:00",
-   "source": "Federated page 11/20/2026",
-   "verified": "2026-11-20"
+   "source": "Federated page 11/23/2026",
+   "verified": "2026-11-23"
   },
   "FTFXX": {
    "time": "13:00",
    "buy": "13:00",
    "sell": "13:00",
    "t1_time": null,
-   "source": "Federated page 11/20/2026",
-   "verified": "2026-11-20"
+   "source": "Federated page 11/23/2026",
+   "verified": "2026-11-23"
   }
  },
  "last": {
+  "date": "2026-11-23",
+  "picks": {
+   "sc_partner": {
+    "same": {
+     "symbol": "FSIXX",
+     "net": 2.3139
+    },
+    "next": {
+     "symbol": "FSIXX",
+     "net": 2.3139
+    },
+    "d13": {
+     "symbol": "BILL-8W",
+     "net": 2.4805
+    },
+    "d52": {
+     "symbol": "BILL-52W",
+     "net": 2.6936
+    }
+   },
+   "sc_trust": {
+    "same": {
+     "symbol": "FSIXX",
+     "net": 2.3139
+    },
+    "next": {
+     "symbol": "FSIXX",
+     "net": 2.3139
+    },
+    "d13": {
+     "symbol": "BILL-8W",
+     "net": 2.4805
+    },
+    "d52": {
+     "symbol": "BILL-52W",
+     "net": 2.6936
+    }
+   },
+   "fl_trust": {
+    "same": {
+     "symbol": "FSIXX",
+     "net": 2.3147
+    },
+    "next": {
+     "symbol": "MCSXX",
+     "net": 2.36
+    },
+    "d13": {
+     "symbol": "BILL-8W",
+     "net": 2.4805
+    },
+    "d52": {
+     "symbol": "BILL-52W",
+     "net": 2.6936
+    }
+   },
+   "foundation": {
+    "same": {
+     "symbol": "FSIXX",
+     "net": 3.8557
+    },
+    "next": {
+     "symbol": "FSIXX",
+     "net": 3.8557
+    },
+    "d13": {
+     "symbol": "BILL-8W",
+     "net": 4.1318
+    },
+    "d52": {
+     "symbol": "BILL-52W",
+     "net": 4.4868
+    }
+   }
+  },
+  "cutoffs": {
+   "FSIXX": "16:00",
+   "TTTXX": "14:30",
+   "UTIXX": "15:00",
+   "TSTXX": "17:00",
+   "FISXX": "16:00",
+   "TFDXX": "17:00",
+   "FIGXX": "16:00",
+   "TMCXX": "15:00",
+   "FFTXX": "13:00",
+   "MCSXX": "13:00",
+   "FRSXX": "16:00",
+   "UTPXX": "15:00",
+   "FTFXX": "13:00",
+   "SGOV": "16:00",
+   "BIL": "16:00",
+   "USFR": "16:00"
+  },
+  "early_seen": [
+   "2026-11-27"
+  ],
+  "muni": {
+   "sc": "green",
+   "fl": "amber"
+  }
+ },
+ "baseline": {
   "date": "2026-11-20",
   "picks": {
    "sc_partner": {
@@ -518,108 +602,6 @@
     "d52": {
      "symbol": "BILL-52W",
      "net": 4.4375
-    }
-   }
-  },
-  "cutoffs": {
-   "FSIXX": "16:00",
-   "TTTXX": "14:30",
-   "UTIXX": "15:00",
-   "TSTXX": "17:00",
-   "FISXX": "16:00",
-   "TFDXX": "17:00",
-   "FIGXX": "16:00",
-   "TMCXX": "15:00",
-   "FFTXX": "13:00",
-   "MCSXX": "13:00",
-   "FRSXX": "16:00",
-   "UTPXX": "15:00",
-   "FTFXX": "13:00",
-   "SGOV": "16:00",
-   "BIL": "16:00",
-   "USFR": "16:00"
-  },
-  "early_seen": [
-   "2026-11-27"
-  ],
-  "muni": {
-   "sc": "amber",
-   "fl": "amber"
-  }
- },
- "baseline": {
-  "date": "2026-11-19",
-  "picks": {
-   "sc_partner": {
-    "same": {
-     "symbol": "FSIXX",
-     "net": 2.3021
-    },
-    "next": {
-     "symbol": "MCSXX",
-     "net": 2.3697
-    },
-    "d13": {
-     "symbol": "BILL-13W",
-     "net": 2.5219
-    },
-    "d52": {
-     "symbol": "BILL-52W",
-     "net": 2.7232
-    }
-   },
-   "sc_trust": {
-    "same": {
-     "symbol": "FSIXX",
-     "net": 2.3021
-    },
-    "next": {
-     "symbol": "MCSXX",
-     "net": 2.3697
-    },
-    "d13": {
-     "symbol": "BILL-13W",
-     "net": 2.5219
-    },
-    "d52": {
-     "symbol": "BILL-52W",
-     "net": 2.7232
-    }
-   },
-   "fl_trust": {
-    "same": {
-     "symbol": "FSIXX",
-     "net": 2.3029
-    },
-    "next": {
-     "symbol": "MCSXX",
-     "net": 2.5
-    },
-    "d13": {
-     "symbol": "BILL-13W",
-     "net": 2.5219
-    },
-    "d52": {
-     "symbol": "BILL-52W",
-     "net": 2.7232
-    }
-   },
-   "foundation": {
-    "same": {
-     "symbol": "FSIXX",
-     "net": 3.8359
-    },
-    "next": {
-     "symbol": "FSIXX",
-     "net": 3.8359
-    },
-    "d13": {
-     "symbol": "BILL-13W",
-     "net": 4.2008
-    },
-    "d52": {
-     "symbol": "BILL-52W",
-     "net": 4.5361
     }
    }
   },

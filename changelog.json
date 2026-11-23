@@ -1,5 +1,89 @@
 [
  {
+  "date": "2026-11-23",
+  "summary": "7 changes against the previous day's run",
+  "items": [
+   {
+    "kind": "pick",
+    "label": "SC partners",
+    "entity": "sc_partner",
+    "column": "next",
+    "old": "MCSXX",
+    "new": "FSIXX",
+    "old_net": 2.3224,
+    "new_net": 2.3139,
+    "text": "SC partners · Next day, no date: MCSXX (2.32% net) → FSIXX (2.31% net)",
+    "alert": true
+   },
+   {
+    "kind": "pick",
+    "label": "SC partners",
+    "entity": "sc_partner",
+    "column": "d13",
+    "old": "BILL-13W",
+    "new": "BILL-8W",
+    "old_net": 2.5042,
+    "new_net": 2.4805,
+    "text": "SC partners · Dated, 13 weeks out: BILL-13W (2.50% net) → BILL-8W (2.48% net)",
+    "alert": true
+   },
+   {
+    "kind": "pick",
+    "label": "SC trust",
+    "entity": "sc_trust",
+    "column": "next",
+    "old": "MCSXX",
+    "new": "FSIXX",
+    "old_net": 2.3224,
+    "new_net": 2.3139,
+    "text": "SC trust · Next day, no date: MCSXX (2.32% net) → FSIXX (2.31% net)",
+    "alert": true
+   },
+   {
+    "kind": "pick",
+    "label": "SC trust",
+    "entity": "sc_trust",
+    "column": "d13",
+    "old": "BILL-13W",
+    "new": "BILL-8W",
+    "old_net": 2.5042,
+    "new_net": 2.4805,
+    "text": "SC trust · Dated, 13 weeks out: BILL-13W (2.50% net) → BILL-8W (2.48% net)",
+    "alert": true
+   },
+   {
+    "kind": "pick",
+    "label": "FL trust",
+    "entity": "fl_trust",
+    "column": "d13",
+    "old": "BILL-13W",
+    "new": "BILL-8W",
+    "old_net": 2.5042,
+    "new_net": 2.4805,
+    "text": "FL trust · Dated, 13 weeks out: BILL-13W (2.50% net) → BILL-8W (2.48% net)",
+    "alert": true
+   },
+   {
+    "kind": "pick",
+    "label": "Foundation",
+    "entity": "foundation",
+    "column": "d13",
+    "old": "BILL-13W",
+    "new": "BILL-8W",
+    "old_net": 4.1712,
+    "new_net": 4.1318,
+    "text": "Foundation · Dated, 13 weeks out: BILL-13W (4.17% net) → BILL-8W (4.13% net)",
+    "alert": true
+   },
+   {
+    "kind": "muni",
+    "label": "Muni test",
+    "text": "Muni test (SC) flipped: Treasury-only wins (ratio 60.2%)",
+    "alert": true
+   }
+  ]
+ },
+ {
   "date": "2026-11-19",
   "summary": "7 changes against the previous day's run",
   "items": [
