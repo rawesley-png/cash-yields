@@ -1,5 +1,71 @@
 [
  {
+  "date": "2026-11-24",
+  "summary": "5 changes against the previous day's run",
+  "items": [
+   {
+    "kind": "pick",
+    "label": "SC partners",
+    "entity": "sc_partner",
+    "column": "d52",
+    "old": "BILL-52W",
+    "new": "BILL-26W",
+    "old_net": 2.6936,
+    "new_net": 2.664,
+    "text": "SC partners · Dated, 52 weeks out: BILL-52W (2.69% net) → BILL-26W (2.66% net)",
+    "alert": true
+   },
+   {
+    "kind": "pick",
+    "label": "SC trust",
+    "entity": "sc_trust",
+    "column": "d52",
+    "old": "BILL-52W",
+    "new": "BILL-26W",
+    "old_net": 2.6936,
+    "new_net": 2.664,
+    "text": "SC trust · Dated, 52 weeks out: BILL-52W (2.69% net) → BILL-26W (2.66% net)",
+    "alert": true
+   },
+   {
+    "kind": "pick",
+    "label": "FL trust",
+    "entity": "fl_trust",
+    "column": "next",
+    "old": "MCSXX",
+    "new": "FFTXX",
+    "old_net": 2.36,
+    "new_net": 2.33,
+    "text": "FL trust · Next day, no date: MCSXX (2.36% net) → FFTXX (2.33% net)",
+    "alert": true
+   },
+   {
+    "kind": "pick",
+    "label": "FL trust",
+    "entity": "fl_trust",
+    "column": "d52",
+    "old": "BILL-52W",
+    "new": "BILL-26W",
+    "old_net": 2.6936,
+    "new_net": 2.664,
+    "text": "FL trust · Dated, 52 weeks out: BILL-52W (2.69% net) → BILL-26W (2.66% net)",
+    "alert": true
+   },
+   {
+    "kind": "pick",
+    "label": "Foundation",
+    "entity": "foundation",
+    "column": "d52",
+    "old": "BILL-52W",
+    "new": "BILL-26W",
+    "old_net": 4.4868,
+    "new_net": 4.4375,
+    "text": "Foundation · Dated, 52 weeks out: BILL-52W (4.49% net) → BILL-26W (4.44% net)",
+    "alert": true
+   }
+  ]
+ },
+ {
   "date": "2026-11-23",
   "summary": "7 changes against the previous day's run",
   "items": [
