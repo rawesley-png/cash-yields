@@ -287,7 +287,7 @@
   },
   "SGOV": {
    "y": 3.9,
-   "asof": "2026-11-23",
+   "asof": "2026-11-24",
    "source": "iShares (30-day SEC yield)",
    "fetched": "2026-11-25",
    "ytm": 4.11
