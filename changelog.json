@@ -1,5 +1,59 @@
 [
  {
+  "date": "2026-11-26",
+  "summary": "4 changes against the previous day's run",
+  "items": [
+   {
+    "kind": "pick",
+    "label": "SC partners",
+    "entity": "sc_partner",
+    "column": "d13",
+    "old": "BILL-8W",
+    "new": "BILL-13W",
+    "old_net": 2.4864,
+    "new_net": 2.5219,
+    "text": "SC partners · Dated, 13 weeks out: BILL-8W (2.49% net) → BILL-13W (2.52% net)",
+    "alert": true
+   },
+   {
+    "kind": "pick",
+    "label": "SC trust",
+    "entity": "sc_trust",
+    "column": "d13",
+    "old": "BILL-8W",
+    "new": "BILL-13W",
+    "old_net": 2.4864,
+    "new_net": 2.5219,
+    "text": "SC trust · Dated, 13 weeks out: BILL-8W (2.49% net) → BILL-13W (2.52% net)",
+    "alert": true
+   },
+   {
+    "kind": "pick",
+    "label": "FL trust",
+    "entity": "fl_trust",
+    "column": "d13",
+    "old": "BILL-8W",
+    "new": "BILL-13W",
+    "old_net": 2.4864,
+    "new_net": 2.5219,
+    "text": "FL trust · Dated, 13 weeks out: BILL-8W (2.49% net) → BILL-13W (2.52% net)",
+    "alert": true
+   },
+   {
+    "kind": "pick",
+    "label": "Foundation",
+    "entity": "foundation",
+    "column": "d13",
+    "old": "BILL-8W",
+    "new": "BILL-13W",
+    "old_net": 4.1416,
+    "new_net": 4.2008,
+    "text": "Foundation · Dated, 13 weeks out: BILL-8W (4.14% net) → BILL-13W (4.20% net)",
+    "alert": true
+   }
+  ]
+ },
+ {
   "date": "2026-11-24",
   "summary": "5 changes against the previous day's run",
   "items": [
