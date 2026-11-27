@@ -688,5 +688,74 @@
     "d52": "BILL-26W"
    }
   }
+ },
+ {
+  "date": "2026-11-27",
+  "gross": {
+   "FSIXX": 3.93,
+   "TTTXX": 3.9,
+   "UTIXX": 3.89,
+   "GOTXX": 3.84,
+   "TSTXX": 3.85,
+   "FISXX": 3.89,
+   "TFFXX": 3.84,
+   "TFDXX": 3.83,
+   "FIGXX": 3.85,
+   "TOIXX": 3.81,
+   "GOIXX": 3.79,
+   "TMCXX": 3.96,
+   "POIXX": 3.97,
+   "FFTXX": 2.34,
+   "MCSXX": 2.29,
+   "FRSXX": 3.97,
+   "UTPXX": 3.93,
+   "FTFXX": 2.39,
+   "BTFXX": 3.5,
+   "BFRXX": 3.43,
+   "PD-100M": 3.92,
+   "PD-10M": 3.87,
+   "PD-5M": 3.61,
+   "PD-2.5M": 3.51,
+   "PD-<2.5M": 3.15,
+   "ISA": 2.05,
+   "MLBDP-1": 0.01,
+   "MLBDP-4": 0.15,
+   "MLBDP-5": 3.35,
+   "SGOV": 3.91,
+   "BIL": 3.92,
+   "BILL-4W": 4.19,
+   "BILL-6W": 4.18,
+   "BILL-8W": 4.2,
+   "BILL-13W": 4.27,
+   "BILL-17W": 4.39,
+   "BILL-26W": 4.5,
+   "BILL-52W": 4.6
+  },
+  "picks": {
+   "sc_partner": {
+    "same": "FSIXX",
+    "next": "FSIXX",
+    "d13": "BILL-13W",
+    "d52": "BILL-52W"
+   },
+   "sc_trust": {
+    "same": "FSIXX",
+    "next": "FSIXX",
+    "d13": "BILL-13W",
+    "d52": "BILL-52W"
+   },
+   "fl_trust": {
+    "same": "FSIXX",
+    "next": "FFTXX",
+    "d13": "BILL-13W",
+    "d52": "BILL-52W"
+   },
+   "foundation": {
+    "same": "FSIXX",
+    "next": "FSIXX",
+    "d13": "BILL-13W",
+    "d52": "BILL-52W"
+   }
+  }
  }
 ]

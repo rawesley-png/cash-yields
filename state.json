@@ -150,10 +150,10 @@
    "MLBDP-4": 0.15,
    "MLBDP-5": 3.35
   },
-  "fetched": "2026-11-26"
+  "fetched": "2026-11-27"
  },
  "treasury": {
-  "asof": "2026-11-25",
+  "asof": "2026-11-27",
   "yields": {
    "BILL-4W": {
     "y": 4.19,
@@ -161,7 +161,7 @@
     "cusip": "912797WH6"
    },
    "BILL-6W": {
-    "y": 4.17,
+    "y": 4.18,
     "maturity": "2027-01-07",
     "cusip": "912797VS3"
    },
@@ -171,29 +171,29 @@
     "cusip": "912797WR4"
    },
    "BILL-13W": {
-    "y": 4.26,
+    "y": 4.27,
     "maturity": "2027-02-25",
     "cusip": "912797WC7"
    },
    "BILL-17W": {
-    "y": 4.38,
+    "y": 4.39,
     "maturity": "2027-03-30",
     "cusip": "912797XK8"
    },
    "BILL-26W": {
-    "y": 4.48,
+    "y": 4.5,
     "maturity": "2027-05-27",
     "cusip": "912797XE2"
    },
    "BILL-52W": {
-    "y": 4.56,
+    "y": 4.6,
     "maturity": "2027-11-26",
     "cusip": "912797XC6"
    }
   }
  },
  "auctions": {
-  "fetched": "2026-11-26",
+  "fetched": "2026-11-27",
   "by_term": {
    "BILL-13W": [
     {
@@ -204,6 +204,15 @@
      "maturity": "2027-03-04",
      "cusip": "912797WD5",
      "announced": "2026-11-25"
+    },
+    {
+     "close_date": null,
+     "nc_time": "11:00",
+     "c_time": "11:30",
+     "issue": "2026-12-10",
+     "maturity": null,
+     "cusip": "912797WK9",
+     "announced": "2026-12-03"
     }
    ],
    "BILL-26W": [
@@ -215,6 +224,15 @@
      "maturity": "2027-06-03",
      "cusip": "912797XF9",
      "announced": "2026-11-25"
+    },
+    {
+     "close_date": null,
+     "nc_time": "11:00",
+     "c_time": "11:30",
+     "issue": "2026-12-10",
+     "maturity": null,
+     "cusip": "912797VF1",
+     "announced": "2026-12-03"
     }
    ],
    "BILL-6W": [
@@ -226,6 +244,48 @@
      "maturity": "2027-01-14",
      "cusip": "912797VT1",
      "announced": "2026-11-25"
+    },
+    {
+     "close_date": null,
+     "nc_time": "11:00",
+     "c_time": "11:30",
+     "issue": "2026-12-10",
+     "maturity": null,
+     "cusip": "912797TM9",
+     "announced": "2026-12-03"
+    }
+   ],
+   "BILL-17W": [
+    {
+     "close_date": null,
+     "nc_time": "11:00",
+     "c_time": "11:30",
+     "issue": "2026-12-08",
+     "maturity": null,
+     "cusip": "912797XQ5",
+     "announced": "2026-12-01"
+    }
+   ],
+   "BILL-4W": [
+    {
+     "close_date": null,
+     "nc_time": "11:00",
+     "c_time": "11:30",
+     "issue": "2026-12-08",
+     "maturity": null,
+     "cusip": "912797WN3",
+     "announced": "2026-12-01"
+    }
+   ],
+   "BILL-8W": [
+    {
+     "close_date": null,
+     "nc_time": "11:00",
+     "c_time": "11:30",
+     "issue": "2026-12-08",
+     "maturity": null,
+     "cusip": "912797WS2",
+     "announced": "2026-12-01"
     }
    ]
   }
@@ -235,68 +295,68 @@
    "y": 3.9,
    "asof": "2026-11-25",
    "source": "BlackRock (7-day SEC yield)",
-   "fetched": "2026-11-26"
+   "fetched": "2026-11-27"
   },
   "TSTXX": {
    "y": 3.85,
    "asof": "2026-11-25",
    "source": "BlackRock (7-day SEC yield)",
-   "fetched": "2026-11-26"
+   "fetched": "2026-11-27"
   },
   "TFDXX": {
    "y": 3.83,
    "asof": "2026-11-25",
    "source": "BlackRock (7-day SEC yield)",
-   "fetched": "2026-11-26"
+   "fetched": "2026-11-27"
   },
   "TMCXX": {
    "y": 3.96,
    "asof": "2026-11-25",
    "source": "BlackRock (7-day SEC yield)",
-   "fetched": "2026-11-26"
+   "fetched": "2026-11-27"
   },
   "MCSXX": {
    "y": 2.29,
    "asof": "2026-11-25",
    "source": "BlackRock (7-day SEC yield)",
-   "fetched": "2026-11-26"
+   "fetched": "2026-11-27"
   },
   "UTIXX": {
    "y": 3.89,
    "asof": "2026-11-26",
    "source": "Federated Hermes (7-day net yield)",
-   "fetched": "2026-11-26"
+   "fetched": "2026-11-27"
   },
   "FFTXX": {
    "y": 2.34,
    "asof": "2026-11-26",
    "source": "Federated Hermes (7-day net yield)",
-   "fetched": "2026-11-26"
+   "fetched": "2026-11-27"
   },
   "UTPXX": {
    "y": 3.93,
    "asof": "2026-11-26",
    "source": "Federated Hermes (7-day net yield)",
-   "fetched": "2026-11-26"
+   "fetched": "2026-11-27"
   },
   "FTFXX": {
    "y": 2.39,
    "asof": "2026-11-26",
    "source": "Federated Hermes (7-day net yield)",
-   "fetched": "2026-11-26"
+   "fetched": "2026-11-27"
   },
   "SGOV": {
-   "y": 3.9,
-   "asof": "2026-11-24",
+   "y": 3.91,
+   "asof": "2026-11-25",
    "source": "iShares (30-day SEC yield)",
-   "fetched": "2026-11-26",
+   "fetched": "2026-11-27",
    "ytm": 4.12
   },
   "BIL": {
-   "y": 3.91,
-   "asof": "2026-11-24",
+   "y": 3.92,
+   "asof": "2026-11-25",
    "source": "State Street (30-day SEC yield)",
-   "fetched": "2026-11-26",
+   "fetched": "2026-11-27",
    "ytm": 4.11
   }
  },
@@ -307,15 +367,15 @@
    "sell": "14:30",
    "t1_time": null,
    "source": "BlackRock fact sheet Oct 2026",
-   "verified": "2026-11-26"
+   "verified": "2026-11-27"
   },
   "UTIXX": {
    "time": "15:00",
    "buy": "15:00",
    "sell": "15:00",
    "t1_time": "16:00",
-   "source": "Federated page 11/26/2026",
-   "verified": "2026-11-26"
+   "source": "Federated page 11/27/2026",
+   "verified": "2026-11-27"
   },
   "TSTXX": {
    "time": "17:00",
@@ -323,7 +383,7 @@
    "sell": "17:00",
    "t1_time": null,
    "source": "BlackRock fact sheet Oct 2026",
-   "verified": "2026-11-26"
+   "verified": "2026-11-27"
   },
   "TFDXX": {
    "time": "17:00",
@@ -331,7 +391,7 @@
    "sell": "17:00",
    "t1_time": null,
    "source": "BlackRock fact sheet Oct 2026",
-   "verified": "2026-11-26"
+   "verified": "2026-11-27"
   },
   "TMCXX": {
    "time": "15:00",
@@ -339,15 +399,15 @@
    "sell": "15:00",
    "t1_time": null,
    "source": "BlackRock fact sheet Oct 2026",
-   "verified": "2026-11-26"
+   "verified": "2026-11-27"
   },
   "FFTXX": {
    "time": "13:00",
    "buy": "13:00",
    "sell": "13:00",
    "t1_time": null,
-   "source": "Federated page 11/26/2026",
-   "verified": "2026-11-26"
+   "source": "Federated page 11/27/2026",
+   "verified": "2026-11-27"
   },
   "MCSXX": {
    "time": "13:00",
@@ -355,26 +415,128 @@
    "sell": "13:00",
    "t1_time": null,
    "source": "BlackRock fact sheet Oct 2026",
-   "verified": "2026-11-26"
+   "verified": "2026-11-27"
   },
   "UTPXX": {
    "time": "15:00",
    "buy": "15:00",
    "sell": "15:00",
    "t1_time": "16:00",
-   "source": "Federated page 11/26/2026",
-   "verified": "2026-11-26"
+   "source": "Federated page 11/27/2026",
+   "verified": "2026-11-27"
   },
   "FTFXX": {
    "time": "13:00",
    "buy": "13:00",
    "sell": "13:00",
    "t1_time": null,
-   "source": "Federated page 11/26/2026",
-   "verified": "2026-11-26"
+   "source": "Federated page 11/27/2026",
+   "verified": "2026-11-27"
   }
  },
  "last": {
+  "date": "2026-11-27",
+  "picks": {
+   "sc_partner": {
+    "same": {
+     "symbol": "FSIXX",
+     "net": 2.3257
+    },
+    "next": {
+     "symbol": "FSIXX",
+     "net": 2.3257
+    },
+    "d13": {
+     "symbol": "BILL-13W",
+     "net": 2.5278
+    },
+    "d52": {
+     "symbol": "BILL-52W",
+     "net": 2.7232
+    }
+   },
+   "sc_trust": {
+    "same": {
+     "symbol": "FSIXX",
+     "net": 2.3257
+    },
+    "next": {
+     "symbol": "FSIXX",
+     "net": 2.3257
+    },
+    "d13": {
+     "symbol": "BILL-13W",
+     "net": 2.5278
+    },
+    "d52": {
+     "symbol": "BILL-52W",
+     "net": 2.7232
+    }
+   },
+   "fl_trust": {
+    "same": {
+     "symbol": "FSIXX",
+     "net": 2.3266
+    },
+    "next": {
+     "symbol": "FFTXX",
+     "net": 2.34
+    },
+    "d13": {
+     "symbol": "BILL-13W",
+     "net": 2.5278
+    },
+    "d52": {
+     "symbol": "BILL-52W",
+     "net": 2.7232
+    }
+   },
+   "foundation": {
+    "same": {
+     "symbol": "FSIXX",
+     "net": 3.8754
+    },
+    "next": {
+     "symbol": "FSIXX",
+     "net": 3.8754
+    },
+    "d13": {
+     "symbol": "BILL-13W",
+     "net": 4.2106
+    },
+    "d52": {
+     "symbol": "BILL-52W",
+     "net": 4.5361
+    }
+   }
+  },
+  "cutoffs": {
+   "FSIXX": "16:00",
+   "TTTXX": "14:30",
+   "UTIXX": "15:00",
+   "TSTXX": "17:00",
+   "FISXX": "16:00",
+   "TFDXX": "17:00",
+   "FIGXX": "16:00",
+   "TMCXX": "15:00",
+   "FFTXX": "13:00",
+   "MCSXX": "13:00",
+   "FRSXX": "16:00",
+   "UTPXX": "15:00",
+   "FTFXX": "13:00",
+   "SGOV": "16:00",
+   "BIL": "16:00",
+   "USFR": "16:00"
+  },
+  "early_seen": [
+   "2026-11-27"
+  ],
+  "muni": {
+   "sc": "green",
+   "fl": "amber"
+  }
+ },
+ "baseline": {
   "date": "2026-11-26",
   "picks": {
    "sc_partner": {
@@ -443,108 +605,6 @@
     "d13": {
      "symbol": "BILL-13W",
      "net": 4.2008
-    },
-    "d52": {
-     "symbol": "BILL-26W",
-     "net": 4.4177
-    }
-   }
-  },
-  "cutoffs": {
-   "FSIXX": "16:00",
-   "TTTXX": "14:30",
-   "UTIXX": "15:00",
-   "TSTXX": "17:00",
-   "FISXX": "16:00",
-   "TFDXX": "17:00",
-   "FIGXX": "16:00",
-   "TMCXX": "15:00",
-   "FFTXX": "13:00",
-   "MCSXX": "13:00",
-   "FRSXX": "16:00",
-   "UTPXX": "15:00",
-   "FTFXX": "13:00",
-   "SGOV": "16:00",
-   "BIL": "16:00",
-   "USFR": "16:00"
-  },
-  "early_seen": [
-   "2026-11-27"
-  ],
-  "muni": {
-   "sc": "green",
-   "fl": "amber"
-  }
- },
- "baseline": {
-  "date": "2026-11-25",
-  "picks": {
-   "sc_partner": {
-    "same": {
-     "symbol": "FSIXX",
-     "net": 2.3257
-    },
-    "next": {
-     "symbol": "FSIXX",
-     "net": 2.3257
-    },
-    "d13": {
-     "symbol": "BILL-8W",
-     "net": 2.4864
-    },
-    "d52": {
-     "symbol": "BILL-26W",
-     "net": 2.6522
-    }
-   },
-   "sc_trust": {
-    "same": {
-     "symbol": "FSIXX",
-     "net": 2.3257
-    },
-    "next": {
-     "symbol": "FSIXX",
-     "net": 2.3257
-    },
-    "d13": {
-     "symbol": "BILL-8W",
-     "net": 2.4864
-    },
-    "d52": {
-     "symbol": "BILL-26W",
-     "net": 2.6522
-    }
-   },
-   "fl_trust": {
-    "same": {
-     "symbol": "FSIXX",
-     "net": 2.3266
-    },
-    "next": {
-     "symbol": "FFTXX",
-     "net": 2.34
-    },
-    "d13": {
-     "symbol": "BILL-8W",
-     "net": 2.4864
-    },
-    "d52": {
-     "symbol": "BILL-26W",
-     "net": 2.6522
-    }
-   },
-   "foundation": {
-    "same": {
-     "symbol": "FSIXX",
-     "net": 3.8754
-    },
-    "next": {
-     "symbol": "FSIXX",
-     "net": 3.8754
-    },
-    "d13": {
-     "symbol": "BILL-8W",
-     "net": 4.1416
     },
     "d52": {
      "symbol": "BILL-26W",
