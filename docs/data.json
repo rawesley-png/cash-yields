@@ -1,5 +1,5 @@
 {
- "updated": "Fri 11/27/2026 2:57 PM ET",
+ "updated": "Fri 11/27/2026 4:24 PM ET",
  "run_date": "2026-11-27",
  "first_run": false,
  "compared_with": "2026-11-26",
@@ -1830,8 +1830,8 @@
     "foundation": 3.8557
    },
    "timing": {
-    "cutoff": "market hours 9:30 a.m.–4:00 p.m. ET (early close — confirm)",
-    "cash": "T+1 = Mon 11/30"
+    "cutoff": "market closed — next session Mon 11/30 9:30 a.m. ET",
+    "cash": "T+1 = Tue 12/1 (traded Mon 11/30)"
    },
    "can_recommend": true,
    "columns": [
@@ -1887,8 +1887,8 @@
     "foundation": 3.8655
    },
    "timing": {
-    "cutoff": "market hours 9:30 a.m.–4:00 p.m. ET (early close — confirm)",
-    "cash": "T+1 = Mon 11/30"
+    "cutoff": "market closed — next session Mon 11/30 9:30 a.m. ET",
+    "cash": "T+1 = Tue 12/1 (traded Mon 11/30)"
    },
    "can_recommend": true,
    "columns": [
@@ -1937,8 +1937,8 @@
     "foundation": null
    },
    "timing": {
-    "cutoff": "market hours 9:30 a.m.–4:00 p.m. ET (early close — confirm)",
-    "cash": "T+1 = Mon 11/30"
+    "cutoff": "market closed — next session Mon 11/30 9:30 a.m. ET",
+    "cash": "T+1 = Tue 12/1 (traded Mon 11/30)"
    },
    "can_recommend": false,
    "columns": [
@@ -2655,7 +2655,7 @@
    "name": "SIFMA calendar",
    "ok": true,
    "asof": "2026-11-27",
-   "note": "fetched today"
+   "note": "cached (refetched weekly)"
   },
   {
    "name": "Merrill Yields at a Glance",
